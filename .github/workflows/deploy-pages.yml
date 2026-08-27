@@ -23,6 +23,13 @@ jobs:
         with:
           fetch-depth: 0 # showLastUpdateTime reads git history
 
+      # 🔴 BEFORE setup-node, not after. The runner's global yarn is 1.22, and `packageManager:
+      # yarn@4` in package.json makes any yarn invocation refuse until Corepack is on — including
+      # the `yarn cache dir` that setup-node itself runs for `cache: yarn`. Putting this second
+      # fails the job before the install step is even reached.
+      - name: Enable Corepack
+        run: corepack enable
+
       - uses: actions/setup-node@v5
         with:
           node-version: 22
