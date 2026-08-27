@@ -3,7 +3,7 @@
  *
  * The palette is the app's own, so the docs and the product read as one thing:
  * SlateTeal30 #204E4C is the app's light primary and SlateTeal80 #A1CFCC its dark primary
- * (app/src/main/java/com/aoneahsan/netcage/core/designsystem/theme/Color.kt). The launcher mark is
+ * (the app's design-system colour tokens). The launcher mark is
  * #E6F5F1 on #10343B, which is where the darkest surface tone comes from.
  *
  * Light is defined on bare `:root` and dark only overrides. Nothing gets its ONLY definition inside

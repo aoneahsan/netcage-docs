@@ -69,6 +69,11 @@ const config: Config = {
           lastmod: 'date',
           changefreq: 'weekly',
           priority: 0.5,
+          // 🔴 Only real pages. The generated sitemap carried 47 URLs: 13 documents and 34 pieces
+          // of chrome - 32 tag pages, /tags and /search - each ~10 KB of navigation with no unique
+          // prose. Submitting 34 empty URLs beside 13 real ones is how a site earns
+          // "Crawled - currently not indexed" on the pages that matter.
+          ignorePatterns: ['/tags/**', '/tags', '/search'],
         },
         ...(gtag ? {gtag: {trackingID: gtag, anonymizeIP: true}} : {}),
       } satisfies Preset.Options,
@@ -76,6 +81,9 @@ const config: Config = {
   ],
 
   plugins: [
+    // Supplies the browsable /sitemap page and the RSS /feed.xml - the two fleet surfaces
+    // Docusaurus does not generate here, since this site deliberately has no blog.
+    './plugins/site-index',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
@@ -85,6 +93,33 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
       },
     ],
+  ],
+
+  // 🔴 Structured data. Until 2026-08-28 every page carried only Docusaurus's default
+  // `BreadcrumbList` — nothing said what the product actually is. `SoftwareApplication` is the
+  // schema an Android app's documentation should emit, and it is what lets a search or answer
+  // engine state the platform and price without inferring them.
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {type: 'application/ld+json'},
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'NetCage',
+        applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'Android 8.0+',
+        description:
+          'A per-app Android firewall. Cut any installed app off from the internet — foreground ' +
+          'and background, Wi-Fi and mobile — with one switch.',
+        url: 'https://netcage.aoneahsan.com',
+        author: {
+          '@type': 'Person',
+          name: 'Ahsan Mahmood',
+          url: 'https://aoneahsan.com',
+        },
+      }),
+    },
   ],
 
   themeConfig: {
@@ -99,6 +134,11 @@ const config: Config = {
           'Documentation for NetCage, a per-app Android firewall that cuts any installed ' +
           'app’s internet access on Wi-Fi and mobile.',
       },
+      // Both were absent from every page. `og:type` is what makes a share card render as an
+      // article rather than falling back to a bare link, and `og:site_name` is what puts the
+      // product's name on it.
+      {property: 'og:type', content: 'website'},
+      {property: 'og:site_name', content: 'NetCage documentation'},
     ],
     navbar: {
       title: 'NetCage',
@@ -143,6 +183,16 @@ const config: Config = {
             {label: 'aoneahsan.com', href: 'https://aoneahsan.com'},
             {label: 'GitHub', href: 'https://github.com/aoneahsan/netcage-docs'},
             {label: 'For agents', to: '/for-agents'},
+          ],
+        },
+        {
+          // The fleet standard: all four discovery surfaces, reachable from every page.
+          title: 'Index',
+          items: [
+            {label: 'Sitemap', to: '/sitemap'},
+            {label: 'sitemap.xml', href: 'https://netcage-docs.aoneahsan.com/sitemap.xml'},
+            {label: 'Release feed', to: '/feed'},
+            {label: 'feed.xml', href: 'https://netcage-docs.aoneahsan.com/feed.xml'},
           ],
         },
       ],

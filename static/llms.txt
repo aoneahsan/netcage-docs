@@ -3,7 +3,7 @@
 > A per-app firewall for Android. Pick any installed app and cut its internet access — foreground
 > and background, Wi-Fi and mobile — with one switch.
 
-NetCage is an Android application, package `com.aoneahsan.netcage`, published on Google Play.
+NetCage is an Android application, package `com.aoneahsan.netcage`, prepared for release on Google Play, not yet published.
 This site is its documentation. It is prerendered, so every page's HTML already contains its full
 text — no JavaScript is needed to read it. The Markdown source is public at
 https://github.com/aoneahsan/netcage-docs under `docs/`, where the page at `/<name>` is
@@ -35,6 +35,7 @@ enters the process, so there is no latency and no battery cost for them.
 - [Schedules and day passes](https://netcage-docs.aoneahsan.com/schedules-and-day-passes)
 - [Widgets and the Quick Settings tile](https://netcage-docs.aoneahsan.com/widgets-and-tile)
 - [Account and sync](https://netcage-docs.aoneahsan.com/account-and-sync)
+- [Settings and your data](https://netcage-docs.aoneahsan.com/settings-and-data)
 - [Privacy](https://netcage-docs.aoneahsan.com/privacy)
 - [Limitations](https://netcage-docs.aoneahsan.com/limitations)
 - [FAQ](https://netcage-docs.aoneahsan.com/faq)

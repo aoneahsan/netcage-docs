@@ -14,7 +14,7 @@ It works through Android's VPN slot. NetCage builds a local tunnel that goes now
 only the apps you cage into it. Their packets are discarded on your device: nothing is forwarded,
 inspected or logged. Apps you have not caged are untouched.
 
-Package `com.aoneahsan.netcage`. Version 2.0.0 is the first release on Google Play.
+Package `com.aoneahsan.netcage`. Version 2.0.0 is prepared for release on Google Play. It is not published yet.
 
 ## What you can do with it
 

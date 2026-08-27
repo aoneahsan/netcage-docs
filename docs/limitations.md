@@ -1,7 +1,7 @@
 ---
 title: Limitations
 description: What NetCage cannot do, and why — one VPN at a time, blocking by user ID, handoff to another app, cached content, DNS, transport rules, and the experimental root engine.
-sidebar_position: 10
+sidebar_position: 11
 tags: [limitations, troubleshooting]
 ---
 

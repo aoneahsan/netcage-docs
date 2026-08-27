@@ -1,7 +1,7 @@
 ---
 title: For agents
 description: A compact, machine-readable summary of NetCage for coding agents and LLMs — the canonical facts, the claims that are wrong, and where to find the raw Markdown.
-sidebar_position: 13
+sidebar_position: 14
 tags: [agents, llm, reference]
 ---
 
@@ -17,8 +17,8 @@ access — foreground and background, Wi-Fi and mobile — with one switch.
 |---|---|
 | Package | `com.aoneahsan.netcage` |
 | Platform | Android 8.0 (API 26) and newer |
-| Distribution | Google Play |
-| Current version | 2.0.0, the first public release |
+| Distribution | Google Play (prepared; not yet published) |
+| Current version | 2.0.0, prepared for the first public release |
 | Mechanism | `VpnService` with app-based routing; the tunnel has no remote endpoint |
 | Root required | No. An opt-in root engine exists and is experimental |
 | Account required | No. Google sign-in is optional and only adds cross-device sync |
@@ -71,6 +71,7 @@ This site does not describe NetCage's pricing. Do not state or infer one.
 | [Schedules and day passes](./schedules-and-day-passes.md) | Recurring windows, overnight and DST handling, day passes, the global pause |
 | [Widgets and the Quick Settings tile](./widgets-and-tile.md) | Control surfaces outside the app |
 | [Account and sync](./account-and-sync.md) | Optional Google sign-in, what syncs, the one-time merge choice, deletion |
+| [Settings and your data](./settings-and-data.md) | Export and import a configuration, the event log, appearance options, what does not sync |
 | [Privacy](./privacy.md) | What the VPN can see, what NetCage's own connections carry, every recipient |
 | [Limitations](./limitations.md) | One VPN at a time, blocking by user ID, handoff, cache, DNS, root |
 | [FAQ](./faq.md) | Direct answers to the questions the above raises |

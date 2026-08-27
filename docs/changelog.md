@@ -1,21 +1,21 @@
 ---
 title: Changelog
 description: What changed in each release of NetCage, latest first.
-sidebar_position: 12
+sidebar_position: 13
 tags: [changelog, releases]
 ---
 
-Latest first. Version 2.0.0 is the first release published on Google Play.
+Latest first. Version 2.0.0 is prepared for release on Google Play; it is not published yet.
 
 ## 2.0.0
 
-**The first public release.** Everything before it was sideloaded and offline-only.
+**The first release prepared for the public.** Everything before it was sideloaded and offline-only.
 
 - Sign in to sync your rules, profiles and schedules across devices
 - Filter by category and cage every browser, game or social app in one tap
 - Real app icons, generic category icons, or your own custom icon per app
 - A cleaner list that hides archived and disabled apps
-- Now on the Play Store, so updates arrive automatically
+- Built for the Play Store, so updates will arrive automatically once it is listed
 
 In more detail:
 
@@ -31,7 +31,8 @@ In more detail:
 - Archived and disabled apps no longer clutter the list, and an app can be hidden outright.
 - Optional Google sign-in with cross-device sync of rules, profiles, schedules, preferences, hidden
   apps and custom icons.
-- One banner ad on the list and detail screens, behind a consent form where consent is required.
+- A promotion for another app by the same developer on the list and detail screens. It is bundled
+  in the app, so it makes no network request and reads no advertising identifier.
 - In-app updates from Play, and an in-app review prompt.
 - Crash and anonymous usage reporting, each behind its own switch in **Settings ▸ Privacy**.
 

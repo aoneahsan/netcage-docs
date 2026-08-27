@@ -1,7 +1,7 @@
 ---
 title: Privacy
 description: What the VPN can and cannot see, why a caged app's package name is never sent to any analytics or crash reporter, what NetCage's own connections carry, and the switches that turn them off.
-sidebar_position: 9
+sidebar_position: 10
 tags: [privacy, data, telemetry]
 ---
 
@@ -96,7 +96,6 @@ never constructed and none of these calls happen.
 
 | Provider | Receives | Gated on |
 |---|---|---|
-| **Google AdMob** | Advertising ID, ad request and device context, consent state | The ad configuration and your consent choice |
 | **Google Analytics for Firebase** | Screen views, bounded event names and counts, advertising ID, app instance id | *Share anonymous usage data* |
 | **Sentry** | Exception type, a bounded call-site label, redacted message, device, OS and app version | *Send crash reports* |
 | **Amplitude** | The same bounded event set as Analytics | *Share anonymous usage data* |
@@ -142,7 +141,7 @@ build by name.
 | `PACKAGE_USAGE_STATS` | Optional per-app data totals. You grant it in Android's own settings |
 | `SCHEDULE_EXACT_ALARM` | Optional precise timing for schedules and day passes |
 | `WAKE_LOCK` | The background-work deadline fallback |
-| Advertising ID and Privacy Sandbox permissions | Required by the ad and analytics SDKs |
+| Advertising ID and Privacy Sandbox permissions | Required by the analytics SDK |
 | Push delivery permissions | Required to receive an announcement |
 
 Two permissions the credential library tries to inject — `USE_BIOMETRIC` and `USE_FINGERPRINT` — are
