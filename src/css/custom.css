@@ -1,0 +1,107 @@
+/**
+ * NetCage documentation theme.
+ *
+ * The palette is the app's own, so the docs and the product read as one thing:
+ * SlateTeal30 #204E4C is the app's light primary and SlateTeal80 #A1CFCC its dark primary
+ * (app/src/main/java/com/aoneahsan/netcage/core/designsystem/theme/Color.kt). The launcher mark is
+ * #E6F5F1 on #10343B, which is where the darkest surface tone comes from.
+ *
+ * Light is defined on bare `:root` and dark only overrides. Nothing gets its ONLY definition inside
+ * the dark block.
+ */
+
+:root {
+  --ifm-color-primary: #204e4c;
+  --ifm-color-primary-dark: #1d4644;
+  --ifm-color-primary-darker: #1b4240;
+  --ifm-color-primary-darkest: #163635;
+  --ifm-color-primary-light: #235654;
+  --ifm-color-primary-lighter: #255a58;
+  --ifm-color-primary-lightest: #2a6663;
+
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #14201f;
+  --ifm-heading-color: #10343b;
+
+  --ifm-code-font-size: 92%;
+  --ifm-code-background: rgba(32, 78, 76, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(32, 78, 76, 0.12);
+
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #10343b;
+
+  --ifm-table-stripe-background: rgba(32, 78, 76, 0.04);
+  --ifm-blockquote-color: #3a6664;
+  --ifm-blockquote-border-color: #a1cfcc;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #a1cfcc;
+  --ifm-color-primary-dark: #8bc4c0;
+  --ifm-color-primary-darker: #80bebb;
+  --ifm-color-primary-darkest: #5da9a5;
+  --ifm-color-primary-light: #b7dad7;
+  --ifm-color-primary-lighter: #c2e0dd;
+  --ifm-color-primary-lightest: #ddeeed;
+
+  --ifm-background-color: #10343b;
+  --ifm-background-surface-color: #14403f;
+  --ifm-font-color-base: #e6f5f1;
+  --ifm-heading-color: #e6f5f1;
+
+  --ifm-code-background: rgba(230, 245, 241, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(230, 245, 241, 0.14);
+
+  --ifm-navbar-background-color: #0d2b31;
+  --ifm-footer-background-color: #0d2b31;
+
+  --ifm-table-stripe-background: rgba(230, 245, 241, 0.05);
+  --ifm-blockquote-color: #bcebe8;
+  --ifm-blockquote-border-color: #3a6664;
+}
+
+/* Tables carry a lot of this site's substance — the limitations and the privacy disclosures are
+   both tables — so they get room to breathe and never push the page sideways. */
+.markdown table {
+  display: table;
+  width: 100%;
+}
+
+.markdown > div:has(> table),
+.markdown .tableWrapper {
+  overflow-x: auto;
+}
+
+.markdown table th,
+.markdown table td {
+  vertical-align: top;
+}
+
+/* A slightly calmer measure than the default: these are pages people read, not skim. */
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 2.4;
+  line-height: 1.7;
+}
+
+.markdown h1 {
+  --ifm-h1-font-size: 2.25rem;
+}
+
+/* The one decorative touch: a hairline under the navbar so the header separates from white pages
+   in light mode without a heavy border. */
+.navbar {
+  box-shadow: 0 1px 0 rgba(32, 78, 76, 0.12);
+}
+
+[data-theme='dark'] .navbar {
+  box-shadow: 0 1px 0 rgba(230, 245, 241, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

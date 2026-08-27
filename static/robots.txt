@@ -1,0 +1,5 @@
+# NetCage documentation — everything here is public and meant to be read, by people and by agents.
+User-agent: *
+Allow: /
+
+Sitemap: https://netcage-docs.aoneahsan.com/sitemap.xml
