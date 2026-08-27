@@ -70,7 +70,7 @@ Tapping a row opens the app's detail view.
 
 | Control | What it does |
 |---|---|
-| **Block on** — Wi-Fi, Mobile data | Restricts the rule to one transport. An app caged on mobile only is free on Wi-Fi |
+| **Block on** — Wi-Fi, Mobile data | Restricts the rule to one transport. An app caged on mobile only still has Wi-Fi |
 | **Day pass** | Lets this app back online briefly — see [Schedules and day passes](./schedules-and-day-passes.md#day-passes) |
 | **Note** | Why you caged it. Yours; nothing reads it |
 | **Data used** | Total, Wi-Fi and mobile, over Today / 7 days / 30 days. Needs Usage Access |

@@ -68,4 +68,4 @@ Two apply to every page, and both come from the product:
 Push to `main`. The workflow builds and publishes; `static/CNAME` pins the custom domain.
 
 DNS (`netcage-docs` CNAME → `aoneahsan.github.io`) and the Pages custom-domain setting with
-**Enforce HTTPS** are one-time owner steps, tracked in the app repository's `docs/MANUAL-TASKS.md`.
+**Enforce HTTPS** are one-time owner steps, tracked with the app.

@@ -103,10 +103,14 @@ never constructed and none of these calls happen.
 | **Microsoft Clarity** | Session interaction data | *Share anonymous usage data* |
 | **OneSignal** | Push token and subscription state | *Announcements* |
 | **Supabase** | Email, name, account id, and the synced configuration — which includes caged package names | Only when you sign in |
-| **FilesHub** | Custom icon images | Only when you sign in and set a custom icon |
+| **The developer's own file storage** | Custom icon images | Only when you sign in and set a custom icon |
 
-Supabase and FilesHub are the developer's own backend and file storage. The credential needed to
-reach storage lives on the server side and is not shipped inside the app.
+Supabase hosts the developer's own database; the icon store is the developer's own service. Neither
+sells or shares your data onward. The credential needed to reach the icon store lives on the server
+side and is **not** shipped inside the app, so the app itself cannot reach anyone else's files.
+
+This page explains what happens and why. The formal disclosure, which lists every recipient, is the
+[privacy policy](https://netcage.aoneahsan.com/privacy).
 
 ## What is never collected
 

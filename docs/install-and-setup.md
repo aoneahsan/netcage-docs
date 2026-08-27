@@ -35,7 +35,7 @@ a useful grant is still missing. It lists only the steps that are actually open,
 - **All steps** — opens the full setup screen.
 - **Not now** — snoozes the card. It remembers which steps were open when you dismissed it.
 
-The full screen is **Settings ▸ Advanced ▸ Setup &amp; permissions**, and it re-reads every grant
+The full screen is **Settings ▸ Advanced ▸ Setup & permissions**, and it re-reads every grant
 from the system each time you open it, so changing something in Android's settings and coming back
 shows the truth rather than a cached answer.
 

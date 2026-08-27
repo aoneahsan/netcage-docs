@@ -13,8 +13,8 @@ Open it from the overflow menu (⋮) on the app list ▸ **Profiles**.
 ## Creating a profile
 
 **New profile** asks for a name and, optionally, an emoji from a small palette. **Save current
-selection** creates a profile from whatever is caged right now, which is usually the fastest route:
-cage the apps you want, then save the result as *Evening* or *Focus*.
+selection** creates a profile from whatever is caged right now, which is usually the easiest
+route: cage the apps you want, then save the result as *Evening* or *Focus*.
 
 A profile needs a name and at least one app. Both are checked at the field, so you find out before
 you tap save:
