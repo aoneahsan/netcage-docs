@@ -116,10 +116,20 @@ const config: Config = {
      *   ❌ A robots.txt cannot help either: crawlers read it only at the ORIGIN root, and
      *      `aoneahsan.github.io/robots.txt` is not ours — it 404s.
      *
-     * The real fix is the custom domain, which makes GitHub Pages 301 the github.io path to it. The
-     * domain is already registered on the repo (`gh api -X PUT .../pages -f cname=...`), so that
-     * redirect starts by itself the moment the DNS CNAME exists — no second action needed. Until
-     * then this is what is available, and the exposure is genuinely open to the AI crawlers.
+     * 🔴 UPDATE, same day, measured after deploying: registering the Pages custom domain
+     * (`gh api -X PUT .../pages -f cname=...`) made GitHub start 301-ing the github.io path to
+     * `netcage-docs.aoneahsan.com` IMMEDIATELY — it did not wait for the DNS CNAME, which is what
+     * the first version of this comment assumed. So the redirect, not this script, is what actually
+     * closes the exposure, and it closes it for the AI crawlers too.
+     *
+     * This guard therefore stays as defence in depth rather than as the mitigation: it costs nothing
+     * and it is what would cover a future host that serves the build without that redirect (a
+     * preview deploy, a mirror, a reverted Pages setting).
+     *
+     * ⚠️ The redirect has a cost worth stating: its target does not resolve yet, so the docs site is
+     * unreachable at every address until the CNAME exists. Nothing user-facing regressed — the app
+     * and all three repos only ever linked to the custom domain — but it does make that one DNS
+     * record the thing standing between offline and live. `netcage/docs/MANUAL-TASKS.md` row 15.
      */
     {
       tagName: 'script',
