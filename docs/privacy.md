@@ -153,3 +153,43 @@ biometric prompt.
 If you signed in, **Settings ▸ Account ▸ Delete account** permanently removes the account, the
 configuration stored for it and any custom icons you uploaded. The same is available at
 [netcage.aoneahsan.com/delete-account](https://netcage.aoneahsan.com/delete-account).
+
+## How long it is kept
+
+What the developer holds — your synced configuration, your stored icons, the record of your devices
+— is kept until you change it or delete your account, and no longer. There is no archive behind the
+delete.
+
+Usage data and crash reports are a different matter, and the honest answer is that NetCage does not
+control them: Google, Amplitude, Microsoft and Sentry each keep what they receive under their own
+retention period. Turning a switch off stops anything new being sent; it does not reach into a
+provider and erase what is already there. Anything held only on the phone goes when you uninstall.
+
+## Where it is processed
+
+The database and sign-in run on Supabase. Icons sit in the developer's own file storage. Google,
+Microsoft, Amplitude, Sentry and OneSignal all operate internationally.
+
+So data covered by this page may be processed in a country other than yours, under each provider's
+own terms. NetCage does not pick the region on your behalf and cannot promise a single jurisdiction.
+
+## Children
+
+NetCage is for people aged 18 and over, and its Play listing says so. It is not directed at
+children, it is not designed to appeal to them, and no data is knowingly collected from them. If you
+believe a child has signed in, write to the developer and the account and its data will be deleted.
+
+## Your rights, and how to use them
+
+Every one of these works today, without asking anyone:
+
+| What you want | How |
+|---|---|
+| See what is held | Sign in at [netcage.aoneahsan.com/account](https://netcage.aoneahsan.com/account) and use the export — the whole stored configuration, as JSON |
+| Correct it | Change it on the phone. The next sync overwrites what is stored |
+| Stop the optional collection | The switches in **Settings ▸ Privacy** |
+| Erase everything | **Settings ▸ Account ▸ Delete account**, or the deletion page |
+| Anything else, including a complaint | The contact form at [netcage.aoneahsan.com/contact](https://netcage.aoneahsan.com/contact) |
+
+Portability is the export: it is a plain JSON file, not a proprietary format, and nothing is withheld
+from it.
