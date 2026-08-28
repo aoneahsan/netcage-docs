@@ -100,6 +100,39 @@ const config: Config = {
   // schema an Android app's documentation should emit, and it is what lets a search or answer
   // engine state the platform and price without inferring them.
   headTags: [
+    /*
+     * 🔴 Keep the github.io copy out of search results.
+     *
+     * The site is built for `netcage-docs.aoneahsan.com`, so `baseUrl` is '/' — which means the copy
+     * GitHub also serves at `aoneahsan.github.io/netcage-docs/` loads its HTML but 404s every asset,
+     * while its canonical and og:url point at the custom domain. An unstyled duplicate with a
+     * canonical to a different host is the worst of both readings.
+     *
+     * 🔴 WHAT THIS DOES AND DOES NOT COVER, precisely — because a partial mitigation described as a
+     * fix is worse than none:
+     *   ✅ Googlebot renders JavaScript, so it sees the noindex. That is the highest-volume crawler
+     *      and the one that would otherwise index the duplicate.
+     *   ❌ GPTBot, ClaudeBot, PerplexityBot and CCBot run NO JavaScript. They do not see this at all.
+     *   ❌ A robots.txt cannot help either: crawlers read it only at the ORIGIN root, and
+     *      `aoneahsan.github.io/robots.txt` is not ours — it 404s.
+     *
+     * The real fix is the custom domain, which makes GitHub Pages 301 the github.io path to it. The
+     * domain is already registered on the repo (`gh api -X PUT .../pages -f cname=...`), so that
+     * redirect starts by itself the moment the DNS CNAME exists — no second action needed. Until
+     * then this is what is available, and the exposure is genuinely open to the AI crawlers.
+     */
+    {
+      tagName: 'script',
+      innerHTML: `(function () {
+        if (location.hostname !== 'netcage-docs.aoneahsan.com' && location.hostname !== 'localhost') {
+          var meta = document.createElement('meta');
+          meta.name = 'robots';
+          meta.content = 'noindex, nofollow';
+          document.head.appendChild(meta);
+        }
+      })();`,
+      attributes: {},
+    },
     {
       tagName: 'script',
       attributes: {type: 'application/ld+json'},
