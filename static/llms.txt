@@ -14,15 +14,18 @@ https://github.com/aoneahsan/netcage-docs under `docs/`, where the page at `/<na
 Android does not let an ordinary app revoke another app's `INTERNET` permission or write firewall
 rules. It does allow a `VpnService` with app-based routing. NetCage builds a VPN tunnel that goes
 nowhere: a private address, a default route, and `addAllowedApplication()` for caged apps only.
-Packets that arrive are read and discarded. Non-caged apps are untouched — their traffic never
-enters the process, so there is no latency and no battery cost for them.
+Packets that arrive are refused with a TCP reset or an ICMP port-unreachable, built from the
+packet's own header, so a caged app reports no internet immediately instead of timing out. Only that
+header is read — never the packet contents, and never a hostname. Non-caged apps are untouched:
+their traffic never enters the process, so there is no latency and no battery cost for them.
 
 ## What NetCage is not
 
 - **Not an ad blocker.** It does no domain filtering, no hosts file, no DNS interception, and no
   content blocking of any kind. It blocks an app, entirely or not at all.
-- **Not a packet inspector.** Packets from caged apps are discarded unread. Nothing is parsed,
-  logged, forwarded, or transmitted.
+- **Not a packet inspector.** Refusing a caged app's connection needs the destination address and
+  port at the front of the packet, and nothing else. The contents are never read, no hostname is
+  ever resolved, and nothing is logged, forwarded, or transmitted.
 - **Not a proxy or a real VPN.** The tunnel has no server on the other end. That is the mechanism.
 
 ## Docs
