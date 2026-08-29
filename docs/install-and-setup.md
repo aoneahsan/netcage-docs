@@ -16,9 +16,10 @@ At the top sits a card reading **One tap to start** — *NetCage needs Android's
 
 > NetCage uses Android's VPN slot
 >
-> Only the apps you cage are routed into NetCage's tunnel, and their traffic is discarded unread —
-> nothing is inspected, stored or sent anywhere. Every other app connects normally. Android will
-> now ask you to allow the VPN connection.
+> Only the apps you cage are routed into NetCage's tunnel, where their connections are refused
+> straight away — so a caged app reports no internet instead of hanging. Nothing you send is read,
+> stored or forwarded anywhere. Every other app connects normally. Android will now ask you to
+> allow the VPN connection.
 
 Choose **Continue** and Android's own VPN consent dialog appears. That dialog is the system's, not
 NetCage's; it is where Android tells you the app can monitor network traffic, which is the warning

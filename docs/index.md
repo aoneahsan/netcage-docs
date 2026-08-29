@@ -11,8 +11,9 @@ NetCage is a per-app firewall for Android. Pick any installed app and cut its in
 access — foreground and background, Wi-Fi and mobile — with one switch.
 
 It works through Android's VPN slot. NetCage builds a local tunnel that goes nowhere and routes
-only the apps you cage into it. Their packets are discarded on your device: nothing is forwarded,
-inspected or logged. Apps you have not caged are untouched.
+only the apps you cage into it. Their connections are refused on your device, so a caged app
+reports no internet straight away. Nothing is forwarded, and no page, message or address you visit
+is ever read or logged. Apps you have not caged are untouched.
 
 Package `com.aoneahsan.netcage`. Version 2.0.0 is prepared for release on Google Play. It is not published yet.
 
@@ -41,8 +42,9 @@ It needs **Android 8.0 or newer**. It does not need root.
 
 - **Not an ad blocker or a content blocker.** NetCage does no domain filtering, no hosts file, no
   DNS interception and no content blocking of any kind. It blocks an app entirely, or not at all.
-- **Not a packet inspector.** Packets from caged apps are read and discarded. Nothing is parsed,
-  stored, forwarded or transmitted.
+- **Not a packet inspector.** To refuse a caged app's connection NetCage reads the destination
+  address and port at the front of the packet, and nothing else — never the contents, never a
+  hostname. Nothing is stored, forwarded or transmitted.
 - **Not a proxy or a remote VPN.** There is no server on the other end of the tunnel. That absence
   *is* the mechanism — see [How it works](./how-it-works.md).
 

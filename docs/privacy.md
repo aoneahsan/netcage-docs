@@ -16,7 +16,8 @@ facts.
 
 Nothing.
 
-NetCage reads the packets caged apps send and drops them without looking inside. It never inspects,
+NetCage reads the address and port at the front of the packets caged apps send, so it can refuse
+them, and never looks inside one. It never inspects,
 parses, stores or forwards traffic, and it sets no DNS server of its own. Apps you have not caged
 never enter the tunnel at all.
 
@@ -118,7 +119,8 @@ This page explains what happens and why. The formal disclosure, which lists ever
 No location, financial, health, contacts, calendar, SMS, call-log, microphone or video data. NetCage
 holds no permission for any of them.
 
-**No web browsing history.** The tunnel discards packets without parsing them, so there is nothing to
+**No web browsing history.** The tunnel reads only a packet's destination header to refuse it, never
+the contents and never a hostname, so there is nothing to
 record — no DNS log, no URL log, no traffic record.
 
 Photos are touched only if you set a custom icon, and then only the one image you picked: it is

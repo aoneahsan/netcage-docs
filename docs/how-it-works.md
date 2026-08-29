@@ -16,10 +16,14 @@ NetCage builds a VPN tunnel that goes nowhere:
 1. A private address and a default route (`0.0.0.0/0`, `::/0`).
 2. `addAllowedApplication()` for **caged apps only**. With a non-empty allow-list, Android routes
    only those apps through the tunnel; every other app uses the network as if no VPN existed.
-3. Packets that arrive are read and discarded. Nothing is forwarded, parsed, inspected or logged.
+3. Packets that arrive are refused. NetCage reads the destination address and port out of the
+   packet header so it can answer "connection refused" immediately — a TCP reset, or an ICMP
+   port-unreachable for UDP. It never reads what is inside a packet, never learns which site or
+   hostname was asked for, logs nothing and forwards nothing.
 
-A caged app's traffic therefore vanishes on the device. It is not slowed, redirected or filtered —
-it goes into the tunnel and stops there.
+A caged app's traffic therefore ends on the device, and the app is told so at once rather than
+waiting out its own timeout. That is the difference between an app that says "no internet" and one
+that sits on a spinner. It is not slowed, redirected or filtered — it is refused.
 
 Everything else is untouched. Apps that are not caged never enter the tunnel at all, so there is no
 latency cost, no battery cost and no inspection for them: their traffic never enters NetCage's
