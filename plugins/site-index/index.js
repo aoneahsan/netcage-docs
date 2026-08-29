@@ -102,11 +102,24 @@ module.exports = function siteIndexPlugin(context) {
 
     async postBuild({content, outDir, siteConfig}) {
       const site = siteConfig.url.replace(/\/$/, '');
+      // Docusaurus's own heading slug: lowercase, drop anything not alphanumeric/space/hyphen,
+      // then spaces to hyphens. `2.0.0` -> `200`. A fragment cannot 404, so a slug that ever
+      // drifted still lands the reader on the changelog page.
+      //
+      // There is deliberately no per-item <pubDate>: the changelog headings carry version numbers
+      // and no dates, and a release date is not something a build may invent.
+      const anchorFor = (version) =>
+        version
+          .toLowerCase()
+          .replace(/[^a-z0-9 -]/g, '')
+          .trim()
+          .replace(/\s+/g, '-');
+
       const items = content.releases
         .map(
           (release) => `    <item>
       <title>NetCage ${escapeXml(release.version)}</title>
-      <link>${site}/changelog</link>
+      <link>${site}/changelog#${escapeXml(anchorFor(release.version))}</link>
       <guid isPermaLink="false">netcage-${escapeXml(release.version)}</guid>
       <description>${escapeXml(release.summary)}</description>
     </item>`,
@@ -121,6 +134,7 @@ module.exports = function siteIndexPlugin(context) {
     <atom:link href="${site}/feed.xml" rel="self" type="application/rss+xml" />
     <description>Release notes for NetCage, the per-app Android firewall.</description>
     <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
   </channel>
 </rss>

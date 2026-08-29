@@ -129,7 +129,7 @@ const config: Config = {
      * ⚠️ The redirect has a cost worth stating: its target does not resolve yet, so the docs site is
      * unreachable at every address until the CNAME exists. Nothing user-facing regressed — the app
      * and all three repos only ever linked to the custom domain — but it does make that one DNS
-     * record the thing standing between offline and live. `netcage/docs/MANUAL-TASKS.md` row 15.
+     * record the thing standing between offline and live. Tracked in the app repo's task record.
      */
     {
       tagName: 'script',

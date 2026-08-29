@@ -32,7 +32,7 @@ rather than from anything NetCage observed.
 ## A caged app's package name is never sent to a third party
 
 Which apps you have cut off is about as revealing as app data gets. The crash reporter, the
-analytics services, the push provider and the ad SDK receive **none** of it, ever.
+analytics services and the push provider receive **none** of it, ever.
 
 That is enforced by the app's own type system rather than by a rule somebody has to remember: an
 analytics property can only be a count, a flag, or a token from a fixed vocabulary of screen names,
@@ -60,11 +60,14 @@ still never leaves the phone.
 |---|---|---|
 | **Account and sync** | Yes — signed out by default | Your rules, profiles, schedules, settings and custom icons, so a second phone matches |
 | **Custom icons** | Yes — only icons you pick yourself | The image, and a reference to it |
-| **Ads** | No, but the consent choice is yours | The standard ad request |
 | **Crash reports** | Yes — one switch | The exception type and where it happened |
 | **Usage statistics** | Yes — one switch | Screen names and counts |
 | **Announcements** | Yes — one switch | A push token. NetCage only receives; it sends nothing |
 | **Update checks** | No | Google Play's own version check |
+
+The in-app promotion of the developer's other apps is **not** in that list, because it makes no
+connection at all. The roster ships inside the app: it requests nothing, downloads nothing, and
+reads no advertising identifier.
 
 ## The switches
 
@@ -73,7 +76,6 @@ still never leaves the phone.
 - **Share anonymous usage data**
 - **Send crash reports**
 - **Announcements** — shown only when push is configured in the build
-- **Ad privacy options** — shown only where the consent framework requires a privacy choice
 
 :::info The switches gate initialisation, not sending
 Turning one off shuts its SDK down rather than muting it. A queued-but-unsent event has still been
@@ -131,7 +133,7 @@ build by name.
 
 | Permission | Why |
 |---|---|
-| `INTERNET` | The optional account and sync, ads, crash and usage reports, Play update checks |
+| `INTERNET` | The optional account and sync, crash and usage reports, Play update checks |
 | `ACCESS_NETWORK_STATE` | Wi-Fi versus mobile rules |
 | `QUERY_ALL_PACKAGES` | The installed-app list *is* the product; any app on the phone can be caged |
 | `FOREGROUND_SERVICE`, plus its VPN service types | The cage runs as a foreground service |

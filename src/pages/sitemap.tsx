@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import type {SiteIndex} from '../../plugins/site-index';
+import {externalLinkPolicy} from '@site/src/lib/linkPolicy';
 
 /**
  * The browsable half of the sitemap pair.
@@ -11,8 +12,13 @@ import type {SiteIndex} from '../../plugins/site-index';
  * and it is the fleet standard for every frontend project. The list is built from the same
  * front-matter scan that feeds `feed.xml`, so a new page appears here without a second edit.
  */
+const NETCAGE_WEBSITE = 'https://netcage.aoneahsan.com';
+
 export default function SitemapPage(): React.ReactElement {
   const {pages} = usePluginData('site-index') as SiteIndex;
+  // Same outbound policy the markdown pages get, applied by hand because this is a React page
+  // rather than MDX. Non-null: NETCAGE_WEBSITE is a different host from this site.
+  const websitePolicy = externalLinkPolicy(NETCAGE_WEBSITE)!;
 
   return (
     <Layout
@@ -45,7 +51,13 @@ export default function SitemapPage(): React.ReactElement {
         <h2>Elsewhere</h2>
         <ul>
           <li>
-            <Link to="https://netcage.aoneahsan.com">The NetCage website</Link>
+            <a
+              href={NETCAGE_WEBSITE}
+              target={websitePolicy.target}
+              rel={websitePolicy.rel}
+            >
+              The NetCage website
+            </a>
           </li>
           <li>
             <Link to="/feed">Release feed</Link>

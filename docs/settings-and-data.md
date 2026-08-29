@@ -14,7 +14,7 @@ list. The groups below match the group headings in the app.
 | --- | --- |
 | **Auto-start on boot** | Brings the cage back up after a restart. Pair it with Always-on VPN so caged apps never get a window of connectivity before you unlock — see [Install and setup](/install-and-setup). |
 | **Show app count in notification** | Puts the number of caged apps in the ongoing VPN notification. The notification itself is required by Android and cannot be hidden. |
-| **Default day pass length** | How long a day pass lasts when you grant one from an app's detail screen. |
+| **Default day pass duration** | How long a day pass lasts when you grant one from an app's detail screen. |
 
 ## Appearance
 

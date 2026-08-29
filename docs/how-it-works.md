@@ -78,7 +78,7 @@ through **the same** decision function described above. The locked-boot path and
 therefore cannot disagree about what is caged.
 
 No network component is started on that path. Nothing that talks to the internet — sign-in, sync,
-analytics, crash reporting, ads — is initialised before the device is unlocked.
+analytics, crash reporting — is initialised before the device is unlocked.
 
 ## The two engines
 
