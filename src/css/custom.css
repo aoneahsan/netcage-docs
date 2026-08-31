@@ -61,7 +61,13 @@
 }
 
 /* Tables carry a lot of this site's substance — the limitations and the privacy disclosures are
-   both tables — so they get room to breathe and never push the page sideways. */
+   both tables — so they get room to breathe and never push the page sideways.
+
+   🔴 The scroll container below only works because `src/theme/MDXComponents.tsx` wraps every
+   markdown table in `.tableWrapper`. Docusaurus wraps them in nothing on its own, so before that
+   override existed these two selectors matched no element and this comment was describing an
+   outcome the CSS did not deliver — `/for-agents` scrolled the whole page sideways at 320px. Change
+   one of these two files and check the other. */
 .markdown table {
   display: table;
   width: 100%;
@@ -70,6 +76,7 @@
 .markdown > div:has(> table),
 .markdown .tableWrapper {
   overflow-x: auto;
+  max-width: 100%;
 }
 
 .markdown table th,

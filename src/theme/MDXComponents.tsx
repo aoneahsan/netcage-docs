@@ -28,7 +28,29 @@ function Anchor(props: ComponentProps<'a'>): ReactElement {
   return <a {...props} target={policy.target} rel={policy.rel} />;
 }
 
+/**
+ * Every markdown table gets its own horizontally scrolling wrapper.
+ *
+ * 🔴 Docusaurus does NOT wrap MDX tables in anything, so `custom.css`'s
+ * `.markdown > div:has(> table)` and `.markdown .tableWrapper` rules matched no element on any page
+ * — the `overflow-x: auto` they carry had never applied, while the comment above them claimed
+ * tables "never push the page sideways". Measured on the live site 2026-08-31: `/for-agents` at a
+ * 320px viewport had a 400px table taking `document.scrollWidth` to 416, so the whole page scrolled
+ * sideways on a small phone. `/faq`, which has no wide table, was clean at the same width.
+ *
+ * Wrapping here rather than switching the table to `display: block` keeps `width: 100%` table
+ * layout intact on wide screens, and makes the CSS that was already written do what it says.
+ */
+function Table(props: ComponentProps<'table'>): ReactElement {
+  return (
+    <div className="tableWrapper">
+      <table {...props} />
+    </div>
+  );
+}
+
 export default {
   ...MDXComponents,
   a: Anchor,
+  table: Table,
 };
