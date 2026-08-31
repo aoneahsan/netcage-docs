@@ -2,7 +2,7 @@
 
 > Mirror: `CLAUDE.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-08-28
+**Last Updated:** 2026-08-31
 
 The **public** documentation site for NetCage, a per-app Android firewall. Docusaurus 3.10.2, React 19,
 TypeScript ~6, yarn 4, GitHub Pages. 14 docs pages plus two custom pages (`/sitemap`, `/feed`).
@@ -115,4 +115,8 @@ custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces
 | App repo | `github.com/aoneahsan/netcage` — **PRIVATE**, do not link it from these pages |
 | This repo | `github.com/aoneahsan/netcage-docs` — public |
 
-**Context verification:** 2026-08-28 (10-day cadence).
+**Context verification:** 2026-08-31 (10-day cadence). Re-probed that day: the domain still returns `000`
+and `aoneahsan.github.io/netcage-docs/` still `301`s to it, so the Pages deploy is healthy and the single
+DNS record remains the only blocker. This site has therefore **never been verified over its live domain** —
+the 256-combination browser pass of 2026-08-30 ran against a local build. That verification, plus enabling
+Pages **enforce-HTTPS** once the certificate exists, is the first thing owed here when DNS lands.
