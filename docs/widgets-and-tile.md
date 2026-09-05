@@ -8,7 +8,7 @@ tags: [widgets, quick-settings, usage]
 Two surfaces work without opening NetCage: a **Quick Settings tile** in the notification shade, and
 a **home-screen widget**.
 
-## The Quick Settings tile
+## How do I control the master switch from Quick Settings?
 
 The tile is the master switch. Tapping it turns the whole cage on or off, and its subtitle says
 which state you are in — the number of apps caged when it is active, or why it is not.
@@ -27,7 +27,7 @@ Two cases behave specially:
 The subtitle is shown on Android 10 and newer; on Android 8 and 9 the tile shows its label and state
 only.
 
-### Adding it
+### How do I add the Quick Settings tile?
 
 On **Android 13 and newer**, **Settings ▸ Advanced ▸ Add the NetCage tile from the prompt** asks
 Android to offer the tile directly.
@@ -35,7 +35,7 @@ Android to offer the tile directly.
 Below Android 13 the tile still exists — open the shade, edit the tile layout, and drag **NetCage**
 in from the available tiles.
 
-## The home-screen widget
+## How do I control apps from the home screen?
 
 Add it the usual way: long-press the home screen ▸ Widgets ▸ NetCage.
 
@@ -53,13 +53,13 @@ from the detail sheet*.
 Like the tile, the widget reads live state from the engine rather than a stored flag, so a widget
 rebuilt in a fresh process shows what is really running.
 
-### Pinning apps
+### How do I pin apps to the widget?
 
 Open an app's detail view and use **Pin to widget**; **Unpin from widget** removes it. A pinned row
 on the widget toggles that one app's cage directly, without opening NetCage.
 
-Pinned apps are part of your configuration, so they are exported, imported and synced along with
-everything else.
+Pinned apps are part of the configuration, so export and import include them. If you enable account
+backup, they are also stored with that versioned configuration for restoration on another phone.
 
 ## While an import is being finished
 

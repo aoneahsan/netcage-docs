@@ -8,7 +8,7 @@ tags: [schedules, day-pass, timing]
 Two mechanisms move apps in and out of the cage on their own: **schedules**, which recur, and **day
 passes**, which are one-off. A **global pause** stops everything for a quarter of an hour.
 
-## Schedules
+## How do I create a repeating schedule?
 
 A schedule is a recurring window during which a target is caged. Open the list from the overflow
 menu (⋮) on the app list ▸ **Schedules**, then **New schedule**.
@@ -27,7 +27,7 @@ The editor tells you what it has understood:
 
 Validation happens at the field: *Choose a profile or an app*, *Choose at least one day*.
 
-### How schedules combine
+### How do schedules combine?
 
 Schedules **union together and never cancel one another out**. Two overlapping windows on the same
 app keep it caged for the whole of both; neither one releases it.
@@ -37,12 +37,12 @@ schedule's window closes — the schedule only ever *adds* while it is open. An 
 schedule that has no rule of its own is treated as blocked on both transports, the same default a
 fresh manual cage gets.
 
-### Overnight windows
+### How do I run a schedule overnight?
 
 An overnight window is anchored to the day it **starts**. A Friday 22:00–06:00 window is still the
 Friday schedule at 02:00 on Saturday, so Saturday not being one of its days does not close it early.
 
-### Daylight saving
+### What happens when the clock changes?
 
 Windows are evaluated as instants, not as wall-clock comparisons, so the two days a year the clock
 is not monotonic resolve unambiguously:
@@ -58,17 +58,17 @@ way NetCage recomputes the whole set and re-establishes the tunnel in place. The
 restarted, and apps that were already caged are not disturbed.
 
 The boundary itself is scheduled as an alarm. With **Precise timing** granted (see
-[Install and setup](./install-and-setup.md#precise-timing)) it fires at the exact minute, even while
-the phone is asleep. Without it, a background-work fallback runs the same recomputation, which can
-be a little late but never wrong: the decision is always made from the clock at the moment it runs,
-never from what was expected earlier.
+[Install and setup](./install-and-setup.md#when-should-i-use-precise-timing)) it fires at the exact minute,
+even while the phone is asleep. Without Precise timing, WorkManager and an inexact alarm provide the
+fallback, so the boundary may run later than the selected minute. When the fallback runs, it evaluates the
+current clock and recomputes the whole caged set instead of replaying an old prediction.
 
 Only the single earliest deadline is ever scheduled at once, and it is re-armed after each one, so
 a phone with many schedules does not wake up repeatedly.
 
 Deadlines are also honoured while the phone is still locked after a reboot.
 
-## Day passes
+## How do I grant a day pass?
 
 A day pass lets one caged app back online for a set time, after which it re-cages itself with no
 further action from you.
@@ -89,9 +89,9 @@ value the **Custom** dialog opens with.
 
 If every eligible app is on a day pass at once, the cage goes inactive until the first one expires —
 there is nothing left to route, and an empty allow-list is never established. See
-[How it works](./how-it-works.md#the-invariant-that-matters).
+[How it works](./how-it-works.md#why-must-the-allow-list-contain-an-app).
 
-## The global pause
+## How do I pause every cage for 15 minutes?
 
 The cage notification carries a **Pause 15m** action. It suspends enforcement everywhere for
 fifteen minutes; the header reads **Paused** and names the time it resumes, and the notification
@@ -101,6 +101,6 @@ A pause leaves every selection, profile and schedule exactly as it is. So does t
 switch off, which is the indefinite version of the same idea.
 
 :::note Neither day passes nor the pause are part of your configuration
-Both are deadlines measured against a clock, so neither is exported, imported or synced. Restoring
-"released until 14:20" onto another phone days later would silently release an app.
+Both are live deadlines measured against this phone's clock, so neither is exported, imported or stored
+in account backup. Restoring “released until 14:20” after that moment could release an app unexpectedly.
 :::

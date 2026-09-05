@@ -5,14 +5,9 @@ Documentation site for **NetCage**, a per-app firewall for Android.
 Its address is **https://netcage-docs.aoneahsan.com**; product site
 **https://netcage.aoneahsan.com**; Play package `com.aoneahsan.netcage`.
 
-> **The product site is live. This docs site is not, and waits on exactly one DNS record** —
-> `CNAME netcage-docs -> aoneahsan.github.io`. The Pages custom domain is already set on the repo.
->
-> Until that record exists the published site is unreachable at **every** address, which is the
-> correct end state rather than a bug to work around. Setting the custom domain made Pages start
-> redirecting immediately: `https://aoneahsan.github.io/netcage-docs/` answers **301** to
-> `netcage-docs.aoneahsan.com` (measured 2026-08-28), so there is no second, duplicate copy of these
-> pages for a crawler to index. Build locally with `yarn build && yarn serve` in the meantime.
+> **The product and documentation sites are live.** GitHub Pages serves the docs at the custom
+> domain above with HTTPS enforced. The public source stays in this repository; product internals and
+> credentials remain in the private app repository.
 
 Built with [Docusaurus](https://docusaurus.io/) 3 and deployed to GitHub Pages by
 `.github/workflows/deploy-pages.yml` on every push to `main`.

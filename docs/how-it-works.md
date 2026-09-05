@@ -1,6 +1,6 @@
 ---
 title: How it works
-description: NetCage routes only the apps you cage into a VpnService tunnel that goes nowhere, and discards their packets unread. The mechanism, and the invariant that keeps it safe.
+description: How NetCage routes selected apps into a local VpnService tunnel, reads the header fields needed for a refusal, and keeps an empty allow-list from taking the whole phone offline.
 sidebar_position: 2
 tags: [mechanism, vpnservice, architecture]
 ---
@@ -9,31 +9,34 @@ Android does not let an ordinary app revoke another app's `INTERNET` permission 
 rules. What it *does* allow is a `VpnService` with **app-based routing**, and that is the lever
 NetCage uses.
 
-## The sinkhole tunnel
+## How does the local tunnel refuse a connection?
 
 NetCage builds a VPN tunnel that goes nowhere:
 
 1. A private address and a default route (`0.0.0.0/0`, `::/0`).
 2. `addAllowedApplication()` for **caged apps only**. With a non-empty allow-list, Android routes
    only those apps through the tunnel; every other app uses the network as if no VPN existed.
-3. Packets that arrive are refused. NetCage reads the destination address and port out of the
-   packet header so it can answer "connection refused" immediately — a TCP reset, or an ICMP
-   port-unreachable for UDP. It never reads what is inside a packet, never learns which site or
-   hostname was asked for, logs nothing and forwards nothing.
+3. NetCage refuses each connection on this phone. It examines IP and transport headers in memory to
+   address a TCP reset or ICMP port-unreachable response. It does not inspect the packet payload, resolve
+   a hostname, keep a DNS, URL or traffic log, or forward the packet to a VPN server.
+
+Android defines the VPN lifecycle in the [`VpnService` reference](https://developer.android.com/reference/android/net/VpnService)
+and the per-app routing controls in the
+[`VpnService.Builder` reference](https://developer.android.com/reference/android/net/VpnService.Builder).
 
 A caged app's traffic therefore ends on the device, and the app is told so at once rather than
 waiting out its own timeout. That is the difference between an app that says "no internet" and one
 that sits on a spinner. It is not slowed, redirected or filtered — it is refused.
 
-Everything else is untouched. Apps that are not caged never enter the tunnel at all, so there is no
-latency cost, no battery cost and no inspection for them: their traffic never enters NetCage's
-process in the first place.
+Apps outside a caged Android UID do not enter NetCage's tunnel, so NetCage does not process their traffic.
+The app does not promise an exact zero cost for the phone as a whole: Android still runs the VPN foreground
+service while at least one app needs the tunnel.
 
 Because there is no server at the far end, Android's own connectivity probe reports that the VPN
 has no internet access. That report is correct, and it is cosmetic — see
 [Limitations](./limitations.md).
 
-## The invariant that matters
+## Why must the allow-list contain an app?
 
 **An empty allow-list is not "cage nothing" — it is "route the entire phone into the sinkhole".**
 
@@ -51,7 +54,7 @@ app says why.
 NetCage's own package is never added to the allow-list, and the tunnel never uses `allowBypass()`.
 :::
 
-## One decision, computed once
+## How does NetCage choose the caged set?
 
 Which packages the tunnel should route is decided by a single pure function. The order of its
 stages is deliberate, because each one produces a different reason for an empty result, and the app
@@ -71,7 +74,7 @@ If the result is empty at any stage, the cage goes inactive. It is never handed 
 A change to your rules does not restart the service. The tunnel is re-established in place, after a
 short debounce, so a run of quick toggles produces one re-establish rather than a dozen.
 
-## Before the phone is unlocked
+## What happens before the phone is unlocked?
 
 After a reboot, and before the device has been unlocked for the first time, the app's own database
 is unreadable — Android's file-based encryption has not been opened yet. NetCage still needs to
@@ -81,16 +84,16 @@ It plans that first tunnel from a device-protected snapshot instead, and feeds t
 through **the same** decision function described above. The locked-boot path and the ordinary path
 therefore cannot disagree about what is caged.
 
-No network component is started on that path. Nothing that talks to the internet — sign-in, sync,
-analytics, crash reporting — is initialised before the device is unlocked.
+The locked-boot path starts no network SDK. Account, backup, support, telemetry, announcements, update and
+Cage Pack connections wait until Android reports that the user has unlocked the phone.
 
-## The two engines
+## Which engine should I use?
 
 The supported mechanism is the VPN described above, and it is the default.
 
 There is also an opt-in **root engine**, which writes firewall rules directly instead of holding
 the VPN slot. It is labelled experimental in the app because it has never run on rooted hardware.
-Read [Limitations](./limitations.md#root-mode-is-experimental) before enabling it.
+Read [Limitations](./limitations.md#what-does-experimental-root-mode-mean) before enabling it.
 
 Nothing above the engine layer knows which engine it got. The set of caged apps is computed the
 same way either way.

@@ -2,10 +2,10 @@
 
 > Mirror: `AGENTS.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-08-31
+**Last Updated:** 2026-09-05
 
 The **public** documentation site for NetCage, a per-app Android firewall. Docusaurus 3.10.2, React 19,
-TypeScript ~6, yarn 4, GitHub Pages. 14 docs pages plus two custom pages (`/sitemap`, `/feed`).
+TypeScript ~6, yarn 4, GitHub Pages. 15 docs pages plus two custom pages (`/sitemap`, `/feed`).
 
 `README.md` is the working guide — local dev, the front-matter contract, the two content rules. **This file
 carries only what a fresh session must hold before its first edit.** Do not restate the README here.
@@ -31,7 +31,7 @@ claim about behaviour, check it against the app:
 
 | Claim about | Check against |
 |---|---|
-| A permission and its justification | `netcage` → `config/release-permissions.txt` (19 entries, each with its reason) |
+| A permission and its justification | `netcage` → `config/release-permissions.txt` (18 entries, each with its reason) |
 | A UI label, menu path or message | `netcage` → `app/src/main/res/values/strings.xml` — quote it **verbatim** |
 | What is collected and shared | `netcage` → `docs/play-store/DATA-SAFETY.md` + `DECLARATIONS.md` (they are a pair) |
 
@@ -70,10 +70,15 @@ claim about behaviour, check it against the app:
 `netcage-docs.aoneahsan.com`, pinned by `static/CNAME`; `url`/`baseUrl` in `docusaurus.config.ts` match it.
 Derived from the product site `netcage.aoneahsan.com` per the fleet `<sub>-docs.<base>.<tld>` rule.
 
-🔴 **The site is not reachable yet, and one DNS record is the only reason** —
-`CNAME netcage-docs → aoneahsan.github.io`. The Pages custom domain is already set, which makes
-`aoneahsan.github.io/netcage-docs/` answer **301** to the custom domain (measured 2026-08-28), so no
-duplicate copy is indexable. Owner-only; tracked in the app repo's task record.
+**The site is LIVE** on that domain since 2026-08-31, with a valid certificate and Pages
+**enforce-HTTPS** on. `aoneahsan.github.io/netcage-docs/` answers **301** to the custom domain, so no
+duplicate copy is indexable.
+
+⚠️ **Analytics are not wired.** `docusaurus.config.ts` loads the `gtag` preset option only when
+`GOOGLE_ANALYTICS_ID` is present in the build environment, and the Pages workflow sets nothing — so
+this site currently reports no traffic at all. Adding it, and the other destinations the product uses,
+is owed work: the ids are public identifiers and belong in the repository's **Actions variables**,
+never in the source. Tracked in the app repository's records.
 
 Deploy is `.github/workflows/deploy-pages.yml` on push to `main` — **GitHub Pages only, never Firebase**.
 There is no `deploy` script in `package.json` on purpose: `docusaurus deploy` would push a `gh-pages` branch
@@ -87,6 +92,10 @@ outside the Actions flow and give the site two deployment paths.
 
 The `site-index` plugin fails closed — it throws when the page or release list is empty, so a generator that
 silently emits nothing cannot pass.
+
+🔴 **Sweep before every commit** — this repository is public:
+`git ls-files | grep -iE '(^|/)\.env$|secret|credential|token|\.pem$|\.jks$|\.keystore$|\.p8'` must come
+back empty, and no diff may carry a local filesystem path or the name of a private tool.
 
 ## Git
 
@@ -110,13 +119,14 @@ custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces
 
 | | |
 |---|---|
-| This site | https://netcage-docs.aoneahsan.com *(awaiting one DNS record)* |
+| This site | **https://netcage-docs.aoneahsan.com — LIVE** |
 | Product site | **https://netcage.aoneahsan.com — LIVE** |
 | App repo | `github.com/aoneahsan/netcage` — **PRIVATE**, do not link it from these pages |
 | This repo | `github.com/aoneahsan/netcage-docs` — public |
 
-**Context verification:** 2026-08-31 (10-day cadence). Re-probed that day: the domain still returns `000`
-and `aoneahsan.github.io/netcage-docs/` still `301`s to it, so the Pages deploy is healthy and the single
-DNS record remains the only blocker. This site has therefore **never been verified over its live domain** —
-the 256-combination browser pass of 2026-08-30 ran against a local build. That verification, plus enabling
-Pages **enforce-HTTPS** once the certificate exists, is the first thing owed here when DNS lands.
+**Context verification:** 2026-09-05 (10-day cadence). The site went live on 2026-08-31 and was verified
+over its real domain that day: 16 sitemap URLs all 200, plus `robots.txt`, `llms.txt`, `/sitemap` and
+`/feed`, and a 64-combination browser pass that found and fixed one real defect (a wide table scrolling
+the whole page sideways at 320 px). The 2026-09-05 content pass adds the Cage Packs page, taking the
+sitemap to 17 — re-probe after that deploy. **Still owed here:** the analytics wiring described above,
+and the licence decision in `CONTRIBUTING.md`.

@@ -1,21 +1,22 @@
 ---
 title: NetCage
-description: A per-app firewall for Android. Pick any installed app and cut its internet access, foreground and background, Wi-Fi and mobile, with one switch.
+description: A per-app firewall for Android. Choose a listed app that can use the internet and refuse its connections on Wi-Fi and mobile while the rest of your phone stays online.
 slug: /
 sidebar_position: 1
 sidebar_label: Overview
 tags: [overview, android, firewall]
 ---
 
-NetCage is a per-app firewall for Android. Pick any installed app and cut its internet
-access — foreground and background, Wi-Fi and mobile — with one switch.
+NetCage is a per-app firewall for Android. Pick a listed app that can use the internet and close its
+route with one switch. Your phone stays online. The caged app does not.
 
-It works through Android's VPN slot. NetCage builds a local tunnel that goes nowhere and routes
-only the apps you cage into it. Their connections are refused on your device, so a caged app
-reports no internet straight away. Nothing is forwarded, and no page, message or address you visit
-is ever read or logged. Apps you have not caged are untouched.
+NetCage uses Android's VPN slot to route selected apps into an on-device tunnel. It examines IP and
+transport-header fields in memory so it can return a local refusal; it does not inspect packet payloads
+or hostnames, keep a traffic log, or forward caged traffic to a VPN server. Apps outside a caged Android
+UID do not enter the tunnel.
 
-Package `com.aoneahsan.netcage`. Version 2.0.0 is prepared for release on Google Play. It is not published yet.
+Package `com.aoneahsan.netcage`. Version 1.3.0, versionCode 3, is the first public release prepared for
+Google Play. It has not been published yet.
 
 ## What you can do with it
 
@@ -28,23 +29,26 @@ Package `com.aoneahsan.netcage`. Version 2.0.0 is prepared for release on Google
 - **Grant a day pass**: let one caged app back online for a few minutes, after which it re-cages
   itself.
 - **Control it without opening the app** — a Quick Settings tile and home-screen widgets.
-- **Sync your setup** across your own phones with optional Google sign-in.
+- **Restore a setup on another phone** with optional Google sign-in and cloud backup.
+- **Share an editable profile** as a Cage Pack. Publishing needs an account; importing does not switch the
+  cage on.
+- **Write to support in the app** and read the reply there. A support request needs an account so the reply
+  has an owner.
 
-## Who it is for
+## Who should use NetCage?
 
-Someone who wants a specific app off the network and does not want to uninstall it: a game that
-phones home, an app that syncs in the background, something you are trying to use less. NetCage
-blocks that app and leaves the rest of the phone alone.
+NetCage is for someone who wants one listed app off the network without uninstalling it: a launcher app,
+a background service, or another enabled package on this phone that can use the internet.
 
 It needs **Android 8.0 or newer**. It does not need root.
 
-## What it is not
+## What doesn't NetCage do?
 
 - **Not an ad blocker or a content blocker.** NetCage does no domain filtering, no hosts file, no
   DNS interception and no content blocking of any kind. It blocks an app entirely, or not at all.
-- **Not a packet inspector.** To refuse a caged app's connection NetCage reads the destination
-  address and port at the front of the packet, and nothing else — never the contents, never a
-  hostname. Nothing is stored, forwarded or transmitted.
+- **Not a packet-content inspector.** NetCage reads the destination address and transport fields needed to
+  address a local refusal. It does not read the payload, resolve the hostname, or keep a DNS, URL or traffic
+  log.
 - **Not a proxy or a remote VPN.** There is no server on the other end of the tunnel. That absence
   *is* the mechanism — see [How it works](./how-it-works.md).
 
@@ -58,7 +62,8 @@ It needs **Android 8.0 or newer**. It does not need root.
 | Group apps together | [Profiles](./profiles.md) |
 | Cage on a timetable, or let one app out briefly | [Schedules and day passes](./schedules-and-day-passes.md) |
 | Control it from the shade or the home screen | [Widgets and the Quick Settings tile](./widgets-and-tile.md) |
-| Sync between two phones | [Account and sync](./account-and-sync.md) |
+| Publish, import, report or block a shared profile | [Cage Packs](./cage-packs.md) |
+| Restore a setup, write to support or delete an account | [Support, backup and account](./account-and-sync.md) |
 | Know exactly what is seen and sent | [Privacy](./privacy.md) |
 | Know what it cannot do | [Limitations](./limitations.md) |
 | Ask a specific question | [FAQ](./faq.md) |

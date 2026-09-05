@@ -10,7 +10,7 @@ creating one changes nothing on its own, and activating one is a single action y
 
 Open it from the overflow menu (⋮) on the app list ▸ **Profiles**.
 
-## Creating a profile
+## How do I create a profile?
 
 **New profile** asks for a name and, optionally, an emoji from a small palette. **Save current
 selection** creates a profile from whatever is caged right now, which is usually the easiest
@@ -23,7 +23,7 @@ you tap save:
 - *You already have a profile with that name*
 - *Choose at least one app*
 
-## Editing a profile
+## How do I edit a profile?
 
 Each profile's menu offers:
 
@@ -37,7 +37,7 @@ Each profile's menu offers:
 Editing a profile's members does not change what is caged right now. Activate it again to apply
 the new set.
 
-## Activating a profile
+## How do I activate a profile?
 
 Activating asks how it should combine with what is already caged:
 
@@ -54,16 +54,24 @@ Schedules contribute their apps independently. Activating a profile can never si
 schedule, and a schedule can never overwrite the selection you made by hand.
 :::
 
-## Profiles and schedules
+## How do I use a profile in a schedule?
 
 A [schedule](./schedules-and-day-passes.md) can target a profile rather than a single app. That is
 the usual way to run something like "cage the *Focus* profile on weekdays from 09:00 to 17:00" —
 edit the profile's members and every schedule pointing at it follows.
 
-## Profiles across devices
+### Share a profile as a Cage Pack
 
-A profile carries a device-independent identity, so the same profile stays the same profile through
-an export and import, and across two phones sharing an account. Schedules reference that identity
-rather than a name, so two profiles with similar names never get confused for one another.
+A signed-in user can publish a profile as a Cage Pack after accepting the current publishing terms. The
+link exposes the pack name, emoji and Android package list, plus an opaque publisher ID used for blocking;
+it does not expose the publisher's Google or Supabase identity.
 
-See [Account and sync](./account-and-sync.md).
+Importing needs no account. It creates an editable profile and leaves it switched off, so the recipient
+reviews the installed matches before choosing whether to activate it. Reporting and publisher blocking
+are covered on [Cage Packs](./cage-packs.md).
+
+## How do I restore a profile from backup?
+
+Profiles keep a device-independent identity through export, import and optional account backup. A
+schedule refers to that identity rather than the profile name, so renaming a profile does not detach its
+schedule. See [Support, backup and account](./account-and-sync.md).

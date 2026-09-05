@@ -5,21 +5,28 @@ sidebar_position: 13
 tags: [changelog, releases]
 ---
 
-Latest first. Version 1.2.0 is the first public release, prepared for Google Play; it is not
-published yet. Version numbering was reset on 2026-08-31: earlier builds ran only on the
-developer's own device and never reached a store — they are recorded at the bottom under the
-numbers they used at the time.
+Latest first. Version 1.3.0, versionCode 3, is the first public release prepared for Google Play; it has
+not been published yet. The 1.0.0/code 1 and 1.2.0/code 2 store candidates were built and superseded before
+upload, so both codes are spent. Earlier sideloaded builds remain recorded under the numbers they used at
+the time.
 
-## 1.2.0
+## 1.3.0
 
-**The first public release.** Everything NetCage does, available to everyone for the first time —
-plus an account that is finally worth having.
+**The first public release.** It includes the firewall, profiles, schedules, day passes, backup, in-app
+support and Cage Packs. Before submission, Cage Packs gained versioned publishing terms, report, block,
+unblock, immediate quarantine and publisher-suspension controls. Importing still creates an inactive,
+editable profile.
 
-- Cage any app's internet with one tap — Wi-Fi and mobile alike
-- Filter by category and cage every browser, game or social app at once
-- Profiles and schedules put whole groups on a timetable
-- Sign in once and your setup comes back on a new phone
-- Write to support inside the app and read the reply there
+- Close an enabled, installed app's internet route on Wi-Fi and mobile
+- Use profiles, schedules, day passes and a global pause
+- Restore your setup on another phone with optional account backup
+- Publish or import editable Cage Packs; imports stay inactive
+- Contact support in the app and read the reply there
+
+The release removes the redundant `specialUse` foreground-service type and keeps `systemExempted`,
+Android's documented type for the configured VPN service. Usage analytics, crash reporting and
+announcements start off. Clarity records only approved replay-safe screens after analytics consent;
+Settings, app lists, app details, support and Cage Pack moderation remain excluded.
 
 In more detail:
 
@@ -45,14 +52,20 @@ In more detail:
 - A promotion for another app by the same developer on the list and detail screens. It is bundled
   in the app, so it makes no network request and reads no advertising identifier.
 - In-app updates from Play, and an in-app review prompt.
-- Crash and anonymous usage reporting, each behind its own switch in **Settings ▸ Privacy**.
+- Crash reporting, usage analytics and announcements, each off by default and behind its own switch in
+  **Settings ▸ Privacy**.
 
 The root engine remains opt-in and labelled experimental. It has never run on rooted hardware.
+
+## 1.2.0
+
+Built and signed, then superseded before upload. Its account backup, in-app support and first Cage Pack
+implementation ship in 1.3.0 with the moderation controls required for public release.
 
 ## 1.0.0
 
 Built and signed for the store, then superseded before it was ever uploaded — never published.
-Everything it contained ships in 1.2.0, so no device ever ran a public 1.0.0.
+Everything it contained ships in 1.3.0, so no device ever ran a public 1.0.0.
 
 ## Pre-Play builds — sideloaded only, never published
 
@@ -61,9 +74,8 @@ These ran on the developer's own device before the version reset and reused the 
 
 ### "2.0.0" (sideloaded)
 
-The build that became the public release above: sign-in and sync, category filters with one-tap
-bulk caging, real app icons, the cleaner list, in-app updates. Its content is described in full
-under 1.2.0.
+The build that became the foundation of the later store candidates: sign-in and sync, category filters
+with one-tap bulk caging, real app icons, the cleaner list and in-app updates.
 
 ### "1.2.0" (sideloaded)
 
