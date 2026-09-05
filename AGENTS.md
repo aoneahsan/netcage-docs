@@ -74,11 +74,25 @@ Derived from the product site `netcage.aoneahsan.com` per the fleet `<sub>-docs.
 **enforce-HTTPS** on. `aoneahsan.github.io/netcage-docs/` answers **301** to the custom domain, so no
 duplicate copy is indexable.
 
-⚠️ **Analytics are not wired.** `docusaurus.config.ts` loads the `gtag` preset option only when
-`GOOGLE_ANALYTICS_ID` is present in the build environment, and the Pages workflow sets nothing — so
-this site currently reports no traffic at all. Adding it, and the other destinations the product uses,
-is owed work: the ids are public identifiers and belong in the repository's **Actions variables**,
-never in the source. Tracked in the app repository's records.
+**Analytics are wired** (2026-09-05). Three destinations, matching the fleet standard: GA4 through the
+`gtag` preset option, and Amplitude + Clarity through `src/clientModules/telemetry.ts`. Every id arrives
+as a build-time `customField` from a repository **Actions variable** — they are public identifiers by
+design, but this repo is public, so they still never sit in source. A missing id switches that
+destination off and costs the reader zero bytes; with none set this module does nothing at all.
+
+🔴 **Amplitude holds a PROMISE, not a boolean.** `init()` resolves asynchronously, so a ready
+*flag* is still `false` when the first route update fires — and that is the one page view every visitor
+generates. Measured here on 2026-09-05: GA4 and Clarity both landed on a live page load while Amplitude
+landed **nothing**, then **two** once the promise was held and the early view queued behind it.
+Collection here is disclosed in `docs/privacy.md` → "What does this documentation site collect?"; if this
+module gains or loses a destination, that section moves in the same commit.
+
+🔴 **`i18n.defaultLocale` is `en-GB`, and it is a DATE setting as much as a language one.** That tag
+is what Docusaurus hands `Intl`, so a bare `en` resolved to US conventions and every page footer read
+*"Sep 5, 2026"* until 2026-09-05 — on a site whose Story Bible has specified `en-GB` since GATE 1. It also
+reaches `<html lang>`. The search plugin's lunr stemmer stays **pinned to `en`**: a stemmer is a property
+of the language, not the region, and `en-GB` is not one it ships. There is still exactly one language and
+no `i18n/` tree.
 
 Deploy is `.github/workflows/deploy-pages.yml` on push to `main` — **GitHub Pages only, never Firebase**.
 There is no `deploy` script in `package.json` on purpose: `docusaurus deploy` would push a `gh-pages` branch
@@ -128,5 +142,5 @@ custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces
 over its real domain that day: 16 sitemap URLs all 200, plus `robots.txt`, `llms.txt`, `/sitemap` and
 `/feed`, and a 64-combination browser pass that found and fixed one real defect (a wide table scrolling
 the whole page sideways at 320 px). The 2026-09-05 content pass adds the Cage Packs page, taking the
-sitemap to 17 — re-probe after that deploy. **Still owed here:** the analytics wiring described above,
-and the licence decision in `CONTRIBUTING.md`.
+sitemap to 17, confirmed 200 after the Pages run. **Still owed here:** only the licence decision in
+`CONTRIBUTING.md` (owner) — the analytics wiring that used to sit on this line landed on 2026-09-05.

@@ -59,8 +59,16 @@ const config: Config = {
   },
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    // 🔴 `en-GB`, not `en`. This tag is what Docusaurus hands `Intl` for every rendered date, and a
+    // bare `en` resolves to US conventions -- the "Last updated on" footer of every page published
+    // "Sep 5, 2026" on a product whose documentation is written in British English. It is also what
+    // reaches `<html lang>`, where the more specific tag is simply more accurate.
+    //
+    // The site still ships exactly one language and no `i18n/` translation tree; this changes the
+    // regional conventions, not the content. Search stays pinned to the `en` stemmer below, because
+    // that is a property of the language rather than of the region.
+    defaultLocale: 'en-GB',
+    locales: ['en-GB'],
   },
 
   presets: [
@@ -106,6 +114,9 @@ const config: Config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
+        // Pinned rather than inferred from the site locale: the plugin resolves a lunr stemmer by
+        // language, and `en-GB` is not one it ships.
+        language: ['en'],
         indexBlog: false,
         docsRouteBasePath: '/',
         highlightSearchTermsOnTargetPage: true,
