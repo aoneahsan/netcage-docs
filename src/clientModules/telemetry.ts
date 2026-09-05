@@ -30,7 +30,18 @@ const fields = (siteConfig.customFields ?? {}) as TelemetryFields;
 const amplitudeApiKey = fields.amplitudeApiKey ?? '';
 const clarityProjectId = fields.clarityProjectId ?? '';
 
-let amplitudeReady = false;
+/**
+ * 🔴 A PROMISE, not a boolean.
+ *
+ * A boolean flag is still false when the first route update fires, because `init()` resolves
+ * asynchronously — so the very first page view, the one every visitor generates, is the one that
+ * gets dropped. Measured here on 2026-09-05: GA4 and Clarity both landed on a live page load while
+ * Amplitude landed nothing, for exactly that reason.
+ *
+ * Holding the promise instead means an early page view is QUEUED behind init rather than discarded.
+ * `null` means Amplitude is not configured at all, which is a different thing from not-ready-yet.
+ */
+let amplitudeReady: Promise<void> | null = null;
 let started = false;
 
 function start(): void {
@@ -38,18 +49,17 @@ function start(): void {
   started = true;
 
   if (amplitudeApiKey !== '') {
-    void import('@amplitude/analytics-browser')
+    amplitudeReady = import('@amplitude/analytics-browser')
       .then(async (amplitude) => {
-        // 🔴 The ready flag flips on the init PROMISE, never on the call. `init()` returns before
-        // its destination plugins attach, so any track() in that window is discarded with only a
-        // console warning — measured on the product website as 1 dropped event in 88 loads.
+        // 🔴 Await the init PROMISE, never just the call. `init()` returns before its destination
+        // plugins attach, so any track() in that window is discarded with only a console warning —
+        // measured on the product website as 1 dropped event in 88 loads.
         await amplitude.init(amplitudeApiKey, {
           // A docs site reads; it does not need form, element or attribution autocapture, and those
           // read text out of the page. Page views are emitted explicitly below.
           autocapture: false,
           trackingOptions: {ipAddress: false},
         }).promise;
-        amplitudeReady = true;
       })
       .catch(() => {
         /* telemetry never breaks the page it measures */
@@ -75,8 +85,14 @@ function start(): void {
  */
 export function onRouteDidUpdate({location}: {location: {pathname: string}}): void {
   start();
-  if (!amplitudeReady) return;
-  void import('@amplitude/analytics-browser').then((amplitude) => {
-    amplitude.track('page_viewed', {path: location.pathname});
-  });
+  if (amplitudeReady === null) return;
+  const path = location.pathname;
+  void amplitudeReady
+    .then(() => import('@amplitude/analytics-browser'))
+    .then((amplitude) => {
+      amplitude.track('page_viewed', {path});
+    })
+    .catch(() => {
+      /* as above */
+    });
 }
