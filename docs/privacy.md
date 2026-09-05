@@ -48,9 +48,24 @@ permission and attaches no caged package names.
 
 Usage analytics, crash reports and announcements start off. NetCage does not send those providers your
 Supabase account ID, name or email address, and makes no OneSignal login or alias call. The website can use
-Google Analytics, Amplitude and Sentry only after website consent; website Sentry removes error messages,
-breadcrumbs, request fields and user fields. The website does not use Clarity or another session-replay
-tool.
+Google Analytics, Amplitude, Microsoft Clarity and Sentry only after website consent; website Sentry removes
+error messages, breadcrumbs, request fields and user fields. Clarity records a replay of a website visit and
+masks text typed into form fields.
+
+## What does this documentation site collect?
+
+This site is separate from the app and from the product website, and it is worth stating on its own because
+a reader arrives here without signing in to anything.
+
+If the developer has configured them, this site loads Google Analytics, Amplitude and Microsoft Clarity to
+measure which pages are read and where readers get stuck. They receive the page path, referrer, bounded
+browser and device details, an analytics identifier and an approximate region derived from the connection;
+Clarity additionally records a replay of the visit to this site. Each provider is loaded only when its
+identifier is present in the build, so an unconfigured site loads none of them and reports nothing.
+
+This site has no account, no sign-in and no form. It never receives a NetCage account ID, an email address,
+a phone number or the name of any app you have caged — those never leave the app except through the features
+described above.
 
 ## What is collected for Cage Pack safety?
 

@@ -13,8 +13,21 @@ import {themes as prismThemes} from 'prism-react-renderer';
  * There is no Firebase here and there must never be: a docs site is not a Firebase app.
  */
 
-/** Analytics is optional and env-gated. No key in the environment means the plugin is not loaded. */
+/**
+ * Analytics is optional and env-gated. No identifier in the environment means that destination is
+ * simply not loaded — the site builds and behaves identically, which is the state it shipped in
+ * until 2026-09-05.
+ *
+ * 🔴 All three are supplied by the workflow from repository **Actions variables**, never from
+ * source: this repository is public. They are public identifiers by design (they are readable in
+ * any page that loads them), but a value in source is a value nobody can rotate without a commit.
+ *
+ * GA4 goes through Docusaurus's own `gtag` preset option below; Amplitude and Clarity have no
+ * preset option, so they reach the browser as `customFields` read by `src/clientModules/telemetry.ts`.
+ */
 const gtag = process.env.GOOGLE_ANALYTICS_ID;
+const amplitudeApiKey = process.env.AMPLITUDE_API_KEY ?? '';
+const clarityProjectId = process.env.CLARITY_PROJECT_ID ?? '';
 
 const config: Config = {
   title: 'NetCage',
@@ -79,6 +92,11 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
+  // Read by src/clientModules/telemetry.ts in the browser. Build-time values only.
+  customFields: {amplitudeApiKey, clarityProjectId},
+
+  clientModules: ['./src/clientModules/telemetry.ts'],
 
   plugins: [
     // Supplies the browsable /sitemap page and the RSS /feed.xml - the two fleet surfaces

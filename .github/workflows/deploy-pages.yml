@@ -38,8 +38,15 @@ jobs:
       - name: Install
         run: yarn install --immutable
 
+      # Analytics identifiers come from repository Actions VARIABLES, not secrets: they are public
+      # by design and readable in any page that loads them. An unset variable means that destination
+      # is not loaded at all, and the build is otherwise identical.
       - name: Build
         run: yarn build
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ vars.GOOGLE_ANALYTICS_ID }}
+          AMPLITUDE_API_KEY: ${{ vars.AMPLITUDE_API_KEY }}
+          CLARITY_PROJECT_ID: ${{ vars.CLARITY_PROJECT_ID }}
 
       - uses: actions/upload-pages-artifact@v4
         with:
