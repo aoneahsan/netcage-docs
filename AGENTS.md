@@ -2,7 +2,15 @@
 
 > Mirror: `CLAUDE.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-09-05
+**Last Updated:** 2026-09-11
+
+## Upcoming release documentation — 2026-09-11
+
+The expanded Android/admin release is implemented locally, including updated privacy drafts and private
+operations records. The private admin code exists in the app/web repositories but is not deployed. The app
+repository's private task record owns implementation scope. Update public documentation only from
+implemented behaviour and GATE 4-approved copy; never expose admin routes, staff identities or
+operational details here. The existing site builds successfully; final privacy parity remains open.
 
 The **public** documentation site for NetCage, a per-app Android firewall. Docusaurus 3.10.2, React 19,
 TypeScript ~6, yarn 4, GitHub Pages. 15 docs pages plus two custom pages (`/sitemap`, `/feed`).
@@ -39,11 +47,12 @@ claim about behaviour, check it against the app:
 
 ### Facts that have already gone stale once — re-check before repeating them
 
-- **There is no AdMob, no ad SDK, no ad request and no consent framework.** The ad slot shows a promotion of
-  the developer's other apps, **bundled in the app**: it makes no network request and reads no advertising
-  identifier. Removed 2026-08-27. On 2026-08-28 four lines in `docs/privacy.md`, one in `docs/for-agents.md`
+- **There is no AdMob, third-party ad SDK, auction or personal targeting.** The house slot shows only
+  approved apps from the developer. Current code may refresh a small public placement configuration and
+  shows nothing without a valid live/cached configuration; it does not read an advertising identifier for promotion.
+  Removed 2026-08-27. On 2026-08-28 four lines in `docs/privacy.md`, one in `docs/for-agents.md`
   and one in `docs/how-it-works.md` were still describing the removed world — including an
-  *"Ad privacy options"* Settings control that exists in no build. Fixed; do not reintroduce.
+  *"Ad privacy options"* Settings control that exists in no build. Fixed; do not reintroduce the old AdMob world.
   ⚠️ The advertising **ID** is still read, by Firebase Analytics, for **analytics only** — `privacy.md`
   lines about that are correct and must stay.
 - **`netcage-ai` was deleted.** `netcage` is the only Firebase project. Zero references belong here.
@@ -138,9 +147,18 @@ custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces
 | App repo | `github.com/aoneahsan/netcage` — **PRIVATE**, do not link it from these pages |
 | This repo | `github.com/aoneahsan/netcage-docs` — public |
 
-**Context verification:** 2026-09-05 (10-day cadence). The site went live on 2026-08-31 and was verified
+**Site verification:** The site went live on 2026-08-31 and was verified
 over its real domain that day: 16 sitemap URLs all 200, plus `robots.txt`, `llms.txt`, `/sitemap` and
 `/feed`, and a 64-combination browser pass that found and fixed one real defect (a wide table scrolling
 the whole page sideways at 320 px). The 2026-09-05 content pass adds the Cage Packs page, taking the
 sitemap to 17, confirmed 200 after the Pages run. **Still owed here:** only the licence decision in
 `CONTRIBUTING.md` (owner) — the analytics wiring that used to sit on this line landed on 2026-09-05.
+
+| Context budget | Value |
+|---|---|
+| Last optimized | 2026-09-17 |
+| Next routine optimization eligible | 2026-10-17 |
+| Guide bytes | 10,498 B |
+| Covered subtree | `netcage-docs/` repo root |
+| Method | Already inside cap; the superseded 10-day cadence line replaced by this row, its verification prose kept inline. No content moved |
+| Fleet record | the workspace context-budget tracker (see the `netcage-root` umbrella guide) |
