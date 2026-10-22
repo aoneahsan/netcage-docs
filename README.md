@@ -5,12 +5,14 @@ Documentation site for **NetCage**, a per-app firewall for Android.
 Its address is **https://netcage-docs.aoneahsan.com**; product site
 **https://netcage.aoneahsan.com**; Play package `com.aoneahsan.netcage`.
 
-> **The product and documentation sites are live.** GitHub Pages serves the docs at the custom
+> **The current public product and documentation baseline is live.** GitHub Pages serves the docs at the custom
 > domain above with HTTPS enforced. The public source stays in this repository; product internals and
-> credentials remain in the private app repository.
+> credentials remain in the private app repository. September 11 administration/privacy implementation is
+> locally complete, but its public wording is not published and still requires GATE 4 plus deployment verification.
 
 Built with [Docusaurus](https://docusaurus.io/) 3 and deployed to GitHub Pages by
 `.github/workflows/deploy-pages.yml` on every push to `main`.
+The workflow typechecks before building and publishes only after both gates pass.
 
 ## Local development
 

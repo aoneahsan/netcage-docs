@@ -38,6 +38,9 @@ jobs:
       - name: Install
         run: yarn install --immutable
 
+      - name: Typecheck
+        run: yarn typecheck
+
       # Analytics identifiers come from repository Actions VARIABLES, not secrets: they are public
       # by design and readable in any page that loads them. An unset variable means that destination
       # is not loaded at all, and the build is otherwise identical.
