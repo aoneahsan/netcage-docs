@@ -2,7 +2,7 @@
 
 > Mirror: `CLAUDE.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-09-11
+**Last Updated:** 2026-11-06
 
 ## Upcoming release documentation — 2026-09-11
 
@@ -85,8 +85,9 @@ duplicate copy is indexable.
 
 **Analytics are wired** (2026-09-05). Three destinations, matching the fleet standard: GA4 through the
 `gtag` preset option, and Amplitude + Clarity through `src/clientModules/telemetry.ts`. Every id arrives
-as a build-time `customField` from a repository **Actions variable** — they are public identifiers by
-design, but this repo is public, so they still never sit in source. A missing id switches that
+as a build-time `customField` from the build environment; a deploy build exports them with
+`gh variable get <NAME>` (repository variables, no workflow runs) — they are public identifiers by design, but this repo is public, so they still never
+sit in source. A missing id switches that
 destination off and costs the reader zero bytes; with none set this module does nothing at all.
 
 🔴 **Amplitude holds a PROMISE, not a boolean.** `init()` resolves asynchronously, so a ready
@@ -103,9 +104,12 @@ reaches `<html lang>`. The search plugin's lunr stemmer stays **pinned to `en`**
 of the language, not the region, and `en-GB` is not one it ships. There is still exactly one language and
 no `i18n/` tree.
 
-Deploy is `.github/workflows/deploy-pages.yml` on push to `main` — **GitHub Pages only, never Firebase**.
-There is no `deploy` script in `package.json` on purpose: `docusaurus deploy` would push a `gh-pages` branch
-outside the Actions flow and give the site two deployment paths.
+Deploy is **by hand, GitHub Pages only, never Firebase**; this repo has no GitHub Actions (owner,
+2026-10-31). Build locally with the three ids in the environment, then publish `build/` as the orphan
+`gh-pages` branch from a worktree outside the repo; Pages serves that branch (`build_type: legacy`,
+switched 2026-11-06). Prove each deploy by the live `last-modified` and the new bundle hash. There is no
+`deploy` script in `package.json` on purpose: `docusaurus deploy` would rebuild its own way and give the
+site a second path.
 
 ## Gates
 
@@ -133,8 +137,8 @@ clean push. Never `--force`, never `--admin`.
 
 ## Fixed paths
 
-Working guide `README.md` · contribution rules `CONTRIBUTING.md` (states the repo carries **no licence**, so
-the content is the author's copyright by default — an open owner decision) · content `docs/*.md` ·
+Working guide `README.md` · contribution rules `CONTRIBUTING.md` and `LICENSE` (all rights reserved, owner
+decision 2026-11-06) · content `docs/*.md` ·
 custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces `static/robots.txt`,
 `static/llms.txt`, `static/CNAME`.
 
@@ -151,8 +155,8 @@ custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces
 over its real domain that day: 16 sitemap URLs all 200, plus `robots.txt`, `llms.txt`, `/sitemap` and
 `/feed`, and a 64-combination browser pass that found and fixed one real defect (a wide table scrolling
 the whole page sideways at 320 px). The 2026-09-05 content pass adds the Cage Packs page, taking the
-sitemap to 17, confirmed 200 after the Pages run. **Still owed here:** only the licence decision in
-`CONTRIBUTING.md` (owner) — the analytics wiring that used to sit on this line landed on 2026-09-05.
+sitemap to 17, confirmed 200 after the Pages run. The licence decision that used to sit on this line
+landed on 2026-11-06 (all rights reserved), and the analytics wiring on 2026-09-05.
 
 | Context budget | Value |
 |---|---|

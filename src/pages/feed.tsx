@@ -11,7 +11,7 @@ import type {SiteIndex} from '../../plugins/site-index';
  * what shipped.
  */
 export default function FeedPage(): React.ReactElement {
-  const {releases} = usePluginData('site-index') as SiteIndex;
+  const {releases, status} = usePluginData('site-index') as SiteIndex;
 
   return (
     <Layout title="Release feed" description="Every NetCage release, newest first, with an RSS feed.">
@@ -22,12 +22,15 @@ export default function FeedPage(): React.ReactElement {
           <Link to="/changelog">changelog</Link>.
         </p>
 
+        {releases.length === 0 ? <p>{status}</p> : null}
+
         <ul>
           {releases.map((release) => (
             <li key={release.version} style={{marginBottom: '1rem'}}>
               <Link to="/changelog">
                 <strong>NetCage {release.version}</strong>
-              </Link>
+              </Link>{' '}
+              <time dateTime={release.date}>{release.date}</time>
               {release.summary ? (
                 <div style={{opacity: 0.75, fontSize: '0.9em'}}>{release.summary}</div>
               ) : null}

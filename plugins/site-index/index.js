@@ -44,9 +44,16 @@ function readPages(docsDir) {
 }
 
 /**
- * Each `## <version>` in the changelog becomes one feed item. The summary is the first non-empty
+ * Each `## <version>` in the changelog is one release. The summary is the first non-empty
  * paragraph under it, which is written as a standalone sentence precisely so it can be lifted.
+ *
+ * 🔴 Only a PUBLISHED release carries its date in the heading: `## 1.3.0 — 2026-11-20`. A release
+ * with no date was built, superseded or sideloaded and is never a feed item (SA-NETCAGE-003): a
+ * subscriber reads an item as "this shipped". The date is written by whoever publishes it, never
+ * invented by the build.
  */
+const PUBLISHED_HEADING = /^(.+?)\s+—\s+(\d{4}-\d{2}-\d{2})\s*$/;
+
 function readReleases(changelog) {
   const releases = [];
   const sections = changelog.split(/^## /m).slice(1);
@@ -57,12 +64,24 @@ function readReleases(changelog) {
       .split(/\n\s*\n/)
       .map((p) => p.trim())
       .find((p) => p.length > 0 && !p.startsWith('#'));
+    const dated = PUBLISHED_HEADING.exec(heading.trim());
+    if (dated && Number.isNaN(Date.parse(`${dated[2]}T00:00:00Z`))) {
+      throw new Error(`site-index: changelog heading "${heading.trim()}" carries an invalid date.`);
+    }
     releases.push({
-      version: heading.trim(),
+      version: dated ? dated[1].trim() : heading.trim(),
+      date: dated ? dated[2] : null,
       summary: (summary ?? '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim(),
     });
   }
   return releases;
+}
+
+/** The changelog's opening paragraph: its own words for the release status, shown while no release is dated. */
+function readStatus(changelog) {
+  const body = changelog.replace(/^---[\s\S]*?\n---\n/, '');
+  const intro = body.split(/^## /m)[0];
+  return intro.replace(/\s+/g, ' ').trim();
 }
 
 function escapeXml(value) {
@@ -87,13 +106,19 @@ module.exports = function siteIndexPlugin(context) {
         throw new Error('site-index found no pages in docs/ — the sitemap page would ship empty.');
       }
       const changelogPath = path.join(docsDir, 'changelog.md');
-      const releases = fs.existsSync(changelogPath)
-        ? readReleases(fs.readFileSync(changelogPath, 'utf8'))
-        : [];
-      if (releases.length === 0) {
-        throw new Error('site-index found no releases in docs/changelog.md — feed.xml would be empty.');
+      const changelog = fs.existsSync(changelogPath) ? fs.readFileSync(changelogPath, 'utf8') : '';
+      const all = readReleases(changelog);
+      // 🔴 Still throw on a changelog that parses to nothing: that is a broken file, not "no releases".
+      if (all.length === 0) {
+        throw new Error('site-index found no `## <version>` sections in docs/changelog.md.');
       }
-      return {pages, releases};
+      const status = readStatus(changelog);
+      if (status.length === 0) {
+        throw new Error('site-index: docs/changelog.md lost its opening status paragraph.');
+      }
+      // Newest first, as the changelog is written; only dated (published) releases are kept.
+      const releases = all.filter((release) => release.date !== null);
+      return {pages, releases, status};
     },
 
     async contentLoaded({content, actions}) {
@@ -106,8 +131,8 @@ module.exports = function siteIndexPlugin(context) {
       // then spaces to hyphens. `2.0.0` -> `200`. A fragment cannot 404, so a slug that ever
       // drifted still lands the reader on the changelog page.
       //
-      // There is deliberately no per-item <pubDate>: the changelog headings carry version numbers
-      // and no dates, and a release date is not something a build may invent.
+      // Every item carries the <pubDate> written in its changelog heading; a release without one
+      // never reaches this list (see readReleases). Zero items is a valid RSS 2.0 channel.
       const anchorFor = (version) =>
         version
           .toLowerCase()
@@ -121,6 +146,7 @@ module.exports = function siteIndexPlugin(context) {
       <title>NetCage ${escapeXml(release.version)}</title>
       <link>${site}/changelog#${escapeXml(anchorFor(release.version))}</link>
       <guid isPermaLink="false">netcage-${escapeXml(release.version)}</guid>
+      <pubDate>${new Date(`${release.date}T00:00:00Z`).toUTCString()}</pubDate>
       <description>${escapeXml(release.summary)}</description>
     </item>`,
         )
