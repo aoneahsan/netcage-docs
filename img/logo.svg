@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 108 108">
+  <title>NetCage</title>
+  <desc>
+    THE MASTER. Every raster icon is exported from this file; none is hand-edited.
+
+    The mark is a signal fanning upward behind vertical cage bars. The bars are painted in the
+    BACKGROUND colour, so they read as gaps cut through the signal rather than as strokes laid over
+    it — that is the whole idea of the app in one shape: the signal is still there, it just cannot
+    get through.
+
+    Geometry and colours are identical to app/src/main/res/drawable/ic_launcher_foreground.xml and
+    ic_launcher_background.xml. If one changes, change both — a store icon that does not match the
+    launcher icon is how an app looks like a different app in the search results than on the phone.
+
+    Play's 512x512 listing icon is full-bleed square (no adaptive safe zone), which is why the
+    background rect is drawn here rather than assumed.
+  </desc>
+
+  <rect width="108" height="108" fill="#10343B"/>
+
+  <g fill="none" stroke="#E6F5F1" stroke-width="6.5" stroke-linecap="round">
+    <path d="M28.5,50.5 A36,36 0 0 1 79.5,50.5"/>
+    <path d="M36.3,58.3 A25,25 0 0 1 71.7,58.3"/>
+    <path d="M44.1,66.1 A14,14 0 0 1 63.9,66.1"/>
+  </g>
+  <circle cx="54" cy="73.8" r="4.6" fill="#E6F5F1"/>
+
+  <g fill="#10343B">
+    <rect x="37.5" y="36" width="5" height="52"/>
+    <rect x="51.5" y="36" width="5" height="52"/>
+    <rect x="65.5" y="36" width="5" height="52"/>
+  </g>
+</svg>

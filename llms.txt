@@ -1,0 +1,51 @@
+# NetCage
+
+> A per-app firewall for Android. Choose an enabled, installed app that requests internet access
+> and close its route on Wi-Fi and mobile.
+
+NetCage is an Android application, package `com.aoneahsan.netcage`, prepared for release on Google Play, not yet published.
+This site is its documentation. It is prerendered, so every page's HTML already contains its full
+text — no JavaScript is needed to read it. The Markdown source is public at
+https://github.com/aoneahsan/netcage-docs under `docs/`, where the page at `/<name>` is
+`docs/<name>.md`.
+
+## How it works, in one paragraph
+
+Android lets a `VpnService` route selected apps. NetCage builds an on-device tunnel and adds caged
+packages to its allow-list. Android applies VPN routing by UID, so apps sharing a selected package's
+UID enter the tunnel too. NetCage examines IP and transport headers in memory to address a TCP reset
+or ICMP port-unreachable response. It does not inspect payloads or hostnames, keep a traffic log, or
+forward caged traffic. Apps outside caged Android UIDs do not enter the tunnel. Android still runs a
+foreground VPN service while a cage is active, so NetCage does not promise an exact zero resource cost.
+
+## What NetCage is not
+
+- **Not an ad blocker.** It does no domain filtering, no hosts file, no DNS interception, and no
+  content blocking of any kind. It blocks an app, entirely or not at all.
+- **Not a packet-content inspector.** Refusing a caged app's connection needs destination and
+  transport-header fields. Packet payloads and hostnames are not inspected, and no DNS, URL or traffic
+  log is kept.
+- **Not a proxy or a real VPN.** The tunnel has no server on the other end. That is the mechanism.
+
+## Docs
+
+- [Overview](https://netcage-docs.aoneahsan.com/)
+- [How it works](https://netcage-docs.aoneahsan.com/how-it-works)
+- [Install and setup](https://netcage-docs.aoneahsan.com/install-and-setup)
+- [Caging apps](https://netcage-docs.aoneahsan.com/caging-apps)
+- [Profiles](https://netcage-docs.aoneahsan.com/profiles)
+- [Cage Packs](https://netcage-docs.aoneahsan.com/cage-packs)
+- [Schedules and day passes](https://netcage-docs.aoneahsan.com/schedules-and-day-passes)
+- [Widgets and the Quick Settings tile](https://netcage-docs.aoneahsan.com/widgets-and-tile)
+- [Support, backup and account](https://netcage-docs.aoneahsan.com/account-and-sync)
+- [Settings and your data](https://netcage-docs.aoneahsan.com/settings-and-data)
+- [Privacy](https://netcage-docs.aoneahsan.com/privacy)
+- [Limitations](https://netcage-docs.aoneahsan.com/limitations)
+- [FAQ](https://netcage-docs.aoneahsan.com/faq)
+- [Changelog](https://netcage-docs.aoneahsan.com/changelog)
+- [For agents](https://netcage-docs.aoneahsan.com/for-agents)
+
+## Links
+
+- Product site: https://netcage.aoneahsan.com
+- Developer: https://aoneahsan.com
