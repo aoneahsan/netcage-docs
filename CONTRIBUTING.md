@@ -53,9 +53,10 @@ factual and the pages short.
 
 ## Licence and support
 
-This repository carries no open-source licence, so the documentation is the author's copyright by
-default. Contributions are accepted on the understanding that they may be published here as part of
-it. If you need different terms, ask before opening a pull request.
+The documentation is all rights reserved: see [`LICENSE`](LICENSE). Read it and link to it freely;
+copying or republishing it needs written permission. Contributions are accepted on the understanding
+that they may be published here as part of it. If you need different terms, ask before opening a pull
+request.
 
 If NetCage is useful to you and you would like to support the work:
 **https://aoneahsan.com/payment?project-id=netcage&project-identifier=com.aoneahsan.netcage**
