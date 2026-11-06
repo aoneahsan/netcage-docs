@@ -41,7 +41,8 @@ const clarityProjectId = process.env.CLARITY_PROJECT_ID ?? '';
 
 const config: Config = {
   title: 'NetCage',
-  tagline: 'Cage any app’s internet',
+  // The approved overview's own first sentence; "any app" overclaimed (product audit F-DISC-004).
+  tagline: 'A per-app firewall for Android',
   favicon: 'img/logo.png',
 
   future: {
@@ -217,6 +218,9 @@ const config: Config = {
       // Both were absent from every page. `og:type` is what makes a share card render as an
       // article rather than falling back to a bare link, and `og:site_name` is what puts the
       // product's name on it.
+      // GitHub Pages sends no Referrer-Policy header; the meta form is what this host allows
+      // (product audit F-SEC-005).
+      {name: 'referrer', content: 'strict-origin-when-cross-origin'},
       {property: 'og:type', content: 'website'},
       {property: 'og:site_name', content: 'NetCage documentation'},
     ],
