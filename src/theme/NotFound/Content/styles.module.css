@@ -1,0 +1,6 @@
+/* The 404's two exits: side by side where they fit, one under the other on a narrow phone. */
+.exits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ifm-spacing-vertical) var(--ifm-spacing-horizontal);
+}

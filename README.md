@@ -10,15 +10,15 @@ Its address is **https://netcage-docs.aoneahsan.com**; product site
 > credentials remain in the private app repository. September 11 administration/privacy implementation is
 > locally complete, but its public wording is not published and still requires GATE 4 plus deployment verification.
 
-Built with [Docusaurus](https://docusaurus.io/) 3 and deployed to GitHub Pages by
-`.github/workflows/deploy-pages.yml` on every push to `main`.
-The workflow typechecks before building and publishes only after both gates pass.
+Built with [Docusaurus](https://docusaurus.io/) 3 and deployed to GitHub Pages by hand: a local build,
+gated by `yarn typecheck && yarn build`, is published as the `gh-pages` branch. There is no GitHub Actions
+workflow.
 
 ## Local development
 
 ```bash
 yarn install
-yarn start          # dev server with hot reload
+yarn start          # dev server with hot reload, http://localhost:5906
 yarn build          # production build — this is the gate
 yarn serve          # serve the real build, which is what gets deployed
 yarn typecheck      # tsc
@@ -64,7 +64,8 @@ Two apply to every page, and both come from the product:
 
 ## Deployment
 
-Push to `main`. The workflow builds and publishes; `static/CNAME` pins the custom domain.
+Build locally (`yarn typecheck && yarn build`, with the analytics ids in the environment) and publish
+`build/` as the orphan `gh-pages` branch; Pages serves that branch. `static/CNAME` pins the custom domain.
 
 DNS (`netcage-docs` CNAME → `aoneahsan.github.io`) and the Pages custom-domain setting with
 **Enforce HTTPS** are one-time owner steps, tracked with the app.

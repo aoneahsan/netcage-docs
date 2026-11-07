@@ -1,6 +1,6 @@
 ---
 title: Install and setup
-description: First launch, the VPN consent, the Finish setup card, Always-on VPN, battery, notifications, precise timing and optional Usage Access.
+description: First launch, the VPN consent, the Finish setup card, Always-on VPN, battery, notifications, optional Usage Access and why schedules need no timing permission.
 sidebar_position: 3
 tags: [setup, permissions, always-on-vpn]
 ---
@@ -62,7 +62,7 @@ Required. Nothing can be caged without it.
 
 ### How do I keep the cage active in the background?
 
-*Exempt NetCage from battery optimisation so Android never kills the cage in the background.*
+*Exempt NetCage from battery optimisation so Android is less likely to stop the cage in the background.*
 
 Strongly recommended. Without the exemption, Doze can stop the service and the cage silently drops.
 
@@ -81,13 +81,6 @@ the cage again, provided Android's **Block connections without VPN** setting rem
 Android lists `systemExempted` and its eligibility conditions in the
 [foreground-service type reference](https://developer.android.com/develop/background-work/services/fgs/service-types#system-exempted).
 
-### When should I use precise timing?
-
-*Let day passes and schedules change at the exact minute, even while the phone sleeps.*
-
-Optional. Without it, schedules and day passes still work — they are backed by an inexact
-fallback and may fire a little late.
-
 ### How do I turn on Always-on VPN?
 
 This is the persistence mechanism worth setting up: it brings the cage up at boot, before your apps
@@ -99,7 +92,7 @@ Settings ▸ Network & internet ▸ VPN ▸ ⚙ next to NetCage ▸ Always-on VP
 
 The setup screen has an **Open VPN settings** button that takes you there.
 
-:::warning Leave "Block connections without VPN" off
+:::warning[Leave "Block connections without VPN" off]
 That switch tells Android to drop all traffic that is not going through the VPN. NetCage's tunnel
 carries **only caged Android UIDs**, so turning it on would cut off every app outside those UIDs — the
 exact opposite of what NetCage is for.
@@ -107,6 +100,18 @@ exact opposite of what NetCage is for.
 
 Android exposes no way for an app to read whether Always-on is enabled, so NetCage never marks this
 step as done and never nags you about it.
+
+## Do schedules need a timing permission?
+
+No. NetCage holds no exact-alarm permission, so Setup has no timing step and there is nothing to grant.
+
+A few minutes before a schedule or day pass changes the cage, an alarm wakes NetCage and a short
+foreground service makes the change with its own timer. Without the battery exemption above, Android may
+refuse to start that service from the background. A regular alarm then makes the change instead, possibly
+later than the minute you chose.
+
+[What happens at a boundary](./schedules-and-day-passes.md#what-happens-at-a-boundary) walks through the
+whole sequence.
 
 ## How do I show on-device data totals?
 

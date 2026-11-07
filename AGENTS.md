@@ -2,7 +2,7 @@
 
 > Mirror: `CLAUDE.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-09-11
+**Last Updated:** 2026-11-07
 
 ## Upcoming release documentation — 2026-09-11
 
@@ -73,6 +73,11 @@ claim about behaviour, check it against the app:
    `src/theme/MDXComponents.tsx`. Links leaving this origin open in a new tab; only the owner's own
    products and profiles are do-follow. It is a host **and path** question — `github.com/aoneahsan/*` is
    his, the rest of `github.com` is not. A React page outside MDX applies it by hand (`src/pages/sitemap.tsx`).
+   Every link that opens a new tab also carries the visually hidden "(opens in a new tab)"
+   (`src/components/NewTabHint.tsx`, the same words as the website); the theme's own external-link icon
+   (`src/theme/Icon/ExternalLink`) and "Edit this page" (`src/theme/EditThisPage`) are ejected only to carry
+   it. A hand-built outbound link that leaves it out is the regression to look for: on 2026-11-07 the built
+   site had 456 `target=_blank` links and 456 hints.
 
 ## Domain and deploy
 
@@ -85,8 +90,9 @@ duplicate copy is indexable.
 
 **Analytics are wired** (2026-09-05). Three destinations, matching the fleet standard: GA4 through the
 `gtag` preset option, and Amplitude + Clarity through `src/clientModules/telemetry.ts`. Every id arrives
-as a build-time `customField` from a repository **Actions variable** — they are public identifiers by
-design, but this repo is public, so they still never sit in source. A missing id switches that
+as a build-time `customField` from the build environment; a deploy build exports them with
+`gh variable get <NAME>` (repository variables, no workflow runs) — they are public identifiers by design, but this repo is public, so they still never
+sit in source. A missing id switches that
 destination off and costs the reader zero bytes; with none set this module does nothing at all.
 
 🔴 **Amplitude holds a PROMISE, not a boolean.** `init()` resolves asynchronously, so a ready
@@ -103,15 +109,18 @@ reaches `<html lang>`. The search plugin's lunr stemmer stays **pinned to `en`**
 of the language, not the region, and `en-GB` is not one it ships. There is still exactly one language and
 no `i18n/` tree.
 
-Deploy is `.github/workflows/deploy-pages.yml` on push to `main` — **GitHub Pages only, never Firebase**.
-There is no `deploy` script in `package.json` on purpose: `docusaurus deploy` would push a `gh-pages` branch
-outside the Actions flow and give the site two deployment paths.
+Deploy is **by hand, GitHub Pages only, never Firebase**; this repo has no GitHub Actions (owner,
+2026-10-31). Build locally with the three ids in the environment, then publish `build/` as the orphan
+`gh-pages` branch from a worktree outside the repo; Pages serves that branch (`build_type: legacy`,
+switched 2026-11-06). Prove each deploy by the live `last-modified` and the new bundle hash. There is no
+`deploy` script in `package.json` on purpose: `docusaurus deploy` would rebuild its own way and give the
+site a second path.
 
 ## Gates
 
 `yarn typecheck && yarn build` — **zero warnings**. The build **is** the link checker:
 `onBrokenLinks`, `onBrokenAnchors`, `onDuplicateRoutes` and both markdown hooks are all `'throw'`.
-`yarn serve` afterwards to check the real build. Test light + dark and 320→1920.
+`yarn serve` afterwards to check the real build (port 5906, registered; `yarn start` uses it too). Test light + dark and 320→1920.
 
 The `site-index` plugin fails closed — it throws when the page or release list is empty, so a generator that
 silently emits nothing cannot pass.
@@ -133,8 +142,8 @@ clean push. Never `--force`, never `--admin`.
 
 ## Fixed paths
 
-Working guide `README.md` · contribution rules `CONTRIBUTING.md` (states the repo carries **no licence**, so
-the content is the author's copyright by default — an open owner decision) · content `docs/*.md` ·
+Working guide `README.md` · contribution rules `CONTRIBUTING.md` and `LICENSE` (all rights reserved, owner
+decision 2026-11-06) · content `docs/*.md` ·
 custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces `static/robots.txt`,
 `static/llms.txt`, `static/CNAME`.
 
@@ -151,8 +160,8 @@ custom pages `src/pages/` · generator `plugins/site-index/` · crawler surfaces
 over its real domain that day: 16 sitemap URLs all 200, plus `robots.txt`, `llms.txt`, `/sitemap` and
 `/feed`, and a 64-combination browser pass that found and fixed one real defect (a wide table scrolling
 the whole page sideways at 320 px). The 2026-09-05 content pass adds the Cage Packs page, taking the
-sitemap to 17, confirmed 200 after the Pages run. **Still owed here:** only the licence decision in
-`CONTRIBUTING.md` (owner) — the analytics wiring that used to sit on this line landed on 2026-09-05.
+sitemap to 17, confirmed 200 after the Pages run. The licence decision that used to sit on this line
+landed on 2026-11-06 (all rights reserved), and the analytics wiring on 2026-09-05.
 
 | Context budget | Value |
 |---|---|

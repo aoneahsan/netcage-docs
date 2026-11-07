@@ -5,11 +5,11 @@
   "packageManager": "yarn@4.10.3",
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "docusaurus start --port 5906",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
+    "serve": "docusaurus serve --port 5906",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"

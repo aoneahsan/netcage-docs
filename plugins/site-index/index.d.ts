@@ -15,12 +15,16 @@ export interface SitePage {
 
 export interface Release {
   readonly version: string;
+  /** ISO date from the changelog heading; only published releases are in the data. */
+  readonly date: string;
   readonly summary: string;
 }
 
 export interface SiteIndex {
   readonly pages: readonly SitePage[];
   readonly releases: readonly Release[];
+  /** The changelog's opening paragraph, shown while no release is published. */
+  readonly status: string;
 }
 
 declare const siteIndexPlugin: (context: unknown) => unknown;

@@ -1,6 +1,7 @@
 import type { ComponentProps, ReactElement } from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 
+import NewTabHint from '@site/src/components/NewTabHint';
 import { externalLinkPolicy } from '@site/src/lib/linkPolicy';
 
 /**
@@ -24,8 +25,15 @@ function Anchor(props: ComponentProps<'a'>): ReactElement {
   }
 
   // A plain anchor rather than the themed Link: Docusaurus's Link is for in-app navigation, and an
-  // external destination is a full page load in a new tab by definition.
-  return <a {...props} target={policy.target} rel={policy.rel} />;
+  // external destination is a full page load in a new tab by definition. The hidden hint goes inside
+  // the anchor so it joins the accessible name.
+  const { children, ...rest } = props;
+  return (
+    <a {...rest} target={policy.target} rel={policy.rel}>
+      {children}
+      <NewTabHint />
+    </a>
+  );
 }
 
 /**

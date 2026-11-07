@@ -5,22 +5,28 @@ Allow: /
 # Named explicitly as well as covered by the wildcard above. All of these honour `*`, so this
 # changes nothing today - it is here so that a future tightening of the wildcard cannot silently
 # exclude the readers this site is partly written for. See /for-agents and /llms.txt.
-User-agent: GPTBot
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
@@ -32,7 +38,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-User-agent: Bytespider
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://netcage-docs.aoneahsan.com/sitemap.xml

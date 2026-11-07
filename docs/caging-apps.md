@@ -109,7 +109,9 @@ selected — the app holds no storage or media permission and cannot see anythin
 custom icon** puts it back.
 
 A custom icon stays on this phone while you are signed out. If you sign in, the selected image can be
-stored with your backup so another phone can restore it. Icon restoration requests the signed-in user's
+stored with your backup so another phone can restore it. That stored copy is a private 192 × 192 pixel
+image with no public link. It syncs only while it is 32 KB (32,768 bytes) or smaller; a larger one stays
+on this phone, and NetCage tells you so when you set it. Icon restoration requests the signed-in user's
 own icon rows, then matches their package names against the eligible apps on this phone; it does not send
 the phone's full eligible installed-app inventory in the icon request. Removing an uploaded icon is
 fail-closed: if the storage request fails, NetCage keeps its reference and lets you retry. See

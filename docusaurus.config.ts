@@ -3,12 +3,21 @@ import type {Config} from '@docusaurus/types';
 import {themes as prismThemes} from 'prism-react-renderer';
 
 /**
+ * The one product description, taken from the approved overview copy (`docs/index.md`). The
+ * JSON-LD and the site-wide default meta description both read it, so an answer engine never sees
+ * two different claims about what NetCage does (SA-NETCAGE-006, 2026-11-06).
+ */
+const PRODUCT_DESCRIPTION =
+  'A per-app firewall for Android. Choose a listed app that can use the internet and refuse its ' +
+  'connections on Wi-Fi and mobile while the rest of your phone stays online.';
+
+/**
  * NetCage documentation site.
  *
  * Deployed to GitHub Pages on the custom domain in `static/CNAME`. The domain is derived from the
  * product's own domain, `netcage.aoneahsan.com`, by the fleet rule for a subdomain project:
- * `<sub>-docs.<base>.<tld>`. The product site is not live yet — that is a separate session — so the
- * derivation is recorded here rather than probed green.
+ * `<sub>-docs.<base>.<tld>`. Both hosts are live; the product site moved to Cloudflare Pages on
+ * 2026-11-06.
  *
  * There is no Firebase here and there must never be: a docs site is not a Firebase app.
  */
@@ -18,9 +27,10 @@ import {themes as prismThemes} from 'prism-react-renderer';
  * simply not loaded — the site builds and behaves identically, which is the state it shipped in
  * until 2026-09-05.
  *
- * 🔴 All three are supplied by the workflow from repository **Actions variables**, never from
- * source: this repository is public. They are public identifiers by design (they are readable in
- * any page that loads them), but a value in source is a value nobody can rotate without a commit.
+ * 🔴 All three come from the build environment, never from source: this repository is public. The
+ * hand deploy exports them with `gh variable get <NAME>` for that one build (repository variables;
+ * there is no GitHub Actions workflow). They are public identifiers by design (readable in any page that loads
+ * them), but a value in source is a value nobody can rotate without a commit.
  *
  * GA4 goes through Docusaurus's own `gtag` preset option below; Amplitude and Clarity have no
  * preset option, so they reach the browser as `customFields` read by `src/clientModules/telemetry.ts`.
@@ -31,7 +41,8 @@ const clarityProjectId = process.env.CLARITY_PROJECT_ID ?? '';
 
 const config: Config = {
   title: 'NetCage',
-  tagline: 'Cage any app’s internet',
+  // The approved overview's own first sentence; "any app" overclaimed (product audit F-DISC-004).
+  tagline: 'A per-app firewall for Android',
   favicon: 'img/logo.png',
 
   future: {
@@ -88,8 +99,10 @@ const config: Config = {
         },
         sitemap: {
           lastmod: 'date',
-          changefreq: 'weekly',
-          priority: 0.5,
+          // No changefreq or priority: Google ignores both, and one value on every URL carries no
+          // information (SA-NETCAGE-007). `null` drops the elements from sitemap.xml.
+          changefreq: null,
+          priority: null,
           // 🔴 Only real pages. The generated sitemap carried 47 URLs: 13 documents and 34 pieces
           // of chrome - 32 tag pages, /tags and /search - each ~10 KB of navigation with no unique
           // prose. Submitting 34 empty URLs beside 13 real ones is how a site earns
@@ -181,9 +194,7 @@ const config: Config = {
         name: 'NetCage',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Android 8.0+',
-        description:
-          'A per-app Android firewall. Cut any installed app off from the internet — foreground ' +
-          'and background, Wi-Fi and mobile — with one switch.',
+        description: PRODUCT_DESCRIPTION,
         url: 'https://netcage.aoneahsan.com',
         author: {
           '@type': 'Person',
@@ -202,13 +213,14 @@ const config: Config = {
     metadata: [
       {
         name: 'description',
-        content:
-          'Documentation for NetCage, a per-app Android firewall that cuts any installed ' +
-          'app’s internet access on Wi-Fi and mobile.',
+        content: PRODUCT_DESCRIPTION,
       },
       // Both were absent from every page. `og:type` is what makes a share card render as an
       // article rather than falling back to a bare link, and `og:site_name` is what puts the
       // product's name on it.
+      // GitHub Pages sends no Referrer-Policy header; the meta form is what this host allows
+      // (product audit F-SEC-005).
+      {name: 'referrer', content: 'strict-origin-when-cross-origin'},
       {property: 'og:type', content: 'website'},
       {property: 'og:site_name', content: 'NetCage documentation'},
     ],

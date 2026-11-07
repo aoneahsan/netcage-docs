@@ -12,8 +12,8 @@ import siteConfig from '@generated/docusaurus.config';
  * than downloading a disabled SDK. With none configured this module does nothing at all, which is
  * the state the site shipped in until 2026-09-05.
  *
- * 🔴 The identifiers arrive as build-time `customFields`, injected from repository **Actions
- * variables**. They are public identifiers by design — a GA4 measurement id, an Amplitude API key
+ * 🔴 The identifiers arrive as build-time `customFields` from the build environment (a deploy build
+ * exports them with `gh variable get`; repository variables, no workflow runs). They are public identifiers by design — a GA4 measurement id, an Amplitude API key
  * and a Clarity project id are all readable in any page that loads them — but this repository is
  * public, so they still never sit in source.
  *
