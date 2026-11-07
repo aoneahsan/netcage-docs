@@ -6,7 +6,30 @@
     <atom:link href="https://netcage-docs.aoneahsan.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Release notes for NetCage, the per-app Android firewall.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 11:27:42 GMT</lastBuildDate>
-
+    <lastBuildDate>Sat, 07 Nov 2026 15:54:10 GMT</lastBuildDate>
+    <item>
+      <title>NetCage 1.3.0</title>
+      <link>https://netcage-docs.aoneahsan.com/changelog#130</link>
+      <guid isPermaLink="false">netcage-1.3.0</guid>
+      <description>The first public release. It includes the firewall, profiles, schedules, day passes, backup, in-app support and Cage Packs. Before submission, Cage Packs gained versioned publishing terms, report, block, unblock, immediate quarantine and publisher-suspension controls. Importing still creates an inactive, editable profile.</description>
+    </item>
+    <item>
+      <title>NetCage 1.2.0</title>
+      <link>https://netcage-docs.aoneahsan.com/changelog#120</link>
+      <guid isPermaLink="false">netcage-1.2.0</guid>
+      <description>Built and signed, then superseded before upload. Its account backup, in-app support and first Cage Pack implementation ship in 1.3.0 with the moderation controls required for public release.</description>
+    </item>
+    <item>
+      <title>NetCage 1.0.0</title>
+      <link>https://netcage-docs.aoneahsan.com/changelog#100</link>
+      <guid isPermaLink="false">netcage-1.0.0</guid>
+      <description>Built and signed for the store, then superseded before it was ever uploaded — never published. Everything it contained ships in 1.3.0, so no device ever ran a public 1.0.0.</description>
+    </item>
+    <item>
+      <title>NetCage Pre-Play builds — sideloaded only, never published</title>
+      <link>https://netcage-docs.aoneahsan.com/changelog#pre-play-builds-sideloaded-only-never-published</link>
+      <guid isPermaLink="false">netcage-Pre-Play builds — sideloaded only, never published</guid>
+      <description>These ran on the developer's own device before the version reset and reused the numbers 1.0.0, 1.2.0 and 2.0.0. They are not store releases.</description>
+    </item>
   </channel>
 </rss>
