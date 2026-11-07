@@ -2,7 +2,7 @@
 
 > Mirror: `AGENTS.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-11-06
+**Last Updated:** 2026-11-07
 
 ## Upcoming release documentation — 2026-09-11
 
@@ -73,6 +73,11 @@ claim about behaviour, check it against the app:
    `src/theme/MDXComponents.tsx`. Links leaving this origin open in a new tab; only the owner's own
    products and profiles are do-follow. It is a host **and path** question — `github.com/aoneahsan/*` is
    his, the rest of `github.com` is not. A React page outside MDX applies it by hand (`src/pages/sitemap.tsx`).
+   Every link that opens a new tab also carries the visually hidden "(opens in a new tab)"
+   (`src/components/NewTabHint.tsx`, the same words as the website); the theme's own external-link icon
+   (`src/theme/Icon/ExternalLink`) and "Edit this page" (`src/theme/EditThisPage`) are ejected only to carry
+   it. A hand-built outbound link that leaves it out is the regression to look for: on 2026-11-07 the built
+   site had 456 `target=_blank` links and 456 hints.
 
 ## Domain and deploy
 
@@ -115,7 +120,7 @@ site a second path.
 
 `yarn typecheck && yarn build` — **zero warnings**. The build **is** the link checker:
 `onBrokenLinks`, `onBrokenAnchors`, `onDuplicateRoutes` and both markdown hooks are all `'throw'`.
-`yarn serve` afterwards to check the real build. Test light + dark and 320→1920.
+`yarn serve` afterwards to check the real build (port 5906, registered; `yarn start` uses it too). Test light + dark and 320→1920.
 
 The `site-index` plugin fails closed — it throws when the page or release list is empty, so a generator that
 silently emits nothing cannot pass.

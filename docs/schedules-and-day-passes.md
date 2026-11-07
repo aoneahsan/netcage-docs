@@ -57,14 +57,19 @@ At a start boundary the target's apps join the caged set; at an end boundary the
 way NetCage recomputes the whole set and re-establishes the tunnel in place. The service is not
 restarted, and apps that were already caged are not disturbed.
 
-The boundary itself is scheduled as an alarm. With **Precise timing** granted (see
-[Install and setup](./install-and-setup.md#when-should-i-use-precise-timing)) it fires at the exact minute,
-even while the phone is asleep. Without Precise timing, WorkManager and an inexact alarm provide the
-fallback, so the boundary may run later than the selected minute. When the fallback runs, it evaluates the
+Shortly before a boundary, Android may show a silent notification titled **NetCage** that reads *Tap to
+manage*. That is NetCage already awake. It holds no exact-alarm permission, so an inexact alarm wakes it
+early, and each wake lands closer than the last; for at most the last 10 minutes, a short foreground service
+keeps the processor awake and makes the change with its own timer.
+
+That service starts only once Android's VPN consent exists, and without the
+[battery exemption](./install-and-setup.md#how-do-i-keep-the-cage-active-in-the-background) Android may
+refuse to start it from the background. In either case a regular alarm at the boundary, or a WorkManager
+job, stands behind it, so the boundary may run later than the selected minute. Whichever path runs reads the
 current clock and recomputes the whole caged set instead of replaying an old prediction.
 
-Only the single earliest deadline is ever scheduled at once, and it is re-armed after each one, so
-a phone with many schedules does not wake up repeatedly.
+Only the single earliest deadline is armed, and it is re-armed after each one, so a phone with many
+schedules still runs one chain of wakes at a time.
 
 Deadlines are also honoured while the phone is still locked after a reboot.
 
@@ -100,7 +105,7 @@ offers **Resume** to end it early.
 A pause leaves every selection, profile and schedule exactly as it is. So does turning the master
 switch off, which is the indefinite version of the same idea.
 
-:::note Neither day passes nor the pause are part of your configuration
+:::note[Neither day passes nor the pause are part of your configuration]
 Both are live deadlines measured against this phone's clock, so neither is exported, imported or stored
 in account backup. Restoring “released until 14:20” after that moment could release an app unexpectedly.
 :::

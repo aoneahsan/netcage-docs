@@ -18,7 +18,7 @@ workflow.
 
 ```bash
 yarn install
-yarn start          # dev server with hot reload
+yarn start          # dev server with hot reload, http://localhost:5906
 yarn build          # production build — this is the gate
 yarn serve          # serve the real build, which is what gets deployed
 yarn typecheck      # tsc

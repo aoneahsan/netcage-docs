@@ -49,7 +49,7 @@ Activating asks how it should combine with what is already caged:
 The confirmation names the profile — *Activated Evening* — and offers **Undo**, which restores the
 selection exactly as it was before.
 
-:::note Activation touches only your manual selection
+:::note[Activation touches only your manual selection]
 Schedules contribute their apps independently. Activating a profile can never silently cancel a
 schedule, and a schedule can never overwrite the selection you made by hand.
 :::

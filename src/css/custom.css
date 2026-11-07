@@ -102,6 +102,20 @@
   text-underline-offset: 0.18em;
 }
 
+/* Text for screen readers only, such as the new-tab hint inside an outbound link
+   (`src/components/NewTabHint.tsx`). It stays in the accessibility tree and out of the layout. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* The search box's "ctrl K" hint used the stock light grey on a light grey key (1.51:1). */
 .navbar kbd {
   color: var(--ifm-color-emphasis-800);

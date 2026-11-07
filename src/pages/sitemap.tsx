@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import type {SiteIndex} from '../../plugins/site-index';
+import NewTabHint from '@site/src/components/NewTabHint';
 import {externalLinkPolicy} from '@site/src/lib/linkPolicy';
 
 /**
@@ -57,6 +58,7 @@ export default function SitemapPage(): React.ReactElement {
               rel={websitePolicy.rel}
             >
               The NetCage website
+              <NewTabHint />
             </a>
           </li>
           <li>
