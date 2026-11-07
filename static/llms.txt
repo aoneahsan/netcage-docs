@@ -41,6 +41,7 @@ foreground VPN service while a cage is active, so NetCage does not promise an ex
 - [Settings and your data](https://netcage-docs.aoneahsan.com/settings-and-data)
 - [Privacy](https://netcage-docs.aoneahsan.com/privacy)
 - [Limitations](https://netcage-docs.aoneahsan.com/limitations)
+- [Coming from another firewall](https://netcage-docs.aoneahsan.com/compare): eleven Android firewalls and filters beside NetCage, with dated facts and sources
 - [FAQ](https://netcage-docs.aoneahsan.com/faq)
 - [Changelog](https://netcage-docs.aoneahsan.com/changelog)
 - [For agents](https://netcage-docs.aoneahsan.com/for-agents)

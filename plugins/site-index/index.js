@@ -22,25 +22,31 @@ function field(block, name) {
   return match ? match[1].trim().replace(/^["']|["']$/g, '') : '';
 }
 
-function readPages(docsDir) {
-  return fs
-    .readdirSync(docsDir)
-    .filter((name) => name.endsWith('.md'))
-    .map((name) => {
+function readPages(docsDir, prefix = '') {
+  const entries = fs.readdirSync(docsDir, {withFileTypes: true});
+  // One level of folders: `docs/compare/` is a sidebar category whose routes carry its name.
+  const nested = entries
+    .filter((entry) => entry.isDirectory() && prefix === '')
+    .flatMap((entry) => readPages(path.join(docsDir, entry.name), `/${entry.name}`));
+  const pages = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+    .map((entry) => {
+      const name = entry.name;
       const raw = fs.readFileSync(path.join(docsDir, name), 'utf8');
       const block = FRONT_MATTER.exec(raw)?.[1] ?? '';
       const base = name.replace(/\.md$/, '');
       const slugField = field(block, 'slug');
       return {
         // `index.md` carries `slug: /`, and routeBasePath is '/', so the route is the bare name.
-        slug: slugField || (base === 'index' ? '/' : `/${base}`),
+        slug: slugField || (base === 'index' ? prefix || '/' : `${prefix}/${base}`),
         title: field(block, 'title') || base,
         description: field(block, 'description'),
         tags: (field(block, 'tags').replace(/^\[|\]$/g, '').split(',').map((t) => t.trim()).filter(Boolean)),
-        position: Number(field(block, 'sidebar_position') || '999'),
+        // A folder's own positions restart at 1; its pages list after the top-level ones.
+        position: Number(field(block, 'sidebar_position') || '999') + (prefix === '' ? 0 : 100),
       };
-    })
-    .sort((a, b) => a.position - b.position);
+    });
+  return [...pages, ...nested].sort((a, b) => a.position - b.position);
 }
 
 /**

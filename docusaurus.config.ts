@@ -239,6 +239,7 @@ const config: Config = {
             {label: 'How it works', to: '/how-it-works'},
             {label: 'Privacy', to: '/privacy'},
             {label: 'Limitations', to: '/limitations'},
+            {label: 'Coming from another firewall', to: '/compare'},
           ],
         },
         {
