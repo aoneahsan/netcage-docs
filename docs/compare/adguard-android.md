@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+AdGuard is for filtering ads and trackers out of apps you keep using, on several devices under one licence. NetCage refuses a chosen app outright instead of filtering it, with no certificate to install and no licence to carry.
 
-## How does AdGuard differ from NetCage?
+NetCage isn’t something you can install today, though; no store lists it and nothing is published for download.
 
-AdGuard filters ads and trackers out of apps you keep using, and it’s sold as a licence across several devices. NetCage isn’t an ad blocker and doesn’t filter anything. It refuses a chosen app’s connections and leaves every other app alone, with no certificate to install and no lists to update.
+## Does NetCage filter like AdGuard?
+
+It doesn’t filter at all. AdGuard cleans what an app shows while the app stays online. NetCage refuses a chosen app’s connections and leaves every other app alone, with no lists to update. Ads in an app you leave online stay where they are.
 
 AdGuard’s local VPN and NetCage want the same slot, and Android allows one VPN at a time.
 
-Choose AdGuard if you want ads and trackers filtered out of apps you keep using, across several devices on one licence.
+## What should an AdGuard user read first?
 
-Choose NetCage if you want a chosen app refused outright rather than filtered, with no certificate installed and no licence to carry.
-
-## What should I read first?
-
-NetCage imports nothing from AdGuard, so there’s no settings file to bring across. You’d choose your apps again.
+None of your AdGuard filters come across; NetCage imports nothing from it. Read these to see the different job:
 
 - [How it works](../how-it-works.md): refusing an app, which isn’t the same job as filtering one.
 - [Caging apps](../caging-apps.md): what you do in place of setting up filters.
@@ -30,16 +28,11 @@ NetCage imports nothing from AdGuard, so there’s no settings file to bring acr
 
 ## What does each one state?
 
-Checked 7 November 2026. The AdGuard column comes from the linked pages, and NetCage’s from its code.
+Checked 7 November 2026. The AdGuard column comes from the linked pages, and NetCage’s from its code. AdGuard’s pages stated one of these six rows. They didn’t say whether it blocks one chosen app’s internet, keeps blocking in the background, is open source, shows ads or has in-app purchases, so those rows are hidden rather than marked no.
 
 | Feature | AdGuard Ad Blocker for Android | NetCage |
 |---|---|---|
-| Blocks one chosen app’s internet | Not stated on the pages we checked | Yes |
-| Keeps blocking while the app is in the background | Not stated on the pages we checked | Yes |
 | Needs no root | Yes ([adguard.com](https://adguard.com/en/adguard-android/overview.html)) | Yes |
-| Open source | Not stated on the pages we checked | No |
-| Shows ads | Not stated on the pages we checked | Partly. Promotions for the developer’s own apps only, no ad network |
-| In-app purchases | Not stated on the pages we checked | No |
 
 ## What does AdGuard cost?
 
@@ -49,7 +42,7 @@ Checked 7 November 2026. The AdGuard column comes from the linked pages, and Net
 | Licence, lower tier shown | $2.49 a month | Billed annually, VAT may apply. The page sells a Personal licence (3 devices) and a Family licence (9 devices) and also lifetime licences; the tier label beside this figure was not legible in the text we read | [adguard.com](https://adguard.com/en/license.html) | 7 November 2026 |
 | Licence, higher tier shown | $5.49 a month | Billed annually, VAT may apply, shown beside a crossed-out $7.47 /mo; tier label not legible in the text we read | [adguard.com](https://adguard.com/en/license.html) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage has no price on record to compare.
 
 ## Where can I check this?
 

@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+If you want Tor, encrypted DNS and I2P routing, with a firewall as one part of the package, InviZible Pro is built for that. NetCage is for not routing your traffic anywhere: caged connections end on this phone, and everything else takes its normal path.
 
-## How does InviZible Pro differ from NetCage?
+For now that’s a comparison only, since NetCage has neither a store listing nor a download.
 
-InviZible Pro routes traffic through Tor, DNSCrypt and I2P, and its firewall is one part of that. NetCage routes nothing anywhere. A caged app’s connection ends on the phone, and every other app takes its normal path, so NetCage gives you no anonymity or encrypted DNS at all.
+## Does NetCage do any of InviZible Pro’s routing?
 
-Android allows one VPN at a time. If InviZible Pro holds that slot on your phone, NetCage can’t hold it as well.
+None of it. InviZible Pro sends traffic through Tor, DNSCrypt and I2P; NetCage routes nothing anywhere. A caged app’s connection ends on the phone and every other app goes out as usual, so NetCage gives you no anonymity and no encrypted DNS.
 
-Choose InviZible Pro if you want Tor, encrypted DNS and I2P routing and the firewall is one part of that.
+And if InviZible Pro is using Android’s VPN slot, NetCage can’t take it too; Android allows one VPN at a time.
 
-Choose NetCage if you do not want your traffic routed anywhere; caged connections end on this phone and everything else takes its normal path.
+## What should an InviZible Pro user read here?
 
-## What should I read first?
-
-NetCage imports nothing from InviZible Pro, so there’s no settings file to bring across. You’d choose your apps again.
+Nothing transfers from InviZible Pro, so you’d choose your apps again. Read these with the routing question in mind:
 
 - [How it works](../how-it-works.md): why no traffic leaves through NetCage.
 - [Caging apps](../caging-apps.md): the switch and how to find an app quickly.
@@ -47,7 +45,7 @@ Checked 7 November 2026. The InviZible Pro column comes from the linked pages, a
 |---|---|---|---|---|
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $6.99 per item | [play.google.com](https://play.google.com/store/apps/details?id=pan.alexander.tordnscrypt.gp) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage has no published price.
 
 ## Where can I check this?
 

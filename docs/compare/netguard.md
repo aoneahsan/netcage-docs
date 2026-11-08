@@ -8,25 +8,23 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+NetGuard is the one to keep if you want an open-source firewall you can get today, from Google Play or F-Droid, with optional per-address filtering and traffic logs. NetCage is narrower: one switch per app and nothing to tune. A caged app is refused on this phone, in the foreground and the background, and the rest of your phone stays online.
 
-## How does NetGuard differ from NetCage?
+You can’t switch yet. NetCage has no store listing and no public download, so this page stops at reading, not installing.
 
-Both decide internet access app by app without root. NetGuard goes further inside an app: its paid features add filtering by address, and it can keep traffic logs. NetCage has no address rules and keeps no traffic log. A caged app is refused outright and an uncaged app isn’t touched.
+## Where does NetGuard go further?
 
-Android allows one VPN at a time. If NetGuard holds that slot on your phone, NetCage can’t hold it as well.
+Inside an app. Both decide internet access app by app without root, but NetGuard’s paid features add filtering by address, and it can keep traffic logs. NetCage has no address rules and keeps no traffic log: a caged app is refused outright and an uncaged app isn’t touched.
 
-Choose NetGuard if you want an open-source firewall that is on Google Play and F-Droid today, with optional per-address filtering and traffic logs.
+Android gives its VPN slot to one app at a time. If NetGuard has it on your phone, NetCage can’t run beside it.
 
-Choose NetCage if you want one switch per app and nothing to tune: the caged app is refused on this phone, in the foreground and the background, and the rest of your phone stays online.
+## Which pages here map to NetGuard?
 
-## What should I read first?
+NetCage imports none of NetGuard’s settings, so you pick your apps again. These three pages cover what changes:
 
-NetCage imports nothing from NetGuard, so there’s no settings file to bring across. You’d choose your apps again.
-
-- [How it works](../how-it-works.md): the sinkhole tunnel, which is the part closest to what you already know.
-- [Caging apps](../caging-apps.md): the list and the one switch.
-- [Limitations](../limitations.md): what you’d give up by having no address rules.
+- [How it works](../how-it-works.md): the sinkhole tunnel, the part closest to what you already know from NetGuard.
+- [Caging apps](../caging-apps.md): the list and the switch, with Wi-Fi and mobile rules beside it as NetGuard has.
+- [Limitations](../limitations.md): what you give up with no address rules.
 
 ## What does each one state?
 
@@ -48,7 +46,7 @@ Checked 7 November 2026. The NetGuard column comes from the linked pages, and Ne
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $8.49 per item | [play.google.com](https://play.google.com/store/apps/details?id=eu.faircode.netguard) | 7 November 2026 |
 | Pro features outside Google Play | €0.10 once | A one-time donation of EUR 0.10 or more unlocks the pro features once; EUR 7 or more unlocks them on every device you own | [netguard.me](https://netguard.me/) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage has no published price to set beside these.
 
 ## Where can I check this?
 

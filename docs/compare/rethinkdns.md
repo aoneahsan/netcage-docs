@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+Rethink suits you if you want encrypted DNS, blocklists and WireGuard in the same app, and you’re happy to configure them. NetCage suits you if you only want to take the internet away from chosen apps and leave DNS, VPN servers and blocklists out of it.
 
-## How does Rethink differ from NetCage?
+Moving isn’t possible yet in any case: NetCage isn’t in any store and has no public download.
 
-Rethink is three tools in one app: an encrypted DNS resolver, a firewall and WireGuard connections. NetCage is one of those, and a narrower one. It sets no DNS server, connects to no VPN server and has no block lists. If you use Rethink for its DNS or WireGuard, NetCage replaces none of that.
+## What would NetCage replace in Rethink?
 
-Android allows one VPN at a time. If Rethink holds that slot on your phone, NetCage can’t hold it as well.
+One of its three parts. Rethink combines an encrypted DNS resolver, a firewall and WireGuard connections; NetCage is a per-app firewall only, and a narrower one than Rethink’s. It sets no DNS server, connects to no VPN server and has no block lists. If you use Rethink for DNS or WireGuard, nothing here takes that over.
 
-Choose Rethink if you also want encrypted DNS, blocklists and WireGuard in the same app, and you are happy to configure them.
+Running both may not work either. Android allows one VPN at a time, so while Rethink holds that slot, NetCage can’t.
 
-Choose NetCage if you only want to take the internet away from chosen apps and leave DNS, VPN servers and blocklists out of it.
+## Which pages answer a Rethink user’s questions?
 
-## What should I read first?
-
-NetCage imports nothing from Rethink, so there’s no settings file to bring across. You’d choose your apps again.
+Rethink settings don’t carry over, so you’d choose your apps again. Start with DNS, because that’s the habit that changes most:
 
 - [What happens to DNS?](../limitations.md#what-happens-to-dns): the first question if you’re used to choosing a resolver.
 - [Caging apps](../caging-apps.md): the per-app switch, which is all NetCage has.
@@ -47,7 +45,7 @@ Checked 7 November 2026. The Rethink column comes from the linked pages, and Net
 |---|---|---|---|---|
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $48.99 per item. The site says the app is free and open source and the cloud DNS service will have a free and a paid tier | [play.google.com](https://play.google.com/store/apps/details?id=com.celzero.bravedns) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage doesn’t publish a price.
 
 ## Where can I check this?
 

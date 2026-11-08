@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+AFWall+ is the right tool on a rooted phone: iptables rules, profiles and Tasker hooks, without taking Android’s VPN slot. NetCage is for a phone that isn’t rooted. Its supported engine uses the VPN slot and asks for nothing more.
 
-## How does AFWall+ differ from NetCage?
+NetCage can’t be installed today. There’s no store listing and no public download, so treat this page as reading for later.
 
-AFWall+ writes iptables rules and needs a rooted phone. It leaves Android’s VPN slot free, which NetCage does not. NetCage’s supported engine uses that slot and needs no root. It does carry a root engine, but that one is opt-in, experimental and has never run on rooted hardware, so don’t plan around it.
+## What do you give up by leaving iptables?
 
-This is the real cost of moving: with NetCage up, you can’t run any other VPN, and AFWall+ never asked you to choose.
+The free VPN slot. AFWall+ writes iptables rules on a rooted phone and leaves that slot alone; NetCage’s supported engine takes it and needs no root. With NetCage up you can’t run any other VPN, and AFWall+ never asked you to make that choice.
 
-Choose AFWall+ if your phone is rooted and you want iptables rules, profiles and Tasker hooks without taking Android’s VPN slot.
+NetCage does carry a root engine, but it’s opt-in, experimental and has never run on rooted hardware. Don’t plan a move around it.
 
-Choose NetCage if your phone is not rooted; NetCage’s supported engine uses the VPN slot and asks for nothing more.
+## Where do your AFWall+ habits land?
 
-## What should I read first?
-
-NetCage imports nothing from AFWall+, so there’s no settings file to bring across. You’d choose your apps again.
+Your rules stay in AFWall+, since NetCage has no importer for them. These pages show what you’d set up in their place:
 
 - [Why can only one VPN run?](../limitations.md#why-can-only-one-vpn-run): the trade you’d be making for not needing root.
 - [How it works](../how-it-works.md): what replaces iptables here.
@@ -47,7 +45,7 @@ Checked 7 November 2026. The AFWall+ column comes from the linked pages, and Net
 |---|---|---|---|---|
 | App | Free | Free install on Google Play with no ads or in-app purchase label; the GitHub README offers a separate paid unlocker key on Google Play, price not confirmed on the pages we read | [play.google.com](https://play.google.com/store/apps/details?id=dev.ukanth.ufirewall) | 7 November 2026 |
 
-NetCage publishes no price.
+There’s no NetCage price to compare against.
 
 ## Where can I check this?
 

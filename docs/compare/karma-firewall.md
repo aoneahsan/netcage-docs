@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+Karma Firewall suits you if you want a tiny open-source app from F-Droid that holds no internet permission of its own. NetCage is the bigger app: Wi-Fi and mobile rules, schedules, shareable Cage Packs, and a foreground service that keeps the cage up after a reboot.
 
-## How does Karma Firewall differ from NetCage?
+It’s also the one you can’t get yet, with no store listing and nothing to download.
 
-Both are about picking apps, with no IP or port rules to learn. Karma Firewall stops there. NetCage adds Wi-Fi and mobile rules, schedules, profiles and Cage Packs, and it has optional online features for accounts, backup and support, so it’s a bigger app with more to look at.
+## How much more is there to NetCage?
 
-Android allows one VPN at a time. If Karma Firewall holds that slot on your phone, NetCage can’t hold it as well.
+The core idea is shared. In both you pick apps, with no IP or port rules to learn, and Karma Firewall stops there. NetCage adds rules per network, schedules, profiles and Cage Packs, plus optional online features for accounts, backup and support. That makes more to look at, and an app that can connect for its own optional features where Karma Firewall holds no internet permission.
 
-Choose Karma Firewall if you want a tiny open-source app from F-Droid that holds no internet permission of its own.
+Only one app can hold Android’s VPN slot. If Karma Firewall has it, NetCage can’t run as well.
 
-Choose NetCage if you want Wi-Fi and mobile rules, schedules, shareable Cage Packs and a foreground service that keeps the cage up after a reboot.
+## Which pages cover the extras?
 
-## What should I read first?
-
-NetCage imports nothing from Karma Firewall, so there’s no settings file to bring across. You’d choose your apps again.
+Your Karma list doesn’t transfer, so you’d pick the apps again. Start from the part you know and work outwards:
 
 - [Caging apps](../caging-apps.md): the same idea you already know.
 - [Profiles](../profiles.md): grouping apps under one name.
@@ -30,16 +28,12 @@ NetCage imports nothing from Karma Firewall, so there’s no settings file to br
 
 ## What does each one state?
 
-Checked 7 November 2026. The Karma Firewall column comes from the linked pages, and NetCage’s from its code.
+Checked 7 November 2026. The Karma Firewall column comes from the linked pages, and NetCage’s from its code. Karma Firewall’s pages didn’t say whether it keeps blocking in the background, needs no root, shows ads or has in-app purchases. Those four rows are hidden, and silence there isn’t a no.
 
 | Feature | Karma Firewall | NetCage |
 |---|---|---|
 | Blocks one chosen app’s internet | Yes ([f-droid.org](https://f-droid.org/en/packages/net.stargw.fok/)) | Yes |
-| Keeps blocking while the app is in the background | Not stated on the pages we checked | Yes |
-| Needs no root | Not stated on the pages we checked | Yes |
 | Open source | Yes ([f-droid.org](https://f-droid.org/en/packages/net.stargw.fok/)) | No |
-| Shows ads | Not stated on the pages we checked | Partly. Promotions for the developer’s own apps only, no ad network |
-| In-app purchases | Not stated on the pages we checked | No |
 
 ## What does Karma Firewall cost?
 
@@ -47,7 +41,7 @@ Checked 7 November 2026. The Karma Firewall column comes from the linked pages, 
 |---|---|---|---|---|
 | App | Free | Free download from F-Droid, GitHub releases or the developer’s site; the developer accepts a voluntary coffee donation | [f-droid.org](https://f-droid.org/en/packages/net.stargw.fok/) | 7 November 2026 |
 
-NetCage publishes no price.
+No NetCage price has been published.
 
 ## Where can I check this?
 

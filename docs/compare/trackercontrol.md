@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+TrackerControl is for watching which companies an app talks to and blocking the trackers while the app stays online. NetCage is for taking the whole app offline instead. It doesn’t filter inside an app you leave online.
 
-## How does TrackerControl differ from NetCage?
+You can’t try that today; NetCage isn’t listed in a store or offered for download.
 
-TrackerControl looks inside an app’s traffic to show which companies it contacts, and blocks those while the app stays online. NetCage can’t show you any of that. It takes the whole app offline or leaves it alone, and it doesn’t resolve a hostname or keep a record of what an app tried to reach.
+## What would you stop seeing?
 
-Both use a local VPN, and Android allows one at a time, so the two can’t run together.
+Everything TrackerControl shows you. It looks inside an app’s traffic to name the companies it contacts; NetCage doesn’t resolve a hostname or keep a record of what an app tried to reach. An app is either caged and offline, or left alone.
 
-Choose TrackerControl if you want to see which companies an app talks to and block the trackers while the app stays online.
+TrackerControl runs as a local VPN too, so the two would compete for Android’s single VPN slot.
 
-Choose NetCage if you want the whole app offline rather than a list of trackers; NetCage does not filter inside an app you leave online.
+## Which pages explain the difference?
 
-## What should I read first?
-
-NetCage imports nothing from TrackerControl, so there’s no settings file to bring across. You’d choose your apps again.
+There’s no tracker list to bring over; NetCage imports nothing from TrackerControl, and you’d pick whole apps again. Read these in order:
 
 - [How it works](../how-it-works.md): what the tunnel reads, which is much less than you may be used to.
 - [Caging apps](../caging-apps.md): choosing an app and closing its gate.
@@ -47,7 +45,7 @@ Checked 7 November 2026. The TrackerControl column comes from the linked pages, 
 |---|---|---|---|---|
 | App | Free | F-Droid says it will always be free and open source; the Google Play edition is TrackerControl Slim, free install with no ads or in-app purchase label | [f-droid.org](https://f-droid.org/en/packages/net.kollnig.missioncontrol.fdroid/) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage hasn’t published a price.
 
 ## Where can I check this?
 

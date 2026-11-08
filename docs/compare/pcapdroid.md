@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+PCAPdroid is the tool for seeing packets: captures, TLS decryption and PCAP exports, with app blocking as a paid extra on top. NetCage is for people who don’t want to inspect anything. It reads only the header it needs to send a refusal and never records your traffic.
 
-## How does PCAPdroid differ from NetCage?
+You can’t install NetCage today. No store carries it and there’s no public download.
 
-PCAPdroid is for looking at traffic: captures, TLS decryption and PCAP exports, with blocking as a paid extra. NetCage is the opposite kind of tool. It reads only the header fields it needs to address a refusal, in memory, and it has no capture, no log and no export of traffic at all.
+## What does NetCage look at, compared with PCAPdroid?
 
-Android allows one VPN at a time. If PCAPdroid holds that slot on your phone, NetCage can’t hold it as well.
+Almost nothing. It reads only the header fields it needs to address a refusal, in memory, and has no capture, no log and no export of traffic. If you open PCAPdroid to understand what an app is doing, NetCage won’t tell you.
 
-Choose PCAPdroid if you want to see the packets, decrypt TLS and export PCAP files, and block apps as a paid extra on top.
+There’s one VPN slot on Android. With PCAPdroid in it, NetCage stays off.
 
-Choose NetCage if you do not want to inspect anything; NetCage reads only the header it needs to send a refusal and never records your traffic.
+## Which pages matter to a PCAPdroid user?
 
-## What should I read first?
-
-NetCage imports nothing from PCAPdroid, so there’s no settings file to bring across. You’d choose your apps again.
+No capture settings carry over; NetCage imports nothing from PCAPdroid. You’ll want the precise answers first:
 
 - [How it works](../how-it-works.md): exactly which header fields the tunnel reads.
 - [Limitations](../limitations.md): the system networking and shared user ID cases.
@@ -47,7 +45,7 @@ Checked 7 November 2026. The PCAPdroid column comes from the linked pages, and N
 |---|---|---|---|---|
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $2.99 - $11.99 per item. The firewall is listed as a paid feature | [play.google.com](https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage hasn’t set a public price.
 
 ## Where can I check this?
 

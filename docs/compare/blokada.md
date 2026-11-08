@@ -8,21 +8,19 @@ last_update:
   date: 2026-11-07
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so this page ends without an install step. It covers how the two apps differ and which pages here to read first.
+Blokada is what you want if the goal is ads and trackers removed across every app and browser, with a family edition on top. NetCage does something else: it takes a chosen app fully offline by closing its route, and leaves ad lists and content filtering to apps like Blokada.
 
-## How does Blokada differ from NetCage?
+Either way, there’s no NetCage to install today: no store listing, no download.
 
-Blokada removes ads and trackers across your apps and browsers, with a free app and subscription editions on top. NetCage isn’t an ad blocker and doesn’t do that job. It has no lists and no content filtering, and an app you leave online keeps everything it had. If you want ads gone while you keep using an app, stay with Blokada.
+## Is NetCage a replacement for Blokada?
 
-Android allows one VPN at a time. If Blokada holds that slot on your phone, NetCage can’t hold it as well.
+No. Blokada filters what an app loads while you keep using it; NetCage has no lists and filters no content, and an app you leave online keeps everything it had. If you want ads gone from apps you still use, stay with Blokada.
 
-Choose Blokada if what you want is ads and trackers blocked across every app and browser, with a family edition on top.
+Android lets one app hold the VPN slot at a time. Where Blokada holds it on your phone, NetCage can’t start until it’s free.
 
-Choose NetCage if you want a chosen app fully offline; NetCage closes the app’s route and leaves ad lists and content filtering to others.
+## What should a Blokada user read first?
 
-## What should I read first?
-
-NetCage imports nothing from Blokada, so there’s no settings file to bring across. You’d choose your apps again.
+NetCage imports nothing from Blokada. There are no lists to move, only apps to choose:
 
 - [How it works](../how-it-works.md): the difference between refusing an app and filtering it.
 - [Caging apps](../caging-apps.md): what taking one app offline looks like.
@@ -30,16 +28,12 @@ NetCage imports nothing from Blokada, so there’s no settings file to bring acr
 
 ## What does each one state?
 
-Checked 7 November 2026. The Blokada column comes from the linked pages, and NetCage’s from its code.
+Checked 7 November 2026. The Blokada column comes from the linked pages, and NetCage’s from its code. Blokada’s pages didn’t say whether it blocks one chosen app’s internet, keeps blocking in the background, shows ads or has in-app purchases, so those four rows are left out; a page that doesn’t say isn’t saying no.
 
 | Feature | Blokada | NetCage |
 |---|---|---|
-| Blocks one chosen app’s internet | Not stated on the pages we checked | Yes |
-| Keeps blocking while the app is in the background | Not stated on the pages we checked | Yes |
 | Needs no root | Yes ([blokada.org](https://blokada.org/)) | Yes |
 | Open source | Yes ([blokada.org](https://blokada.org/)) | No |
-| Shows ads | Not stated on the pages we checked | Partly. Promotions for the developer’s own apps only, no ad network |
-| In-app purchases | Not stated on the pages we checked | No |
 
 ## What does Blokada cost?
 
@@ -48,7 +42,7 @@ Checked 7 November 2026. The Blokada column comes from the linked pages, and Net
 | Blokada 5 for Android | Free | Free | [blokada.org](https://blokada.org/faq/#what-does-blokada-cost) | 7 November 2026 |
 | Blokada 6, Blokada Family, Blokada Plus | No figure published | Quote only: subscription with a 7 day free trial; prices differ by country and store and are shown before you pay | [blokada.org](https://blokada.org/faq/#what-does-blokada-cost) | 7 November 2026 |
 
-NetCage publishes no price.
+NetCage doesn’t publish one.
 
 ## Where can I check this?
 
