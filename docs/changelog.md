@@ -24,9 +24,10 @@ editable profile.
 - Contact support in the app and read the reply there
 
 The release removes the redundant `specialUse` foreground-service type and keeps `systemExempted`,
-Android's documented type for the configured VPN service. Usage analytics, crash reporting and
-announcements start off. Clarity records only approved replay-safe screens after analytics consent;
-Settings, app lists, app details, support and Cage Pack moderation remain excluded.
+Android's documented type for the configured VPN service. Usage analytics and crash reporting are on from
+the first launch, with no switch to turn them off, and NetCage says so once. Announcements start off.
+Clarity records only approved replay-safe screens; Settings, app lists, app details, support and Cage Pack
+moderation remain excluded.
 
 In more detail:
 
@@ -52,8 +53,8 @@ In more detail:
 - A promotion for another app by the same developer on the list and detail screens. It is bundled
   in the app, so it makes no network request and reads no advertising identifier.
 - In-app updates from Play, and an in-app review prompt.
-- Crash reporting, usage analytics and announcements, each off by default and behind its own switch in
-  **Settings ▸ Privacy**.
+- Usage analytics and crash reporting on from the first launch, with no switch; announcements off by
+  default, behind their own switch in **Settings ▸ Privacy**.
 
 The root engine remains opt-in and labelled experimental. It has never run on rooted hardware.
 

@@ -47,7 +47,7 @@ Do not write any of these about NetCage. Each is false.
 | "No packet fields are read" | NetCage examines destination and transport-header fields in memory to address the refusal; it does not inspect payloads or hostnames |
 | "A VPN service" / "routes traffic through a server" | There is no server at the far end. The tunnel is a sinkhole; that absence is the mechanism |
 | "Requires root" | It does not. The root engine is opt-in and has never run on rooted hardware |
-| "Nothing leaves the device" | Caged traffic is refused locally, but NetCage can connect for optional accounts, backup, support, Cage Packs, telemetry, announcements and Play updates |
+| "Nothing leaves the device" | Caged traffic is refused locally, but NetCage connects for its own usage analytics and crash reports, and can connect for optional accounts, backup, support, Cage Packs, announcements and Play updates |
 | "Every feature works signed out" | The firewall and Cage Pack import and reporting work signed out; backup, support replies and pack publishing need an account |
 | "Any installed app can be caged" | The picker contains enabled, currently installed apps with internet capability; it excludes NetCage, disabled or archived apps and packages without `INTERNET`, while system apps are opt-in |
 | "No performance or battery cost" | Apps outside caged Android UIDs bypass the tunnel, but Android still runs a foreground VPN service while the cage is active |

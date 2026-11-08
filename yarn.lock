@@ -10038,7 +10038,9 @@ __metadata:
     "@docusaurus/core": "npm:3.10.2"
     "@docusaurus/faster": "npm:3.10.2"
     "@docusaurus/module-type-aliases": "npm:3.10.2"
+    "@docusaurus/plugin-content-docs": "npm:3.10.2"
     "@docusaurus/preset-classic": "npm:3.10.2"
+    "@docusaurus/theme-common": "npm:3.10.2"
     "@docusaurus/tsconfig": "npm:3.10.2"
     "@docusaurus/types": "npm:3.10.2"
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.3"
@@ -10049,6 +10051,7 @@ __metadata:
     prism-react-renderer: "npm:^2.3.0"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    strata-storage: "npm:3.1.4"
     typescript: "npm:~6.0.2"
   languageName: unknown
   linkType: soft
@@ -12612,6 +12615,35 @@ __metadata:
   version: 3.10.0
   resolution: "std-env@npm:3.10.0"
   checksum: 10c0/1814927a45004d36dde6707eaf17552a546769bc79a6421be2c16ce77d238158dfe5de30910b78ec30d95135cc1c59ea73ee22d2ca170f8b9753f84da34c427f
+  languageName: node
+  linkType: hard
+
+"strata-storage@npm:3.1.4":
+  version: 3.1.4
+  resolution: "strata-storage@npm:3.1.4"
+  peerDependencies:
+    "@angular/core": ">=21.0.6"
+    "@angular/forms": ">=21.0.6"
+    "@capacitor/core": ">=8.0.0"
+    firebase: ">=10.0.0"
+    react: ">=19.2.3"
+    vue: ">=3.5.26"
+  peerDependenciesMeta:
+    "@angular/core":
+      optional: true
+    "@angular/forms":
+      optional: true
+    "@capacitor/core":
+      optional: true
+    firebase:
+      optional: true
+    react:
+      optional: true
+    vue:
+      optional: true
+  bin:
+    strata-storage: bin/cli.js
+  checksum: 10c0/22b18c77a57c26e1fe4afd5141a27e47a1ddcab98f7c51985e69967416b50392a32eeb04d2cf93bdbad19db4620c874072a183365b444fd9d84a3edfae66728e
   languageName: node
   linkType: hard
 
