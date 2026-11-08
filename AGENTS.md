@@ -2,7 +2,7 @@
 
 > Mirror: `CLAUDE.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-11-07
+**Last Updated:** 2026-11-08
 
 ## Upcoming release documentation — 2026-09-11
 
@@ -99,8 +99,12 @@ destination off and costs the reader zero bytes; with none set this module does 
 *flag* is still `false` when the first route update fires — and that is the one page view every visitor
 generates. Measured here on 2026-09-05: GA4 and Clarity both landed on a live page load while Amplitude
 landed **nothing**, then **two** once the promise was held and the early view queued behind it.
-Collection here is disclosed in `docs/privacy.md` → "What does this documentation site collect?"; if this
-module gains or loses a destination, that section moves in the same commit.
+Collection here is disclosed in `docs/privacy.md` → "What does this documentation site collect?" and, since
+2026-11-08, in the website's binding policy (`netcage-web` keys `privacy.docsSiteHeading` / `privacy.docsSiteBody`).
+If this module gains or loses a destination, both move in the same task: no test sees across the two builds.
+The first visit shows the quiet told-once bar (`src/components/FirstVisitNotice`, mounted by `src/theme/Root.tsx`):
+`role="status"`, never a dialog, marked seen through strata-storage the moment it shows (`src/lib/storage.ts`, the one
+thing here that touches web storage), gone after 10 seconds unless hovered or focused.
 
 🔴 **`i18n.defaultLocale` is `en-GB`, and it is a DATE setting as much as a language one.** That tag
 is what Docusaurus hands `Intl`, so a bare `en` resolved to US conventions and every page footer read
