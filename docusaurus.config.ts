@@ -132,7 +132,11 @@ const config: Config = {
         language: ['en'],
         indexBlog: false,
         docsRouteBasePath: '/',
-        highlightSearchTermsOnTargetPage: true,
+        // 🔴 Stays false. Highlighting put every search term into the opened page's URL as
+        // `?_highlight=`, where analytics and session recordings read it. The ejected SearchBar and
+        // SearchPage in src/theme keep the query out of URLs altogether and no longer read this
+        // option, so turning it back on would only bundle mark.js (2026-11-08).
+        highlightSearchTermsOnTargetPage: false,
       },
     ],
   ],
