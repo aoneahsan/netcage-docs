@@ -63,7 +63,7 @@ claim about behaviour, check it against the app:
 - **Never frame NetCage as an ad blocker or content blocker** — Play's Device and Network Abuse policy. It
   does no domain, hosts, DNS or content filtering. `docs/for-agents.md` holds the correction table.
 
-## Two mechanisms that do not defend themselves
+## Three mechanisms that do not defend themselves
 
 1. 🔴 **The FAQ's `FAQPage` JSON-LD is HAND-MAINTAINED, not generated** (`docs/faq.md`, in `<head>`).
    Editing an answer does **not** update it. Change an answer → change its `text` in the same commit.
@@ -78,6 +78,15 @@ claim about behaviour, check it against the app:
    (`src/theme/Icon/ExternalLink`) and "Edit this page" (`src/theme/EditThisPage`) are ejected only to carry
    it. A hand-built outbound link that leaves it out is the regression to look for: on 2026-11-07 the built
    site had 456 `target=_blank` links and 456 hints.
+3. 🔴 **Search is ejected so the query stays out of URLs, titles and recordings** (2026-11-08; analytics law: no
+   free text in any payload). `src/theme/SearchBar/` and `src/theme/SearchPage/` (`SearchPage.jsx`,
+   `useSearchQuery.js`) are ejected from `@easyops-cn/docusaurus-search-local` 0.55.3; templates, styles, worker
+   and helpers still come from the package. "See all results" opens `/search` with the query in history state,
+   never `?q=`; results open without `?_highlight=` (`highlightSearchTermsOnTargetPage: false`); the tab title
+   stays "Search the documentation", because GA4 sends the title as `page_title`; the navbar search and the
+   search page body carry `data-clarity-mask="true"`; Amplitude counts a page only when the path changes. On
+   every update of that package, re-diff each ejected file against the file named in its header, rebuild, and
+   grep `build/assets/js` for `_highlight`, `search/?` and `?q=`: all three must come back empty.
 
 ## Domain and deploy
 

@@ -82,10 +82,20 @@ function start(): void {
  *
  * The path is sent, never the full URL: this site has no query parameters that carry meaning, and
  * sending the whole location is how a search term or a token ends up in an analytics property.
+ *
+ * A change that keeps the path is not a new page: the search page writes each keystroke into its
+ * history entry's state, and every write arrives here as a route update.
  */
-export function onRouteDidUpdate({location}: {location: {pathname: string}}): void {
+export function onRouteDidUpdate({
+  location,
+  previousLocation,
+}: {
+  location: {pathname: string};
+  previousLocation: {pathname: string} | null;
+}): void {
   start();
   if (amplitudeReady === null) return;
+  if (previousLocation !== null && previousLocation.pathname === location.pathname) return;
   const path = location.pathname;
   void amplitudeReady
     .then(() => import('@amplitude/analytics-browser'))
