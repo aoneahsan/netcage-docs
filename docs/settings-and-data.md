@@ -84,10 +84,12 @@ hardware — see [Limitations](/limitations) for exactly what that means.
 
 ## How do I choose privacy controls?
 
-**Usage analytics**, **Send crash reports** and **Announcements** are separate switches. All three start
-off. Turning on Usage analytics first opens **Share usage data?**, which names Google Analytics for
-Firebase, Amplitude and Microsoft Clarity and explains the replay-safe screen boundary before any of
-those providers starts.
+**Announcements** is the one privacy switch in Settings, and it starts off. Usage analytics and crash
+reporting are on from the first launch, with no switch to turn them off.
+
+The home screen says so once at first launch, before you reach Settings, in a notice titled
+**NetCage counts how it’s used**. It names Google Analytics for Firebase, Amplitude, Microsoft Clarity and
+Sentry, then explains the replay-safe screen boundary. **Okay** closes it.
 
 Announcements gives OneSignal consent and opts this installation in only after you turn the switch on.
 Turning it off opts out and revokes SDK consent. Read [Privacy](./privacy.md) for the exact data and

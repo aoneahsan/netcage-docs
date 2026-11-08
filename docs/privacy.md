@@ -1,6 +1,6 @@
 ---
 title: Privacy
-description: What the local firewall reads, which optional features send data, which providers receive it, and how account deletion works.
+description: What the local firewall reads, what NetCage and its optional features send, which providers receive it, and how account deletion works.
 sidebar_position: 10
 tags: [privacy, data, telemetry]
 ---
@@ -39,33 +39,37 @@ permission and attaches no caged package names.
 |---|---|---|
 | Supabase | Account, contact, backup, support, device and Cage Pack records | Sign-in or an explicit account action |
 | The developer's own file storage | The custom-icon image you selected | Sign-in and a custom icon |
-| Google Analytics for Firebase | Bounded screen and feature events, app/install identifiers, advertising ID, and approximate region | **Usage analytics** |
-| Amplitude | Bounded events, sessions and a random identifier for this app installation; no advertising ID, App Set ID, IP address or location fields | **Usage analytics** |
-| Microsoft Clarity | Interaction data from Setup, Help and Other apps by the same developer; sensitive and unknown routes stay masked and paused | **Usage analytics** |
-| Sentry | Exception type, stack frames, bounded tags, device, OS and app version; no event message, exception value, breadcrumb or request data | **Send crash reports** |
+| Google Analytics for Firebase | Bounded screen and feature events, app/install identifiers, advertising ID, and approximate region | First launch; no switch |
+| Amplitude | Bounded events, sessions and a random identifier for this app installation; no advertising ID, App Set ID, IP address or location fields | First launch; no switch |
+| Microsoft Clarity | Interaction data from Setup, Help and Other apps by developer; sensitive and unknown routes stay masked and paused | Opening a replay-safe screen; no switch |
+| Sentry | Exception type, stack frames, bounded tags, device, OS and app version; no event message, exception value, breadcrumb or request data | First launch; no switch |
 | OneSignal | Push subscription, sessions, notification interactions, device/app metadata, country and IP address | **Announcements** |
 | Google Play | Update availability and the Play update flow | Play-installed build |
 
-Usage analytics, crash reports and announcements start off. NetCage does not send those providers your
-Supabase account ID, name or email address, and makes no OneSignal login or alias call. The website can use
-Google Analytics, Amplitude, Microsoft Clarity and Sentry only after website consent; website Sentry removes
-error messages, breadcrumbs, request fields and user fields. Clarity records a replay of a website visit and
-masks text typed into form fields.
+Usage analytics and crash reporting are on from the first launch, with no switch to turn them off, and
+NetCage says so once. Announcements start off. NetCage does not send those providers your Supabase account
+ID, name or email address, and makes no OneSignal login or alias call.
+
+The public website measures page views, bounded actions and errors through Google Analytics, Amplitude and
+Sentry from your first visit. A short bar says so once. There is no setting to turn any of it off. Website
+Sentry removes error messages, breadcrumbs, request fields and user fields; Microsoft Clarity never loads on
+a signed-in page and masks all form text before session replay capture.
 
 ## What does this documentation site collect?
 
 This site is separate from the app and from the product website, and it is worth stating on its own because
 a reader arrives here without signing in to anything.
 
-If the developer has configured them, this site loads Google Analytics, Amplitude and Microsoft Clarity to
-measure which pages are read and where readers get stuck. They receive the page path, referrer, bounded
-browser and device details, an analytics identifier and an approximate region derived from the connection;
-Clarity additionally records a replay of the visit to this site. Each provider is loaded only when its
-identifier is present in the build, so an unconfigured site loads none of them and reports nothing.
+This site loads Google Analytics, Amplitude and Microsoft Clarity to measure which pages are read and where
+readers get stuck. A short bar says so once. There is no setting to turn any of it off. These three receive
+the page path, bounded browser and device details and an analytics identifier. Google Analytics and Clarity
+also receive the referrer and an approximate region derived from the connection, and Clarity records a replay
+of your visit. Each provider is loaded only when its identifier is present in the build, so an unconfigured
+site loads none of them and reports nothing.
 
-This site has no account, no sign-in and no form. It never receives a NetCage account ID, an email address,
-a phone number or the name of any app you have caged — those never leave the app except through the features
-described above.
+This site has no account, sign-in or contact form, and what you type into its search stays in your browser.
+It never receives a NetCage account ID, an email address, a phone number or the name of any app you have
+caged — those never leave the app except through the features described above.
 
 ## What is collected for Cage Pack safety?
 
@@ -108,7 +112,7 @@ calendar entries, audio, video, SMS or email content from your messaging account
 or web browsing history. It holds no permission for those data types.
 
 Approximate region is different: Google Analytics for Firebase can derive it from a masked IP address,
-and Microsoft Clarity can receive country or region after you enable Usage analytics. A custom icon is
+and Microsoft Clarity can receive country or region. A custom icon is
 also a photo you choose through Android's system picker. Export and import use the system document picker
 on this phone; NetCage does not upload the selected backup file.
 
@@ -123,8 +127,8 @@ already absent. Until then, the identity, references and other account rows rema
 completed deletion includes published packs and reports attached to those packs. A report can remain with
 the moderation record after review while its pack exists.
 
-Provider telemetry and crash data follow each provider's retention period. Turning a Settings switch off
-stops new collection by that category. Website contact email and mailbox notification copies of in-app
+Provider telemetry and crash data follow each provider's retention period. Turning Announcements off
+stops new OneSignal collection. Website contact email and mailbox notification copies of in-app
 support requests sit outside the NetCage database and may remain until the developer deletes them
 manually; NetCage promises no fixed mailbox deletion period. Device-only settings and the report token
 disappear when you clear NetCage's app data or uninstall it.
@@ -145,7 +149,7 @@ developer can remove it and its associated records.
 ## How can I access, correct or delete my data?
 
 Sign in on the website to export the configuration stored for your account. Correct it in NetCage and
-sync again, or turn off Usage analytics, crash reports and announcements separately in Settings.
+sync again, or turn off announcements in Settings.
 
 Delete the cloud account under **Settings ▸ Account ▸ Delete account**. The public deletion page links to
 the Google sign-in and deletion-confirmation flow on the account page. A completed request removes the

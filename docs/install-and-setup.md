@@ -12,7 +12,9 @@ NetCage needs **Android 8.0 or newer**. It does not need root, and it does not n
 To set up NetCage, choose an app, read the VPN disclosure, grant Android's VPN consent, and keep the
 foreground notification available while the cage is active.
 
-The app list is the first screen. Before granting anything, you can browse enabled, currently installed
+The app list is the first screen. It is also the home screen, where a notice titled
+**NetCage counts how it’s used** says once that usage analytics and crash reporting are on from the
+first launch. Before granting anything, you can browse enabled, currently installed
 apps that can use the internet, including background and non-launcher packages. System apps appear only
 when **Show system apps** is on.
 
