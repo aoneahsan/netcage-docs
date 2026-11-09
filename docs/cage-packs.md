@@ -20,6 +20,13 @@ does not return your Google identity or Supabase user ID.
 Do not publish hate, harassment, sexual or violent content, illegal instructions, impersonation, malware
 promotion or deceptive links. Reports can remove a pack from new imports while it is reviewed.
 
+## How do I see or delete the packs I published?
+
+Open **Settings ▸ Account ▸ Your Cage Packs**: each pack shows its apps, how often it was imported and its link.
+**Delete** stops its link for good, and nobody can import it again. Copies people already imported, your own
+profile and any reports about the pack stay as they are. A pack under review after a report can't be imported
+until the review ends.
+
 ## How do I import a Cage Pack?
 
 Open the link in NetCage. Importing needs no account. The preview shows the apps installed on this phone

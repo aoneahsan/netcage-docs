@@ -45,7 +45,7 @@ Checked 7 November 2026. The InviZible Pro column comes from the linked pages, a
 |---|---|---|---|---|
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $6.99 per item | [play.google.com](https://play.google.com/store/apps/details?id=pan.alexander.tordnscrypt.gp) | 7 November 2026 |
 
-NetCage has no published price.
+NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 

@@ -46,7 +46,7 @@ Checked 7 November 2026. The NetGuard column comes from the linked pages, and Ne
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $8.49 per item | [play.google.com](https://play.google.com/store/apps/details?id=eu.faircode.netguard) | 7 November 2026 |
 | Pro features outside Google Play | €0.10 once | A one-time donation of EUR 0.10 or more unlocks the pro features once; EUR 7 or more unlocks them on every device you own | [netguard.me](https://netguard.me/) | 7 November 2026 |
 
-NetCage has no published price to set beside these.
+NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 

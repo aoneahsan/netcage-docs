@@ -10,6 +10,13 @@ not been published yet. The 1.0.0/code 1 and 1.2.0/code 2 store candidates were 
 upload, so both codes are spent. Earlier sideloaded builds remain recorded under the numbers they used at
 the time.
 
+## 1.4.0
+
+Account now shows your plan, your backup versions (restore any of them) and the Cage Packs you published (delete
+any of them). Family invitations go out from Settings ▸ Account ▸ Family. Ask NetCage answers from the
+documentation on the Help screen. NetCage tells you when a new version is required, and Update opens Google Play's
+update. The launcher icon now draws the cage bars.
+
 ## 1.3.0
 
 **The first public release.** It includes the firewall, profiles, schedules, day passes, backup, in-app

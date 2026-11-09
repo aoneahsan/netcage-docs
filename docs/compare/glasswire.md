@@ -45,7 +45,7 @@ Checked 7 November 2026. The GlassWire column comes from the linked pages, and N
 |---|---|---|---|---|
 | App | Free | Free install on Google Play with no ads or in-app purchase label; the listing says the company earns from its Windows software | [play.google.com](https://play.google.com/store/apps/details?id=com.glasswire.android) | 7 November 2026 |
 
-NetCage publishes no price of its own.
+NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 

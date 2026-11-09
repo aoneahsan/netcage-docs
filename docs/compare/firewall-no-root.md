@@ -45,7 +45,7 @@ Checked 7 November 2026. The Firewall No Root column comes from the linked pages
 |---|---|---|---|---|
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $16.99 per item | [play.google.com](https://play.google.com/store/apps/details?id=com.cbinnovations.firewall) | 7 November 2026 |
 
-NetCage lists no price.
+NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 

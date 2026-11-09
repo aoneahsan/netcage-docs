@@ -42,7 +42,7 @@ Checked 7 November 2026. The AdGuard column comes from the linked pages, and Net
 | Licence, lower tier shown | $2.49 a month | Billed annually, VAT may apply. The page sells a Personal licence (3 devices) and a Family licence (9 devices) and also lifetime licences; the tier label beside this figure was not legible in the text we read | [adguard.com](https://adguard.com/en/license.html) | 7 November 2026 |
 | Licence, higher tier shown | $5.49 a month | Billed annually, VAT may apply, shown beside a crossed-out $7.47 /mo; tier label not legible in the text we read | [adguard.com](https://adguard.com/en/license.html) | 7 November 2026 |
 
-NetCage has no price on record to compare.
+NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 

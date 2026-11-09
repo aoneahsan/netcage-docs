@@ -29,6 +29,12 @@ current setup on this phone unchanged.
 
 Live day passes and the global pause are not backed up. They are deadlines tied to this phone's clock.
 
+## How do I restore an earlier backup?
+
+Open **Settings ▸ Account ▸ Backup versions**. Each version shows its time and its caged apps, profiles and
+schedules, newest first. **Restore** applies that version on this phone. Your plan decides how many versions are
+kept; the oldest goes when a new one would pass the limit.
+
 ## How are custom icons restored?
 
 A custom icon stays on this phone while you are signed out. If you sign in, the selected image can be
