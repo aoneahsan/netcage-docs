@@ -215,6 +215,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     metadata: [
+      { name: 'yandex-verification', content: 'bfb02722189028cf' },
       {
         name: 'description',
         content: PRODUCT_DESCRIPTION,
