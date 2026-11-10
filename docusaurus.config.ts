@@ -123,6 +123,9 @@ const config: Config = {
     // Supplies the browsable /sitemap page and the RSS /feed.xml - the two fleet surfaces
     // Docusaurus does not generate here, since this site deliberately has no blog.
     './plugins/site-index',
+    // GitHub Pages sends no headers of our choosing, so each built page carries its own
+    // Content-Security-Policy <meta>, with its inline scripts hashed after the build.
+    './plugins/security-meta',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {

@@ -5,7 +5,7 @@ sidebar_label: "From InviZible Pro"
 sidebar_position: 5
 tags: [comparison]
 last_update:
-  date: 2026-11-07
+  date: 2026-11-10
 ---
 
 If you want Tor, encrypted DNS and I2P routing, with a firewall as one part of the package, InviZible Pro is built for that. NetCage is for not routing your traffic anywhere: caged connections end on this phone, and everything else takes its normal path.
@@ -45,10 +45,12 @@ Checked 7 November 2026. The InviZible Pro column comes from the linked pages, a
 |---|---|---|---|---|
 | App | Free | Free install on Google Play; the listing carries an In-app purchases label at $6.99 per item | [play.google.com](https://play.google.com/store/apps/details?id=pan.alexander.tordnscrypt.gp) | 7 November 2026 |
 
-NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
+NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 
 - [InviZible Pro’s own page](https://invizible.net/en/)
+- [InviZible Pro on F-Droid](https://f-droid.org/en/packages/pan.alexander.tordnscrypt.stable/)
+- [InviZible Pro on Google Play](https://play.google.com/store/apps/details?id=pan.alexander.tordnscrypt.gp)
 - [The comparison on the NetCage website](https://netcage.aoneahsan.com/compare/invizible-pro)
 - [All comparisons](./index.md)

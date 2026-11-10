@@ -5,10 +5,10 @@ sidebar_label: "All comparisons"
 sidebar_position: 1
 tags: [comparison]
 last_update:
-  date: 2026-11-07
+  date: 2026-11-10
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so none of these pages ends in an install step. If you need something on your phone now, every app below is there to get and NetCage isn’t.
+NetCage can’t be installed today. It has no store listing and no public download, so none of these pages ends in an install step; if you need something on your phone now, every app below is there to get and NetCage isn’t.
 
 Each page says how that app differs from NetCage, who it suits better and which pages here to read first. Facts about the other app come from its own pages, with the link and the date. Where its pages don’t say, the row reads “Not stated on the pages we checked”.
 

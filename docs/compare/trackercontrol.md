@@ -5,7 +5,7 @@ sidebar_label: "From TrackerControl"
 sidebar_position: 6
 tags: [comparison]
 last_update:
-  date: 2026-11-07
+  date: 2026-11-10
 ---
 
 TrackerControl is for watching which companies an app talks to and blocking the trackers while the app stays online. NetCage is for taking the whole app offline instead. It doesn’t filter inside an app you leave online.
@@ -45,10 +45,12 @@ Checked 7 November 2026. The TrackerControl column comes from the linked pages, 
 |---|---|---|---|---|
 | App | Free | F-Droid says it will always be free and open source; the Google Play edition is TrackerControl Slim, free install with no ads or in-app purchase label | [f-droid.org](https://f-droid.org/en/packages/net.kollnig.missioncontrol.fdroid/) | 7 November 2026 |
 
-NetCage hasn’t published a price.
+NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 
 - [TrackerControl’s own page](https://trackercontrol.org/)
+- [TrackerControl on F-Droid](https://f-droid.org/en/packages/net.kollnig.missioncontrol.fdroid/)
+- [TrackerControl on Google Play](https://play.google.com/store/apps/details?id=net.kollnig.missioncontrol.play)
 - [The comparison on the NetCage website](https://netcage.aoneahsan.com/compare/trackercontrol)
 - [All comparisons](./index.md)

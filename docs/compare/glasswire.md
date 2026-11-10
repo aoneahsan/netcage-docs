@@ -5,7 +5,7 @@ sidebar_label: "From GlassWire"
 sidebar_position: 9
 tags: [comparison]
 last_update:
-  date: 2026-11-07
+  date: 2026-11-10
 ---
 
 GlassWire suits the question of which app is eating your data plan, with blocking as the second step. NetCage starts after that question: you already know which app should be offline, and you cage it with one switch, without a usage dashboard in the way.
@@ -45,10 +45,11 @@ Checked 7 November 2026. The GlassWire column comes from the linked pages, and N
 |---|---|---|---|---|
 | App | Free | Free install on Google Play with no ads or in-app purchase label; the listing says the company earns from its Windows software | [play.google.com](https://play.google.com/store/apps/details?id=com.glasswire.android) | 7 November 2026 |
 
-NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
+NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 
 - [GlassWire Data Usage Monitor’s own page](https://www.glasswire.com/android/)
+- [GlassWire on Google Play](https://play.google.com/store/apps/details?id=com.glasswire.android)
 - [The comparison on the NetCage website](https://netcage.aoneahsan.com/compare/glasswire)
 - [All comparisons](./index.md)

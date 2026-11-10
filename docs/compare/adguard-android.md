@@ -5,7 +5,7 @@ sidebar_label: "From AdGuard"
 sidebar_position: 10
 tags: [comparison]
 last_update:
-  date: 2026-11-07
+  date: 2026-11-10
 ---
 
 AdGuard is for filtering ads and trackers out of apps you keep using, on several devices under one licence. NetCage refuses a chosen app outright instead of filtering it, with no certificate to install and no licence to carry.
@@ -14,7 +14,7 @@ NetCage isn’t something you can install today, though; no store lists it and n
 
 ## Does NetCage filter like AdGuard?
 
-It doesn’t filter at all. AdGuard cleans what an app shows while the app stays online. NetCage refuses a chosen app’s connections and leaves every other app alone, with no lists to update. Ads in an app you leave online stay where they are.
+It doesn’t filter at all. AdGuard cleans what an app shows while the app stays online; NetCage refuses a chosen app’s connections and leaves every other app alone, with no lists to update. Ads in an app you leave online stay where they are.
 
 AdGuard’s local VPN and NetCage want the same slot, and Android allows one VPN at a time.
 
@@ -42,7 +42,7 @@ Checked 7 November 2026. The AdGuard column comes from the linked pages, and Net
 | Licence, lower tier shown | $2.49 a month | Billed annually, VAT may apply. The page sells a Personal licence (3 devices) and a Family licence (9 devices) and also lifetime licences; the tier label beside this figure was not legible in the text we read | [adguard.com](https://adguard.com/en/license.html) | 7 November 2026 |
 | Licence, higher tier shown | $5.49 a month | Billed annually, VAT may apply, shown beside a crossed-out $7.47 /mo; tier label not legible in the text we read | [adguard.com](https://adguard.com/en/license.html) | 7 November 2026 |
 
-NetCage's prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
+NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 

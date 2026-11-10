@@ -5,7 +5,7 @@ sidebar_label: "From Blokada"
 sidebar_position: 7
 tags: [comparison]
 last_update:
-  date: 2026-11-07
+  date: 2026-11-10
 ---
 
 Blokada is what you want if the goal is ads and trackers removed across every app and browser, with a family edition on top. NetCage does something else: it takes a chosen app fully offline by closing its route, and leaves ad lists and content filtering to apps like Blokada.
@@ -42,7 +42,7 @@ Checked 7 November 2026. The Blokada column comes from the linked pages, and Net
 | Blokada 5 for Android | Free | Free | [blokada.org](https://blokada.org/faq/#what-does-blokada-cost) | 7 November 2026 |
 | Blokada 6, Blokada Family, Blokada Plus | No figure published | Quote only: subscription with a 7 day free trial; prices differ by country and store and are shown before you pay | [blokada.org](https://blokada.org/faq/#what-does-blokada-cost) | 7 November 2026 |
 
-NetCage doesn’t publish one.
+NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
 ## Where can I check this?
 
