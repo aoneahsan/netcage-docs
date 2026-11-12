@@ -44,7 +44,6 @@ permission and attaches no caged package names.
 | Microsoft Clarity | Interaction data from Setup, Help and Other apps by developer; sensitive and unknown routes stay masked and paused | Opening a replay-safe screen; no switch |
 | Sentry | Exception type, stack frames, bounded tags, device, OS and app version; no event message, exception value, breadcrumb or request data | First launch; no switch |
 | OneSignal | Push subscription, sessions, notification interactions, device/app metadata, country and IP address | **Announcements** |
-| Google Play | Update availability and the Play update flow | Play-installed build |
 
 Usage analytics and crash reporting are on from the first launch, with no switch to turn them off, and
 NetCage says so once. Announcements start off. NetCage does not send those providers your Supabase account

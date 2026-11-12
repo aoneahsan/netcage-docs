@@ -1,16 +1,16 @@
 ---
 title: "Coming from GlassWire"
-description: "How GlassWire and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How GlassWire and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From GlassWire"
 sidebar_position: 9
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 GlassWire suits the question of which app is eating your data plan, with blocking as the second step. NetCage starts after that question: you already know which app should be offline, and you cage it with one switch, without a usage dashboard in the way.
 
-That’s on paper for now, because NetCage can’t be installed yet: no listing, no public download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## What happens to your data graphs?
 

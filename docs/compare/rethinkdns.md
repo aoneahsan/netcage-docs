@@ -1,16 +1,16 @@
 ---
 title: "Coming from Rethink"
-description: "How Rethink: DNS + Firewall + VPN and NetCage differ, what to read first in these docs, and the dated facts behind it. NetCage cannot be installed today."
+description: "How Rethink: DNS + Firewall + VPN and NetCage differ, what to read first in these docs, and the dated facts behind it. NetCage is available as a signed APK."
 sidebar_label: "From Rethink"
 sidebar_position: 3
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 Rethink suits you if you want encrypted DNS, blocklists and WireGuard in the same app, and you’re happy to configure them. NetCage suits you if you only want to take the internet away from chosen apps and leave DNS, VPN servers and blocklists out of it.
 
-Moving isn’t possible yet in any case: NetCage isn’t in any store and has no public download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## What would NetCage replace in Rethink?
 

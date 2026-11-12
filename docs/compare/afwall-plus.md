@@ -1,16 +1,16 @@
 ---
 title: "Coming from AFWall+"
-description: "How AFWall+ and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How AFWall+ and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From AFWall+"
 sidebar_position: 4
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 AFWall+ is the right tool on a rooted phone: iptables rules, profiles and Tasker hooks, without taking Android’s VPN slot; NetCage is for a phone that isn’t rooted. Its supported engine uses the VPN slot and asks for nothing more.
 
-NetCage can’t be installed today. There’s no store listing and no public download, so treat this page as reading for later.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## What do you give up by leaving iptables?
 

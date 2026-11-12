@@ -1,16 +1,16 @@
 ---
 title: "Coming from Blokada"
-description: "How Blokada and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How Blokada and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From Blokada"
 sidebar_position: 7
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 Blokada is what you want if the goal is ads and trackers removed across every app and browser, with a family edition on top. NetCage does something else: it takes a chosen app fully offline by closing its route, and leaves ad lists and content filtering to apps like Blokada.
 
-Either way, there’s no NetCage to install today: no store listing, no download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## Is NetCage a replacement for Blokada?
 

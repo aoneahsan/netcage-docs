@@ -1,14 +1,14 @@
 ---
 title: "Coming from another firewall"
-description: "Eleven Android firewalls and filters, how each differs from NetCage and what to read first here. NetCage cannot be installed today."
+description: "Eleven Android firewalls and filters, how each differs from NetCage and what to read first here. NetCage is available as a signed APK."
 sidebar_label: "All comparisons"
 sidebar_position: 1
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
-NetCage can’t be installed today. It has no store listing and no public download, so none of these pages ends in an install step; if you need something on your phone now, every app below is there to get and NetCage isn’t.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 Each page says how that app differs from NetCage, who it suits better and which pages here to read first. Facts about the other app come from its own pages, with the link and the date. Where its pages don’t say, the row reads “Not stated on the pages we checked”.
 

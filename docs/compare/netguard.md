@@ -1,16 +1,16 @@
 ---
 title: "Coming from NetGuard"
-description: "How NetGuard and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How NetGuard and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From NetGuard"
 sidebar_position: 2
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 NetGuard is the one to keep if you want an open-source firewall you can get today, from Google Play or F-Droid, with optional per-address filtering and traffic logs. NetCage is narrower: one switch per app and nothing to tune. A caged app is refused on this phone, in the foreground and the background, and the rest of your phone stays online.
 
-You can’t switch yet. NetCage has no store listing and no public download, so this page stops at reading, not installing.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## Where does NetGuard go further?
 

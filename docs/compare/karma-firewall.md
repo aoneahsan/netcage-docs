@@ -1,16 +1,16 @@
 ---
 title: "Coming from Karma Firewall"
-description: "How Karma Firewall and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How Karma Firewall and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From Karma Firewall"
 sidebar_position: 8
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 Karma Firewall suits you if you want a tiny open-source app from F-Droid that holds no internet permission of its own. NetCage is the bigger app: Wi-Fi and mobile rules, schedules, shareable Cage Packs, and a foreground service that keeps the cage up after a reboot.
 
-It’s also the one you can’t get yet, with no store listing and nothing to download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## How much more is there to NetCage?
 

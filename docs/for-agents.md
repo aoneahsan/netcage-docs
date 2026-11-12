@@ -18,7 +18,7 @@ connections on Wi-Fi or mobile with one switch.
 |---|---|
 | Package | `com.aoneahsan.netcage` |
 | Platform | Android 8.0 (API 26) and newer |
-| Distribution | Google Play, first public release prepared but not yet published |
+| Distribution | Signed Android APK from https://netcage.aoneahsan.com/download; 1.4.0 is the first public website release |
 | Current version | 1.3.0, versionCode 3 |
 | Mechanism | `VpnService` with app-based routing; the tunnel has no remote endpoint |
 | Root required | No. An opt-in root engine exists and is experimental |

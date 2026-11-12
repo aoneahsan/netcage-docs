@@ -1,16 +1,16 @@
 ---
 title: "Coming from AdGuard"
-description: "How AdGuard for Android and NetCage differ, what to read first in these docs, and the dated facts behind it. NetCage cannot be installed today."
+description: "How AdGuard for Android and NetCage differ, what to read first in these docs, and the dated facts behind it. NetCage is available as a signed APK."
 sidebar_label: "From AdGuard"
 sidebar_position: 10
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 AdGuard is for filtering ads and trackers out of apps you keep using, on several devices under one licence. NetCage refuses a chosen app outright instead of filtering it, with no certificate to install and no licence to carry.
 
-NetCage isn’t something you can install today, though; no store lists it and nothing is published for download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## Does NetCage filter like AdGuard?
 

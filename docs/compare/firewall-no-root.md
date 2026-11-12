@@ -1,16 +1,16 @@
 ---
 title: "Coming from Firewall No Root"
-description: "How Firewall No Root and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How Firewall No Root and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From Firewall No Root"
 sidebar_position: 12
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 Firewall No Root is the choice if you want host and domain rules, filter lists and a DNS changer beside the per-app switch, and it’s on Google Play today. NetCage is the switch and little else to manage: no lists to update and no DNS to change. When a friend wants your setup, you share a Cage Pack.
 
-Unlike Firewall No Root, NetCage can’t be installed yet. There’s no store listing and no public download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## What’s different beyond the switch?
 

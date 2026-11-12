@@ -1,16 +1,16 @@
 ---
 title: "Coming from InviZible Pro"
-description: "How InviZible Pro and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How InviZible Pro and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From InviZible Pro"
 sidebar_position: 5
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 If you want Tor, encrypted DNS and I2P routing, with a firewall as one part of the package, InviZible Pro is built for that. NetCage is for not routing your traffic anywhere: caged connections end on this phone, and everything else takes its normal path.
 
-For now that’s a comparison only, since NetCage has neither a store listing nor a download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## Does NetCage do any of InviZible Pro’s routing?
 

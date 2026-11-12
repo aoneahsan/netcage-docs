@@ -5,8 +5,7 @@ sidebar_position: 8.6
 tags: [updates, release]
 ---
 
-NetCage tells you when a new version is out. Most updates arrive through Google Play by themselves; when one matters,
-NetCage asks for it directly.
+NetCage tells you when a new version is out. The Update action opens the signed APK download from the NetCage website.
 
 ## Why does NetCage ask me to update?
 
@@ -14,10 +13,11 @@ A version has been replaced. For a normal update you'll see "NetCage has a new v
 it." For an urgent one, NetCage shows "This version has to be updated" with the reason, and stays on that screen until
 it's updated.
 
-## What happens when I update?
+## How do I update NetCage?
 
-**Update** opens Google Play's own update. Updating restarts NetCage. Without Auto-start on boot, switch the cage back
-on afterwards.
+Use the Update action in the app, or return to the [NetCage website](https://netcage.aoneahsan.com/download). Install the new APK over your existing copy.
+
+Keep a backup. Android will reject a replacement whose signing certificate differs from the installed copy, so export your setup before removing the old app, then import it after installing the new one.
 
 ## What if I'm offline?
 

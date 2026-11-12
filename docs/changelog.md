@@ -5,8 +5,7 @@ sidebar_position: 13
 tags: [changelog, releases]
 ---
 
-Latest first. Version 1.3.0, versionCode 3, is the first public release prepared for Google Play; it has
-not been published yet. The 1.0.0/code 1 and 1.2.0/code 2 store candidates were built and superseded before
+Latest first. Version 1.4.0, versionCode 4, is the first public release, available as a signed APK from the [NetCage website](https://netcage.aoneahsan.com/download). The 1.0.0/code 1 and 1.2.0/code 2 store candidates were built and superseded before
 upload, so both codes are spent. Earlier sideloaded builds remain recorded under the numbers they used at
 the time.
 
@@ -14,12 +13,11 @@ the time.
 
 Account now shows your plan, your backup versions (restore any of them) and the Cage Packs you published (delete
 any of them). Family invitations go out from Settings ▸ Account ▸ Family. Ask NetCage answers from the
-documentation on the Help screen. NetCage tells you when a new version is required, and Update opens Google Play's
-update. The launcher icon now draws the cage bars.
+documentation on the Help screen. NetCage tells you when a new version is required, and Update opens the signed APK download on the NetCage website. The launcher icon now draws the cage bars.
 
 ## 1.3.0
 
-**The first public release.** It includes the firewall, profiles, schedules, day passes, backup, in-app
+**A superseded release candidate.** It includes the firewall, profiles, schedules, day passes, backup, in-app
 support and Cage Packs. Before submission, Cage Packs gained versioned publishing terms, report, block,
 unblock, immediate quarantine and publisher-suspension controls. Importing still creates an inactive,
 editable profile.
@@ -59,7 +57,6 @@ In more detail:
   help, and a failure can be copied as a diagnostics block.
 - A promotion for another app by the same developer on the list and detail screens. It is bundled
   in the app, so it makes no network request and reads no advertising identifier.
-- In-app updates from Play, and an in-app review prompt.
 - Usage analytics and crash reporting on from the first launch, with no switch; announcements off by
   default, behind their own switch in **Settings ▸ Privacy**.
 

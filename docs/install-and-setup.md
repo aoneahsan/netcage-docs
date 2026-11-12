@@ -7,6 +7,10 @@ tags: [setup, permissions, always-on-vpn]
 
 NetCage needs **Android 8.0 or newer**. It does not need root, and it does not need a computer.
 
+## How do I install NetCage?
+
+Download the signed Android APK from the [NetCage website](https://netcage.aoneahsan.com/download). Check the file's SHA-256 against the value on the home page before opening it. Android may ask you to allow installations from the browser or file manager you used. NetCage needs Android 8.0 or newer.
+
 ## How do I set up NetCage for the first time?
 
 To set up NetCage, choose an app, read the VPN disclosure, grant Android's VPN consent, and keep the

@@ -1,16 +1,16 @@
 ---
 title: "Coming from PCAPdroid"
-description: "How PCAPdroid and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage cannot be installed today."
+description: "How PCAPdroid and NetCage differ, what to read first in these docs, and the dated facts behind the comparison. NetCage is available as a signed APK."
 sidebar_label: "From PCAPdroid"
 sidebar_position: 11
 tags: [comparison]
 last_update:
-  date: 2026-11-10
+  date: 2026-11-12
 ---
 
 PCAPdroid is the tool for seeing packets: captures, TLS decryption and PCAP exports, with app blocking as a paid extra on top. NetCage is for people who don’t want to inspect anything. It reads only the header it needs to send a refusal and never records your traffic.
 
-You can’t install NetCage today. No store carries it and there’s no public download.
+NetCage for Android is ready to install from its website. [Download the signed APK](https://netcage.aoneahsan.com/download), then check its SHA-256 against the value on the home page before opening it.
 
 ## What does NetCage look at, compared with PCAPdroid?
 
