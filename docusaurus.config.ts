@@ -260,6 +260,7 @@ const config: Config = {
             {label: 'Privacy', to: '/privacy'},
             {label: 'Limitations', to: '/limitations'},
             {label: 'Coming from another firewall', to: '/compare'},
+            {label: 'White-label & licensing', to: '/white-label'},
           ],
         },
         {

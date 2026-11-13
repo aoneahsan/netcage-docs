@@ -42,6 +42,7 @@ foreground VPN service while a cage is active, so NetCage does not promise an ex
 - [Privacy](https://netcage-docs.aoneahsan.com/privacy)
 - [Limitations](https://netcage-docs.aoneahsan.com/limitations)
 - [Coming from another firewall](https://netcage-docs.aoneahsan.com/compare): eleven Android firewalls and filters beside NetCage, with dated facts and sources
+- [White-label & licensing](https://netcage-docs.aoneahsan.com/white-label): offering NetCage under your own name, setup, updates, buyouts and checking a licence
 - [FAQ](https://netcage-docs.aoneahsan.com/faq)
 - [Changelog](https://netcage-docs.aoneahsan.com/changelog)
 - [For agents](https://netcage-docs.aoneahsan.com/for-agents)
@@ -49,4 +50,6 @@ foreground VPN service while a cage is active, so NetCage does not promise an ex
 ## Links
 
 - Product site: https://netcage.aoneahsan.com
+- White-label pricing (live prices): https://netcage.aoneahsan.com/white-label/pricing
+- Check a licence: https://netcage.aoneahsan.com/verify-license
 - Developer: https://aoneahsan.com
