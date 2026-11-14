@@ -8,8 +8,8 @@ tags: [white-label, setup]
 The steps happen in this order. None of them has a fixed duration here, because the slowest step is usually
 Google's review of the listing.
 
-1. **The licence.** After payment, or once a quote is agreed, the buyer receives a licence key and a
-   certificate by email.
+1. **The licence.** The buyer pays by bank transfer to our Wise account and sends us the transfer reference.
+   Once we have confirmed the transfer, the buyer receives a licence key and a certificate by email.
 2. **The brand.** The buyer sends the app name, icon, colours and package name, and the details of the
    developer account the app will be published under.
 3. **The domain.** We connect the buyer's domain. It serves the privacy policy, the file Android reads to open

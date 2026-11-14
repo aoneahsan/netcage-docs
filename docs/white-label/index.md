@@ -20,9 +20,16 @@ reads them live from our licensing service.
 | Source code | Stays with us | Handed over |
 | Can NetCage be sold to others | Yes, until someone buys it outright | No, never again |
 | Updates included | Six months | Six months |
+| Ongoing payment | Renewals, if you want more updates | A 7% royalty on the gross revenue NetCage earns, for as long as it earns |
 
 A buyout is described on the [buyout page](https://netcage.aoneahsan.com/white-label/buyout). Licences sold
-before a buyout keep their terms.
+before a buyout keep their terms. The buyout royalty is 7% of the gross revenue NetCage earns, not counting
+sales tax or VAT collected, paid every quarter with a revenue statement for as long as NetCage earns revenue.
+It is still owed after the buyer sells NetCage on; the
+[licence terms](https://netcage.aoneahsan.com/white-label/license-terms) set it out.
+
+Licences, renewals and buyouts are paid by bank transfer to our Wise account. The licence is issued once we
+have confirmed the transfer.
 
 ## What NetCage ships
 

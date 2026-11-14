@@ -16,7 +16,9 @@ The copy keeps running on the version it has. A renewal starts the updates again
 
 ## What happens after a buyout?
 
-We hand the source over and stop selling NetCage. Licences sold before then keep their terms.
+We hand the source over and stop selling NetCage. Licences sold before then keep their terms. From then on
+the buyer pays us a 7% royalty on the gross revenue NetCage earns, every quarter with a revenue statement, for
+as long as it earns, including after a resale.
 
 ## Who pays for the domain and the developer account?
 
