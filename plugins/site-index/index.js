@@ -29,7 +29,8 @@ function readPages(docsDir, prefix = '') {
     .filter((entry) => entry.isDirectory() && prefix === '')
     .flatMap((entry) => readPages(path.join(docsDir, entry.name), `/${entry.name}`));
   const pages = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+    // PACKAGES.md is excluded from the docs build (docusaurus.config.ts), so it has no route to list.
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'PACKAGES.md')
     .map((entry) => {
       const name = entry.name;
       const raw = fs.readFileSync(path.join(docsDir, name), 'utf8');
