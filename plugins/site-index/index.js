@@ -22,14 +22,22 @@ function field(block, name) {
   return match ? match[1].trim().replace(/^["']|["']$/g, '') : '';
 }
 
-function readPages(docsDir, prefix = '') {
+/**
+ * `exclude` is the docs plugin's own list (globs relative to `docs/`), so a file Docusaurus does not build
+ * is never listed on /sitemap as a page that 404s.
+ */
+function readPages(docsDir, exclude, prefix = '') {
   const entries = fs.readdirSync(docsDir, {withFileTypes: true});
+  const excluded = (name) => {
+    const relative = prefix === '' ? name : `${prefix.slice(1)}/${name}`;
+    return exclude.some((pattern) => path.matchesGlob(relative, pattern));
+  };
   // One level of folders: `docs/compare/` is a sidebar category whose routes carry its name.
   const nested = entries
     .filter((entry) => entry.isDirectory() && prefix === '')
-    .flatMap((entry) => readPages(path.join(docsDir, entry.name), `/${entry.name}`));
+    .flatMap((entry) => readPages(path.join(docsDir, entry.name), exclude, `/${entry.name}`));
   const pages = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.md') && !excluded(entry.name))
     .map((entry) => {
       const name = entry.name;
       const raw = fs.readFileSync(path.join(docsDir, name), 'utf8');
@@ -60,23 +68,33 @@ function readPages(docsDir, prefix = '') {
  */
 const PUBLISHED_HEADING = /^(.+?)\s+—\s+(\d{4}-\d{2}-\d{2})\s*$/;
 
+/**
+ * A dated heading pins its anchor with an explicit id, `## 1.4.0 — 2026-11-13 {/* #140 *\/}` (the MDX comment
+ * form; the site runs with Docusaurus's v4 flags, which reject `{#140}`), so dating a release never moves the
+ * fragment a feed item or an outside link already points at.
+ */
+const EXPLICIT_ID = /\s*\{\/\*\s*#(\S+)\s*\*\/\}\s*$/;
+
 function readReleases(changelog) {
   const releases = [];
   const sections = changelog.split(/^## /m).slice(1);
   for (const section of sections) {
-    const [heading, ...rest] = section.split('\n');
+    const [line, ...rest] = section.split('\n');
+    const anchor = EXPLICIT_ID.exec(line)?.[1] ?? null;
+    const heading = line.replace(EXPLICIT_ID, '').trim();
     const body = rest.join('\n');
     const summary = body
       .split(/\n\s*\n/)
       .map((p) => p.trim())
       .find((p) => p.length > 0 && !p.startsWith('#'));
-    const dated = PUBLISHED_HEADING.exec(heading.trim());
+    const dated = PUBLISHED_HEADING.exec(heading);
     if (dated && Number.isNaN(Date.parse(`${dated[2]}T00:00:00Z`))) {
-      throw new Error(`site-index: changelog heading "${heading.trim()}" carries an invalid date.`);
+      throw new Error(`site-index: changelog heading "${heading}" carries an invalid date.`);
     }
     releases.push({
-      version: dated ? dated[1].trim() : heading.trim(),
+      version: dated ? dated[1].trim() : heading,
       date: dated ? dated[2] : null,
+      anchor,
       summary: (summary ?? '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim(),
     });
   }
@@ -98,14 +116,15 @@ function escapeXml(value) {
     .replace(/"/g, '&quot;');
 }
 
-module.exports = function siteIndexPlugin(context) {
+module.exports = function siteIndexPlugin(context, options = {}) {
   const docsDir = path.join(context.siteDir, 'docs');
+  const exclude = options.exclude ?? [];
 
   return {
     name: 'site-index',
 
     async loadContent() {
-      const pages = readPages(docsDir);
+      const pages = readPages(docsDir, exclude);
       // 🔴 Throw rather than emit an empty index. A sitemap page that silently lists nothing looks
       // exactly like one that is working, and would be cited as the fleet surface being present.
       if (pages.length === 0) {
@@ -138,7 +157,8 @@ module.exports = function siteIndexPlugin(context) {
       // drifted still lands the reader on the changelog page.
       //
       // Every item carries the <pubDate> written in its changelog heading; a release without one
-      // never reaches this list (see readReleases). Zero items is a valid RSS 2.0 channel.
+      // never reaches this list (see readReleases). Zero items is a valid RSS 2.0 channel. There is
+      // no <lastBuildDate>: it is optional, and the build time would claim a change on every deploy.
       const anchorFor = (version) =>
         version
           .toLowerCase()
@@ -150,7 +170,7 @@ module.exports = function siteIndexPlugin(context) {
         .map(
           (release) => `    <item>
       <title>NetCage ${escapeXml(release.version)}</title>
-      <link>${site}/changelog#${escapeXml(anchorFor(release.version))}</link>
+      <link>${site}/changelog#${escapeXml(release.anchor ?? anchorFor(release.version))}</link>
       <guid isPermaLink="false">netcage-${escapeXml(release.version)}</guid>
       <pubDate>${new Date(`${release.date}T00:00:00Z`).toUTCString()}</pubDate>
       <description>${escapeXml(release.summary)}</description>
@@ -166,7 +186,6 @@ module.exports = function siteIndexPlugin(context) {
     <atom:link href="${site}/feed.xml" rel="self" type="application/rss+xml" />
     <description>Release notes for NetCage, the per-app Android firewall.</description>
     <language>en</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
   </channel>
 </rss>

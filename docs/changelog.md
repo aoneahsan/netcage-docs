@@ -9,7 +9,7 @@ Latest first. Version 1.4.0, versionCode 4, is the first public release, availab
 upload, so both codes are spent. Earlier sideloaded builds remain recorded under the numbers they used at
 the time.
 
-## 1.4.0
+## 1.4.0 — 2026-11-13 {/* #140 */}
 
 Account now shows your plan, your backup versions (restore any of them) and the Cage Packs you published (delete
 any of them). Family invitations go out from Settings ▸ Account ▸ Family. Ask NetCage answers from the

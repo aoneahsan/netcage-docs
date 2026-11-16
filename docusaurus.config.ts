@@ -12,6 +12,19 @@ const PRODUCT_DESCRIPTION =
   'connections on Wi-Fi and mobile while the rest of your phone stays online.';
 
 /**
+ * Files under `docs/` that are not pages. docs/PACKAGES.md is the fleet's fixed-path dependency record;
+ * this repo is public, so it stays out of the site. The docs plugin's `exclude` replaces its defaults,
+ * restated here, and the site-index plugin reads the same list so /sitemap and the built pages agree.
+ */
+const DOCS_EXCLUDE = [
+  '**/_*.{js,jsx,ts,tsx,md,mdx}',
+  '**/_*/**',
+  '**/*.test.{js,jsx,ts,tsx}',
+  '**/__tests__/**',
+  'PACKAGES.md',
+];
+
+/**
  * NetCage documentation site.
  *
  * Deployed to GitHub Pages on the custom domain in `static/CNAME`. The domain is derived from the
@@ -89,15 +102,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
-          // docs/PACKAGES.md is the fleet's fixed-path dependency record; this repo is
-          // public, so it stays out of the site. `exclude` replaces the defaults, restated here.
-          exclude: [
-            '**/_*.{js,jsx,ts,tsx,md,mdx}',
-            '**/_*/**',
-            '**/*.test.{js,jsx,ts,tsx}',
-            '**/__tests__/**',
-            'PACKAGES.md',
-          ],
+          exclude: DOCS_EXCLUDE,
           editUrl: 'https://github.com/aoneahsan/netcage-docs/tree/main/',
           showLastUpdateTime: true,
         },
@@ -117,6 +122,26 @@ const config: Config = {
           // prose. Submitting 34 empty URLs beside 13 real ones is how a site earns
           // "Crawled - currently not indexed" on the pages that matter.
           ignorePatterns: ['/tags/**', '/tags', '/search'],
+          // `/feed` and `/sitemap` are plugin pages with no file history, so the default leaves them
+          // undated. Each takes the date of what its words come from: the feed is built from the
+          // changelog alone, and the sitemap page from every page's title, description and tags.
+          createSitemapItems: async ({defaultCreateSitemapItems, ...params}) => {
+            const items = await defaultCreateSitemapItems(params);
+            const routeOf = (url: string) => new URL(url).pathname.replace(/\/$/, '');
+            const changelog = items.find((item) => routeOf(item.url) === '/changelog')?.lastmod;
+            const newestPage =
+              items
+                .map((item) => item.lastmod)
+                .filter((date): date is string => typeof date === 'string')
+                .sort()
+                .at(-1) ?? null;
+            return items.map((item) => {
+              if (item.lastmod) return item;
+              if (routeOf(item.url) === '/feed') return {...item, lastmod: changelog ?? null};
+              if (routeOf(item.url) === '/sitemap') return {...item, lastmod: newestPage};
+              return item;
+            });
+          },
         },
         ...(gtag ? {gtag: {trackingID: gtag, anonymizeIP: true}} : {}),
       } satisfies Preset.Options,
@@ -130,8 +155,9 @@ const config: Config = {
 
   plugins: [
     // Supplies the browsable /sitemap page and the RSS /feed.xml - the two fleet surfaces
-    // Docusaurus does not generate here, since this site deliberately has no blog.
-    './plugins/site-index',
+    // Docusaurus does not generate here, since this site deliberately has no blog. It skips the
+    // same files the docs plugin does, so /sitemap never lists a page that was not built.
+    ['./plugins/site-index', {exclude: DOCS_EXCLUDE}],
     // GitHub Pages sends no headers of our choosing, so each built page carries its own
     // Content-Security-Policy <meta>, with its inline scripts hashed after the build.
     './plugins/security-meta',
