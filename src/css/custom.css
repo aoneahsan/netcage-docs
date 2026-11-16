@@ -131,6 +131,45 @@
   box-shadow: 0 1px 0 rgba(230, 245, 241, 0.1);
 }
 
+/* Every control in the header is at least 44 px, the size the website's controls use (product audit
+   F-EXP-103: the stock theme drew the menu button at 30 px, the theme toggle at 32 and the links at
+   32 to 34). The 60 px navbar holds them without growing. No `display` is set here: the theme's own
+   rules hide the menu button on wide screens and the bar's links on phones. The links reach 44 px
+   through the theme's padding variable (26 px of line plus 9 px above and below). */
+:root {
+  --ifm-navbar-item-padding-vertical: 0.5625rem;
+}
+
+.navbar__brand,
+.navbar__toggle,
+.navbar-sidebar__close,
+.navbar button[class*='toggleButton_'] {
+  align-items: center;
+  min-block-size: 44px;
+}
+
+.navbar__toggle,
+.navbar-sidebar__close,
+.navbar button[class*='toggleButton_'] {
+  justify-content: center;
+  min-inline-size: 44px;
+}
+
+.navbar__search-input {
+  block-size: 44px;
+}
+
+/* Where the sidebar is a menu under a thumb (the phone drawer, or any touch screen), each row is a
+   44 px target too. A desktop pointer keeps the stock rows, so the long sidebar does not grow. */
+@media (max-width: 996px), (pointer: coarse) {
+  .menu__link,
+  .menu__caret,
+  .menu__list-item-collapsible > button,
+  .navbar-sidebar__back {
+    min-block-size: 44px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

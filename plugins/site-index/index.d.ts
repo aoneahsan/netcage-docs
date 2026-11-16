@@ -17,6 +17,8 @@ export interface Release {
   readonly version: string;
   /** ISO date from the changelog heading; only published releases are in the data. */
   readonly date: string;
+  /** The heading's explicit id (`{/* #140 *\/}`), or `null` when the heading has none. */
+  readonly anchor: string | null;
   readonly summary: string;
 }
 
@@ -27,5 +29,5 @@ export interface SiteIndex {
   readonly status: string;
 }
 
-declare const siteIndexPlugin: (context: unknown) => unknown;
+declare const siteIndexPlugin: (context: unknown, options?: {readonly exclude?: readonly string[]}) => unknown;
 export default siteIndexPlugin;
