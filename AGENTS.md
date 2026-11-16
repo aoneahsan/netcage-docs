@@ -4,6 +4,8 @@
 
 **Last Updated:** 2026-11-08
 
+<!-- fleet:node-26-13-1 v1 --> Node 26.13.1 LTS (.nvmrc), packages latest — 2026-11-16
+
 ## Upcoming release documentation — 2026-09-11
 
 The expanded Android/admin release is implemented locally, including updated privacy drafts and private

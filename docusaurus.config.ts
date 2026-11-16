@@ -89,6 +89,15 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
+          // docs/PACKAGES.md is the fleet's fixed-path dependency record; this repo is
+          // public, so it stays out of the site. `exclude` replaces the defaults, restated here.
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            'PACKAGES.md',
+          ],
           editUrl: 'https://github.com/aoneahsan/netcage-docs/tree/main/',
           showLastUpdateTime: true,
         },
