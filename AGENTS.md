@@ -10,8 +10,9 @@
 
 The Android app is distributed as a signed APK from the NetCage website; no build has reached
 Google Play. The website administration is deployed, while this public site keeps its routes and
-operational detail private. The white-label guide passed story GATE 4 on 2026-11-17; its public deployment is verified separately. The app repository's private task record owns implementation scope. Update
-public documentation only from implemented behaviour and GATE 4-approved copy.
+operational detail private. The white-label guide passed story GATE 4 and its public
+deployment was verified on 2026-11-17. The app repository's private task record owns
+implementation scope. Update public documentation only from implemented behaviour and GATE 4-approved copy.
 
 The **public** documentation site for NetCage, a per-app Android firewall. Docusaurus 3.10.2, React 19,
 TypeScript ~6, yarn 4, GitHub Pages. product guides plus two custom pages (`/sitemap`, `/feed`).
@@ -181,7 +182,7 @@ landed on 2026-11-06 (all rights reserved), and the analytics wiring on 2026-09-
 |---|---|
 | Last optimized | 2026-11-16 |
 | Next routine optimization eligible | 2026-12-16 |
-| Guide bytes | 12,961 B |
+| Guide bytes | 12,968 B |
 | Covered subtree | `netcage-docs/` repo root |
 | Method | Already inside cap; the superseded 10-day cadence line replaced by this row, its verification prose kept inline. No content moved |
 | Fleet record | the workspace context-budget tracker (see the `netcage-root` umbrella guide) |
