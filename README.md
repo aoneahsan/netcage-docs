@@ -7,8 +7,9 @@ Its address is **https://netcage-docs.aoneahsan.com**; product site
 
 > **The current public product and documentation baseline is live.** GitHub Pages serves the docs at the custom
 > domain above with HTTPS enforced. The public source stays in this repository; product internals and
-> credentials remain in the private app repository. September 11 administration/privacy implementation is
-> locally complete, but its public wording is not published and still requires GATE 4 plus deployment verification.
+> credentials remain in the private app repository. The approved administration, privacy and white-label
+> wording was published and checked on 2026-11-17. The Android app is distributed as a signed APK from
+> the product website; it has not been uploaded to Google Play.
 
 Built with [Docusaurus](https://docusaurus.io/) 3 and deployed to GitHub Pages by hand: a local build,
 gated by `yarn typecheck && yarn build`, is published as the `gh-pages` branch. There is no GitHub Actions
