@@ -7,6 +7,8 @@ sidebar_label: Overview
 tags: [overview, android, firewall]
 ---
 
+**Get NetCage:** [website](https://netcage.aoneahsan.com) · [all apps](/apps)
+
 NetCage is a per-app firewall for Android. Pick a listed app that can use the internet and close its
 route with one switch. Your phone stays online. The caged app does not.
 

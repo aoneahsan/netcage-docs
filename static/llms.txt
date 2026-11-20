@@ -9,6 +9,12 @@ text — no JavaScript is needed to read it. The Markdown source is public at
 https://github.com/aoneahsan/netcage-docs under `docs/`, where the page at `/<name>` is
 `docs/<name>.md`.
 
+
+## Get NetCage
+
+- [All apps](https://netcage-docs.aoneahsan.com/apps): every released surface of NetCage.
+- [Website](https://netcage.aoneahsan.com)
+
 ## How it works, in one paragraph
 
 Android lets a `VpnService` route selected apps. NetCage builds an on-device tunnel and adds caged

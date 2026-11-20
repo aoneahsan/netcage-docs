@@ -1,6 +1,7 @@
 import type * as Preset from '@docusaurus/preset-classic';
 import type {Config} from '@docusaurus/types';
 import {themes as prismThemes} from 'prism-react-renderer';
+import {APPS_LASTMOD, OTHER_PLATFORMS} from './src/data/platforms';
 
 /**
  * The one product description, taken from the approved overview copy (`docs/index.md`). The
@@ -139,6 +140,8 @@ const config: Config = {
               if (item.lastmod) return item;
               if (routeOf(item.url) === '/feed') return {...item, lastmod: changelog ?? null};
               if (routeOf(item.url) === '/sitemap') return {...item, lastmod: newestPage};
+              // `/apps` lists the released surfaces; it changes when their proof date does.
+              if (routeOf(item.url) === '/apps') return {...item, lastmod: APPS_LASTMOD};
               return item;
             });
           },
@@ -276,7 +279,15 @@ const config: Config = {
       items: [
         {type: 'docSidebar', sidebarId: 'docsSidebar', position: 'left', label: 'Docs'},
         {to: '/changelog', label: 'Changelog', position: 'left'},
-        {href: 'https://netcage.aoneahsan.com', label: 'Website', position: 'right'},
+        {
+          type: 'dropdown',
+          label: 'Get NetCage',
+          position: 'right',
+          items: [
+            ...OTHER_PLATFORMS.map((platform) => ({label: platform.name, href: platform.href})),
+            {label: 'All apps', to: '/apps'},
+          ],
+        },
         {
           href: 'https://github.com/aoneahsan/netcage-docs',
           label: 'GitHub',
@@ -287,6 +298,13 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
+        {
+          title: 'Get NetCage',
+          items: [
+            ...OTHER_PLATFORMS.map((platform) => ({label: platform.name, href: platform.href})),
+            {label: 'All apps', to: '/apps'},
+          ],
+        },
         {
           title: 'Docs',
           items: [
@@ -301,7 +319,6 @@ const config: Config = {
         {
           title: 'NetCage',
           items: [
-            {label: 'Website', href: 'https://netcage.aoneahsan.com'},
             {label: 'Changelog', to: '/changelog'},
             {label: 'FAQ', to: '/faq'},
           ],
