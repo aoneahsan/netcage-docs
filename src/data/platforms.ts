@@ -3,7 +3,7 @@
  * (standard aoneahsan-cccs-platform-links). Each surface passed its release proof on `verified`:
  * the website and this site answered 200. The Android app is not on Google Play yet, so it is not listed.
  */
-export type PlatformId = 'web' | 'docs';
+export type PlatformId = 'apk' | 'web' | 'docs';
 
 export interface Platform {
   id: PlatformId;
@@ -19,7 +19,8 @@ export interface Platform {
 }
 
 export const PLATFORMS: readonly Platform[] = [
-  {id: 'web', name: 'NetCage website', href: 'https://netcage.aoneahsan.com', title: 'The website', text: 'What NetCage does on your Android phone, the plans, and your account.', cta: 'Open the website', primary: true, verified: '2026-11-20'},
+  {id: 'apk', name: 'NetCage for Android', href: 'https://netcage.aoneahsan.com/download', title: 'The Android app', text: 'The per-app gate itself: a signed APK from the website, installed on the phone you want to keep in check.', cta: 'Download for Android', primary: true, verified: '2026-11-20'},
+  {id: 'web', name: 'NetCage website', href: 'https://netcage.aoneahsan.com', title: 'The website', text: 'What NetCage does on your Android phone, the plans, and your account.', cta: 'Open the website', verified: '2026-11-20'},
   {id: 'docs', name: 'Documentation', href: 'https://netcage-docs.aoneahsan.com', title: 'These docs', text: 'How the per-app firewall works, what it keeps private, and its limits.', cta: 'Read the docs', verified: '2026-11-20'},
 ];
 
