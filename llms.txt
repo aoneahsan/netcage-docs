@@ -3,11 +3,17 @@
 > A per-app firewall for Android. Choose an enabled, installed app that requests internet access
 > and close its route on Wi-Fi and mobile.
 
-NetCage is a native Android application, package `com.aoneahsan.netcage`, distributed as a signed APK from https://netcage.aoneahsan.com/download.
+NetCage is an Android application, package `com.aoneahsan.netcage`, prepared for release on Google Play, not yet published.
 This site is its documentation. It is prerendered, so every page's HTML already contains its full
 text — no JavaScript is needed to read it. The Markdown source is public at
 https://github.com/aoneahsan/netcage-docs under `docs/`, where the page at `/<name>` is
 `docs/<name>.md`.
+
+
+## Get NetCage
+
+- [All apps](https://netcage-docs.aoneahsan.com/apps): every released surface of NetCage.
+- [Website](https://netcage.aoneahsan.com)
 
 ## How it works, in one paragraph
 
