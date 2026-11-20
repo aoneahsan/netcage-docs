@@ -13,6 +13,7 @@ https://github.com/aoneahsan/netcage-docs under `docs/`, where the page at `/<na
 ## Get NetCage
 
 - [All apps](https://netcage-docs.aoneahsan.com/apps): every released surface of NetCage.
+- [Android app (signed APK)](https://netcage.aoneahsan.com/download)
 - [Website](https://netcage.aoneahsan.com)
 
 ## How it works, in one paragraph
