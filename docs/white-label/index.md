@@ -7,7 +7,7 @@ tags: [white-label, licence, buyout]
 
 A business can offer NetCage to its own customers under its own name. We build the Android app with that
 business's name, icon and colours, sign it, publish it and run the online services it signs in to. The
-business sells it; we keep its updates coming.
+business offers it; we keep its updates coming.
 
 Prices are not repeated in these docs. The [white-label pricing page](https://netcage.aoneahsan.com/white-label/pricing)
 reads them live from our licensing service.

@@ -2,20 +2,20 @@
 
 > Mirror: `CLAUDE.md` — keep byte-identical except this header block.
 
-**Last Updated:** 2026-11-08
+**Last Updated:** 2026-11-17
 
 <!-- fleet:node-26-13-1 v1 --> Node 26.13.1 LTS (.nvmrc), packages latest — 2026-11-16
 
 ## Upcoming release documentation — 2026-09-11
 
-The expanded Android/admin release is implemented locally, including updated privacy drafts and private
-operations records. The private admin code exists in the app/web repositories but is not deployed. The app
-repository's private task record owns implementation scope. Update public documentation only from
-implemented behaviour and GATE 4-approved copy; never expose admin routes, staff identities or
-operational details here. The existing site builds successfully; final privacy parity remains open.
+The Android app is distributed as a signed APK from the NetCage website; no build has reached
+Google Play. The website administration is deployed, while this public site keeps its routes and
+operational detail private. The white-label guide passed story GATE 4 and its public
+deployment was verified on 2026-11-17. The app repository's private task record owns
+implementation scope. Update public documentation only from implemented behaviour and GATE 4-approved copy.
 
 The **public** documentation site for NetCage, a per-app Android firewall. Docusaurus 3.10.2, React 19,
-TypeScript ~6, yarn 4, GitHub Pages. 15 docs pages plus two custom pages (`/sitemap`, `/feed`).
+TypeScript ~6, yarn 4, GitHub Pages. product guides plus two custom pages (`/sitemap`, `/feed`).
 
 `README.md` is the working guide — local dev, the front-matter contract, the two content rules. **This file
 carries only what a fresh session must hold before its first edit.** Do not restate the README here.
@@ -180,9 +180,9 @@ landed on 2026-11-06 (all rights reserved), and the analytics wiring on 2026-09-
 
 | Context budget | Value |
 |---|---|
-| Last optimized | 2026-09-17 |
-| Next routine optimization eligible | 2026-10-17 |
-| Guide bytes | 10,498 B |
+| Last optimized | 2026-11-16 |
+| Next routine optimization eligible | 2026-12-16 |
+| Guide bytes | 12,968 B |
 | Covered subtree | `netcage-docs/` repo root |
 | Method | Already inside cap; the superseded 10-day cadence line replaced by this row, its verification prose kept inline. No content moved |
 | Fleet record | the workspace context-budget tracker (see the `netcage-root` umbrella guide) |
