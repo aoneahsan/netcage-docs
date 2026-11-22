@@ -45,6 +45,7 @@ foreground VPN service while a cage is active, so NetCage does not promise an ex
 - [Schedules and day passes](https://netcage-docs.aoneahsan.com/schedules-and-day-passes)
 - [Widgets and the Quick Settings tile](https://netcage-docs.aoneahsan.com/widgets-and-tile)
 - [Support, backup and account](https://netcage-docs.aoneahsan.com/account-and-sync)
+- [Two-step sign-in](https://netcage-docs.aoneahsan.com/two-step-sign-in)
 - [Settings and your data](https://netcage-docs.aoneahsan.com/settings-and-data)
 - [Privacy](https://netcage-docs.aoneahsan.com/privacy)
 - [Limitations](https://netcage-docs.aoneahsan.com/limitations)
