@@ -36,7 +36,8 @@ permission and attaches no caged package names.
 Each sign-in also adds a line to Recent sign-ins under Security: the kind of browser or app, its operating
 system, the time and, with two-step sign-in on, how the second step was met. NetCage names them from what the
 browser reports about itself. The list keeps no IP address, place or copy of that report. Lines older than 90
-days are deleted.
+days are deleted. Supabase Auth, which runs sign-in, keeps each signed-in session's browser report and IP
+address until that session ends: when you sign out, use Sign out everywhere else or delete your account.
 
 ## What happens when I turn on two-step sign-in?
 
@@ -74,6 +75,7 @@ remain and when a code was last typed or a support reset made, never a code, key
 | Microsoft Clarity | Interaction data from Setup, Help and Other apps by developer; sensitive and unknown routes stay masked and paused | Opening a replay-safe screen; no switch |
 | Sentry | Exception type, stack frames, bounded tags, device, OS and app version; no event message, exception value, breadcrumb or request data | First launch; no switch |
 | Native Update, the developer's own update service | A random ID for this installation, the app and word-file versions, the platform, the package name and a signing-certificate fingerprint | Opening NetCage 1.5.0 or later; no switch |
+| Polar | Checkout for Plus and Family: your account ID and email address from NetCage; your name, billing country and payment details on its own pages | Choosing a paid plan |
 | OneSignal | Push subscription, sessions, notification interactions, device/app metadata, country and IP address | **Announcements** |
 
 Usage analytics and crash reporting are on from the first launch, with no switch to turn them off, and
@@ -84,6 +86,13 @@ From 1.5.0, NetCage asks Native Update for newer word files each time you open o
 carries no account details, app names or cages. Newer files download from the developer's own file storage
 and are used from the next start only if their signature matches NetCage's key. They change words only;
 new features and permissions still need a new APK.
+
+Polar runs checkout for Plus and Family on the website and is the seller of record. To open your checkout,
+NetCage sends Polar your account ID and email address with the plan, period and seats you chose. Polar
+collects your name, billing country and payment details on its own pages. NetCage never sees a card number.
+Polar then tells NetCage about each order and subscription: its reference, plan, seats, amounts and currency,
+the period it covers, any refund and the renewal date. NetCage keeps those records so your plan applies.
+Deleting your account stops any renewal at the end of the period already paid for.
 
 The public website measures page views, bounded actions and errors through Google Analytics, Amplitude and
 Sentry from your first visit. A short bar says so once. There is no setting to turn any of it off. Website
@@ -162,7 +171,9 @@ already absent. Until then, the identity, references and other account rows rema
 completed deletion includes published packs and reports attached to those packs. A report can remain with
 the moderation record after review while its pack exists.
 
-Recent sign-ins are deleted after 90 days. Two-step sign-in records stay until account deletion. A support reset removes the setup key, recovery codes
+Recent sign-ins are deleted after 90 days. A session's browser report and IP address go when the session ends.
+Order and subscription records from Polar stay after account deletion, without the link to the account, as the
+record of what was sold and refunded. Two-step sign-in records stay until account deletion. A support reset removes the setup key, recovery codes
 and remembered-device records sooner. The log of security events stays. Replacing your authenticator deletes
 the old setup key and ends every remembered device, and making new recovery codes replaces the old set.
 Administrator audit entries, including a support reset's note, are deleted once they are older than 365
@@ -180,7 +191,7 @@ or uninstall it.
 
 Supabase runs the account database and server functions. Custom icons, word files, website contact email and
 two-step sign-in emails use the developer's own storage and email service, and Native Update, the developer's
-own update service, answers the checks for wording fixes. Google, Microsoft, Amplitude, Sentry and OneSignal can process
+own update service, answers the checks for wording fixes. Google, Microsoft, Amplitude, Sentry, OneSignal and Polar can process
 their respective data in more than one country under their own terms. NetCage cannot promise that every
 optional service uses one jurisdiction.
 

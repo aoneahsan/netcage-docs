@@ -14,6 +14,8 @@ an account.
 Open **Settings ▸ Account** and choose **Continue with Google**. Google supplies the name and email address
 for authentication; Supabase stores the account identifier, contact row and versioned configuration.
 
+To add an authenticator code after Google sign-in, read [Two-step sign-in](./two-step-sign-in.md).
+
 If account features are unavailable in the build, caging still works. Use the public
 [contact page](https://netcage.aoneahsan.com/contact) for account help.
 
