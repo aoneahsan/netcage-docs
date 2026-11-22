@@ -33,6 +33,36 @@ can include the message, issue or request category, app version, Android version
 optional phone number you choose through Google's Phone Number Hint sheet. NetCage holds no phone-reading
 permission and attaches no caged package names.
 
+Each sign-in also adds a line to Recent sign-ins under Security: the kind of browser or app, its operating
+system, the time and, with two-step sign-in on, how the second step was met. NetCage names them from what the
+browser reports about itself. The list keeps no IP address, place or copy of that report. Lines older than 90
+days are deleted.
+
+## What happens when I turn on two-step sign-in?
+
+Two-step sign-in is optional. Turn it on under **Settings ▸ Account ▸ Security** in the app, or on the
+Security tab of your account on the website, and Supabase Auth keeps the setup key your authenticator uses so
+it can check each six-digit code. NetCage makes ten recovery codes at a time and stores only keyed hashes of
+them, so it can't show you a set twice. It logs the time of each recovery-code try and use, each new set of
+codes, each remembered or forgotten device and each authenticator replacement or reset. No code goes into that
+log. Five wrong codes in a row start a five-minute wait, and NetCage keeps that count and the time the wait
+ends.
+
+In the Android app, **Remember this device for 7 days** starts unticked. Tick it and the app keeps a random
+token, encrypted with a key that stays in Android's keystore, while NetCage's server keeps a hash of that
+token, the app and system names Recent sign-ins shows, and the dates it starts and ends. Signing out, or
+**Forget this one** or **Forget all** in Security, ends it sooner. **Sign out everywhere else** ends your
+other sign-ins and leaves remembered devices as they are. The website does not remember browsers, so it asks
+for a code after every Google sign-in.
+
+NetCage emails your account's address through the developer's own email service when two-step sign-in is
+turned on, when a recovery code is used and when NetCage support turns it off. Two-step sign-in stays on. To
+turn it off, ask for a support reset through the public contact page. The developer checks your identity
+before removing your authenticator, recovery codes and remembered devices and signing you out everywhere. The
+admin audit log keeps your contact message's reference and a note of how they checked. The developer's staff
+see only whether two-step sign-in is on, when it was added, how many recovery codes and remembered devices
+remain and when a code was last typed or a support reset made, never a code, key or token.
+
 ## Which providers can receive data?
 
 | Provider | What it can receive | Gate |
@@ -43,11 +73,17 @@ permission and attaches no caged package names.
 | Amplitude | Bounded events, sessions and a random identifier for this app installation; no advertising ID, App Set ID, IP address or location fields | First launch; no switch |
 | Microsoft Clarity | Interaction data from Setup, Help and Other apps by developer; sensitive and unknown routes stay masked and paused | Opening a replay-safe screen; no switch |
 | Sentry | Exception type, stack frames, bounded tags, device, OS and app version; no event message, exception value, breadcrumb or request data | First launch; no switch |
+| Native Update, the developer's own update service | A random ID for this installation, the app and word-file versions, the platform, the package name and a signing-certificate fingerprint | Opening NetCage 1.5.0 or later; no switch |
 | OneSignal | Push subscription, sessions, notification interactions, device/app metadata, country and IP address | **Announcements** |
 
 Usage analytics and crash reporting are on from the first launch, with no switch to turn them off, and
 NetCage says so once. Announcements start off. NetCage does not send those providers your Supabase account
 ID, name or email address, and makes no OneSignal login or alias call.
+
+From 1.5.0, NetCage asks Native Update for newer word files each time you open or return to it. A check
+carries no account details, app names or cages. Newer files download from the developer's own file storage
+and are used from the next start only if their signature matches NetCage's key. They change words only;
+new features and permissions still need a new APK.
 
 The public website measures page views, bounded actions and errors through Google Analytics, Amplitude and
 Sentry from your first visit. A short bar says so once. There is no setting to turn any of it off. Website
@@ -126,16 +162,25 @@ already absent. Until then, the identity, references and other account rows rema
 completed deletion includes published packs and reports attached to those packs. A report can remain with
 the moderation record after review while its pack exists.
 
+Recent sign-ins are deleted after 90 days. Two-step sign-in records stay until account deletion. A support reset removes the setup key, recovery codes
+and remembered-device records sooner. The log of security events stays. Replacing your authenticator deletes
+the old setup key and ends every remembered device, and making new recovery codes replaces the old set.
+Administrator audit entries, including a support reset's note, are deleted once they are older than 365
+days. Native Update uses what a check sends to count active installations and failed starts, and NetCage
+promises no fixed deletion period for it.
+
 Provider telemetry and crash data follow each provider's retention period. Turning Announcements off
 stops new OneSignal collection. Website contact email and mailbox notification copies of in-app
 support requests sit outside the NetCage database and may remain until the developer deletes them
-manually; NetCage promises no fixed mailbox deletion period. Device-only settings and the report token
-disappear when you clear NetCage's app data or uninstall it.
+manually; NetCage promises no fixed mailbox deletion period. Device-only settings, the report token, the
+random ID used for wording checks and a remembered-device token disappear when you clear NetCage's app data
+or uninstall it.
 
 ## Where can data be processed?
 
-Supabase runs the account database and server functions. Custom icons and website contact email use the
-developer's own storage and email service. Google, Microsoft, Amplitude, Sentry and OneSignal can process
+Supabase runs the account database and server functions. Custom icons, word files, website contact email and
+two-step sign-in emails use the developer's own storage and email service, and Native Update, the developer's
+own update service, answers the checks for wording fixes. Google, Microsoft, Amplitude, Sentry and OneSignal can process
 their respective data in more than one country under their own terms. NetCage cannot promise that every
 optional service uses one jurisdiction.
 
