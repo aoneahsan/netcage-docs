@@ -5,7 +5,7 @@ sidebar_label: "From AFWall+"
 sidebar_position: 4
 tags: [comparison]
 last_update:
-  date: 2026-11-12
+  date: 2026-11-22
 ---
 
 AFWall+ is the right tool on a rooted phone: iptables rules, profiles and Tasker hooks, without taking Android’s VPN slot; NetCage is for a phone that isn’t rooted. Its supported engine uses the VPN slot and asks for nothing more.
@@ -28,7 +28,7 @@ Your rules stay in AFWall+, since NetCage has no importer for them. These pages 
 
 ## What does each one state?
 
-Checked 7 November 2026. The AFWall+ column comes from the linked pages, and NetCage’s from its code.
+Checked 22 November 2026. The AFWall+ column comes from the linked pages, and NetCage’s from its code.
 
 | Feature | AFWall+ | NetCage |
 |---|---|---|
@@ -43,7 +43,7 @@ Checked 7 November 2026. The AFWall+ column comes from the linked pages, and Net
 
 | Plan | Price | As stated | Source | Checked |
 |---|---|---|---|---|
-| App | Free | Free install on Google Play with no ads or in-app purchase label; the GitHub README offers a separate paid unlocker key on Google Play, price not confirmed on the pages we read | [play.google.com](https://play.google.com/store/apps/details?id=dev.ukanth.ufirewall) | 7 November 2026 |
+| App | Free | Free install on Google Play with no ads or in-app purchase label; the GitHub README offers a separate paid unlocker key on Google Play, price not confirmed on the pages we read | [play.google.com](https://play.google.com/store/apps/details?id=dev.ukanth.ufirewall) | 22 November 2026 |
 
 NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 

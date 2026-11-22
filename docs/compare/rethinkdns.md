@@ -5,7 +5,7 @@ sidebar_label: "From Rethink"
 sidebar_position: 3
 tags: [comparison]
 last_update:
-  date: 2026-11-12
+  date: 2026-11-22
 ---
 
 Rethink suits you if you want encrypted DNS, blocklists and WireGuard in the same app, and you’re happy to configure them. NetCage suits you if you only want to take the internet away from chosen apps and leave DNS, VPN servers and blocklists out of it.
@@ -28,7 +28,7 @@ Rethink settings don’t carry over, so you’d choose your apps again. Start wi
 
 ## What does each one state?
 
-Checked 7 November 2026. The Rethink column comes from the linked pages, and NetCage’s from its code.
+Checked 22 November 2026. The Rethink column comes from the linked pages, and NetCage’s from its code.
 
 | Feature | Rethink: DNS + Firewall + VPN | NetCage |
 |---|---|---|
@@ -43,7 +43,7 @@ Checked 7 November 2026. The Rethink column comes from the linked pages, and Net
 
 | Plan | Price | As stated | Source | Checked |
 |---|---|---|---|---|
-| App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $48.99 per item. The site says the app is free and open source and the cloud DNS service will have a free and a paid tier | [play.google.com](https://play.google.com/store/apps/details?id=com.celzero.bravedns) | 7 November 2026 |
+| App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $48.99 per item. The site says the app is free and open source and the cloud DNS service will have a free and a paid tier | [play.google.com](https://play.google.com/store/apps/details?id=com.celzero.bravedns) | 22 November 2026 |
 
 NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 

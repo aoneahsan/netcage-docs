@@ -5,7 +5,7 @@ sidebar_label: "From NetGuard"
 sidebar_position: 2
 tags: [comparison]
 last_update:
-  date: 2026-11-12
+  date: 2026-11-22
 ---
 
 NetGuard is the one to keep if you want an open-source firewall you can get today, from Google Play or F-Droid, with optional per-address filtering and traffic logs. NetCage is narrower: one switch per app and nothing to tune. A caged app is refused on this phone, in the foreground and the background, and the rest of your phone stays online.
@@ -28,7 +28,7 @@ NetCage imports none of NetGuard’s settings, so you pick your apps again. Thes
 
 ## What does each one state?
 
-Checked 7 November 2026. The NetGuard column comes from the linked pages, and NetCage’s from its code.
+Checked 22 November 2026. The NetGuard column comes from the linked pages, and NetCage’s from its code.
 
 | Feature | NetGuard | NetCage |
 |---|---|---|
@@ -43,8 +43,8 @@ Checked 7 November 2026. The NetGuard column comes from the linked pages, and Ne
 
 | Plan | Price | As stated | Source | Checked |
 |---|---|---|---|---|
-| App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $8.49 per item | [play.google.com](https://play.google.com/store/apps/details?id=eu.faircode.netguard) | 7 November 2026 |
-| Pro features outside Google Play | €0.10 once | A one-time donation of EUR 0.10 or more unlocks the pro features once; EUR 7 or more unlocks them on every device you own | [netguard.me](https://netguard.me/) | 7 November 2026 |
+| App | Free | Free install on Google Play; the listing carries an In-app purchases label at $0.99 - $8.49 per item | [play.google.com](https://play.google.com/store/apps/details?id=eu.faircode.netguard) | 22 November 2026 |
+| Pro features outside Google Play | €0.10 once | A one-time donation of EUR 0.10 or more unlocks the pro features once; EUR 7 or more unlocks them on every device you own | [netguard.me](https://netguard.me/) | 22 November 2026 |
 
 NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 

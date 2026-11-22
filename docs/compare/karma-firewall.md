@@ -5,7 +5,7 @@ sidebar_label: "From Karma Firewall"
 sidebar_position: 8
 tags: [comparison]
 last_update:
-  date: 2026-11-12
+  date: 2026-11-22
 ---
 
 Karma Firewall suits you if you want a tiny open-source app from F-Droid that holds no internet permission of its own. NetCage is the bigger app: Wi-Fi and mobile rules, schedules, shareable Cage Packs, and a foreground service that keeps the cage up after a reboot.
@@ -28,7 +28,7 @@ Your Karma list doesn’t transfer, so you’d pick the apps again. Start from t
 
 ## What does each one state?
 
-Checked 7 November 2026. The Karma Firewall column comes from the linked pages, and NetCage’s from its code. Karma Firewall’s pages didn’t say whether it keeps blocking in the background, needs no root, shows ads or has in-app purchases. Those four rows are hidden, and silence there isn’t a no.
+Checked 22 November 2026. The Karma Firewall column comes from the linked pages, and NetCage’s from its code. Karma Firewall’s pages didn’t say whether it keeps blocking in the background, needs no root, shows ads or has in-app purchases. Those four rows are hidden, and silence there isn’t a no.
 
 | Feature | Karma Firewall | NetCage |
 |---|---|---|
@@ -39,7 +39,7 @@ Checked 7 November 2026. The Karma Firewall column comes from the linked pages, 
 
 | Plan | Price | As stated | Source | Checked |
 |---|---|---|---|---|
-| App | Free | Free download from F-Droid, GitHub releases or the developer’s site; the developer accepts a voluntary coffee donation | [f-droid.org](https://f-droid.org/en/packages/net.stargw.fok/) | 7 November 2026 |
+| App | Free | Free download from F-Droid, GitHub releases or the developer’s site; the developer accepts a voluntary coffee donation | [f-droid.org](https://f-droid.org/en/packages/net.stargw.fok/) | 22 November 2026 |
 
 NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 

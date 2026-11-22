@@ -5,7 +5,7 @@ sidebar_label: "From PCAPdroid"
 sidebar_position: 11
 tags: [comparison]
 last_update:
-  date: 2026-11-12
+  date: 2026-11-22
 ---
 
 PCAPdroid is the tool for seeing packets: captures, TLS decryption and PCAP exports, with app blocking as a paid extra on top. NetCage is for people who don’t want to inspect anything. It reads only the header it needs to send a refusal and never records your traffic.
@@ -28,7 +28,7 @@ No capture settings carry over; NetCage imports nothing from PCAPdroid. You’ll
 
 ## What does each one state?
 
-Checked 7 November 2026. The PCAPdroid column comes from the linked pages, and NetCage’s from its code.
+Checked 22 November 2026. The PCAPdroid column comes from the linked pages, and NetCage’s from its code.
 
 | Feature | PCAPdroid | NetCage |
 |---|---|---|
@@ -43,7 +43,7 @@ Checked 7 November 2026. The PCAPdroid column comes from the linked pages, and N
 
 | Plan | Price | As stated | Source | Checked |
 |---|---|---|---|---|
-| App | Free | Free install on Google Play; the listing carries an In-app purchases label at $2.99 - $11.99 per item. The firewall is listed as a paid feature | [play.google.com](https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture) | 7 November 2026 |
+| App | Free | Free install on Google Play; the listing carries an In-app purchases label at $2.99 - $11.99 per item. The firewall is listed as a paid feature | [play.google.com](https://play.google.com/store/apps/details?id=com.emanuelef.remote_capture) | 22 November 2026 |
 
 NetCage’s prices are on its [pricing page](https://netcage.aoneahsan.com/pricing), which shows whether each plan is on sale.
 
