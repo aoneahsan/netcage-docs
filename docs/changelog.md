@@ -5,9 +5,16 @@ sidebar_position: 13
 tags: [changelog, releases]
 ---
 
-Latest first. Version 1.4.0, versionCode 4, is the first public release, available as a signed APK from the [NetCage website](https://netcage.aoneahsan.com/download). The 1.0.0/code 1 and 1.2.0/code 2 store candidates were built and superseded before
+Latest first. Version 1.5.0, versionCode 5, is the current release, available as a signed APK from the [NetCage website](https://netcage.aoneahsan.com/download). It installs over 1.4.0, the first public release. The 1.0.0/code 1 and 1.2.0/code 2 store candidates were built and superseded before
 upload, so both codes are spent. Earlier sideloaded builds remain recorded under the numbers they used at
 the time.
+
+## 1.5.0 — 2026-11-23
+
+Turn on [two-step sign-in](./two-step-sign-in.md) under Settings ▸ Account ▸ Security: an authenticator code after
+Google sign-in, plus recovery codes that each work once. Settings ▸ About ▸ Get NetCage lists this app, the website
+and the documentation. Wording fixes now arrive as signed files when you open NetCage and apply from the next
+start; new features and permissions still need a new APK.
 
 ## 1.4.0 — 2026-11-13 {/* #140 */}
 

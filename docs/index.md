@@ -17,7 +17,7 @@ transport-header fields in memory so it can return a local refusal; it does not 
 or hostnames, keep a traffic log, or forward caged traffic to a VPN server. Apps outside a caged Android
 UID do not enter the tunnel.
 
-Package `com.aoneahsan.netcage`. NetCage 1.4.0 is available as a signed Android APK from the
+Package `com.aoneahsan.netcage`. NetCage 1.5.0 is available as a signed Android APK from the
 [NetCage website](https://netcage.aoneahsan.com/download).
 
 ## How do I install NetCage?
