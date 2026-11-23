@@ -7,6 +7,13 @@
     <description>Release notes for NetCage, the per-app Android firewall.</description>
     <language>en</language>
     <item>
+      <title>NetCage 1.5.0</title>
+      <link>https://netcage-docs.aoneahsan.com/changelog#150</link>
+      <guid isPermaLink="false">netcage-1.5.0</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Turn on [two-step sign-in](./two-step-sign-in.md) under Settings ▸ Account ▸ Security: an authenticator code after Google sign-in, plus recovery codes that each work once. Settings ▸ About ▸ Get NetCage lists this app, the website and the documentation. Wording fixes now arrive as signed files when you open NetCage and apply from the next start; new features and permissions still need a new APK.</description>
+    </item>
+    <item>
       <title>NetCage 1.4.0</title>
       <link>https://netcage-docs.aoneahsan.com/changelog#140</link>
       <guid isPermaLink="false">netcage-1.4.0</guid>
