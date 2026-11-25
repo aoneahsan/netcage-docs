@@ -165,7 +165,9 @@ const config: Config = {
     // Content-Security-Policy <meta>, with its inline scripts hashed after the build.
     './plugins/security-meta',
     [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
+      // Named by package, never require.resolve(): the config ships to the browser, and a resolved path would
+      // publish this machine's folders (the security-meta plugin fails the build if it does).
+      '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,
         // Pinned rather than inferred from the site locale: the plugin resolves a lunr stemmer by

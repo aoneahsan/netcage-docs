@@ -67,10 +67,25 @@ function htmlFiles(dir) {
   });
 }
 
-module.exports = function securityMetaPlugin() {
+/**
+ * Docusaurus ships the site config and every route module path to the browser, so a require.resolve() plugin or
+ * any other absolute path would publish this machine's folders in main.js. Fails the build when one appears.
+ */
+function assertNoLocalPaths(outDir, siteDir) {
+  const jsDir = path.join(outDir, 'assets', 'js');
+  const forms = [siteDir.split(path.sep).join('/'), siteDir.split(path.sep).join('\\\\')];
+  for (const file of fs.readdirSync(jsDir).filter((name) => name.endsWith('.js'))) {
+    const text = fs.readFileSync(path.join(jsDir, file), 'utf8');
+    const found = forms.find((form) => text.includes(form));
+    if (found) throw new Error(`${file} carries the local path ${found}: name plugins by package or relative path, never require.resolve()`);
+  }
+}
+
+module.exports = function securityMetaPlugin(context) {
   return {
     name: 'netcage-security-meta',
     async postBuild({outDir}) {
+      assertNoLocalPaths(outDir, context.siteDir);
       // The minifier drops the quotes (`<meta charset=UTF-8>`); accept both spellings.
       const anchor = /<meta charset="?utf-8"?>/i;
       for (const file of htmlFiles(outDir)) {
